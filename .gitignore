@@ -1,0 +1,9 @@
+# IDE
+.idea
+.gradle
+
+# LaTeX
+*.pdf
+*.aux
+*log
+*.toc
