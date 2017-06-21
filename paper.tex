@@ -1,13 +1,19 @@
 \documentclass{report}
 
 % Packages
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage[frenchb]{babel}
-\usepackage[english]{babel}
+\usepackage[frenchb]{babel}
+% \usepackage[english]{babel}
 \usepackage[a4paper,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
 
+\usepackage{titlesec}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{amsmath}
+
+\definecolor{lightgray}{gray}{0.75}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}\textcolor{lightgray}{|}\hspace{20pt}}{0pt}{\Huge\bfseries}
 
 \lstset{
    language=C,
@@ -24,14 +30,17 @@
    keywordstyle=\color{blue}
 }
 
-\usepackage{amsmath}
-
 % Document metadata
-\title{Example paper}
+\title{
+    Données centralisées et intelligences interconnectées \\
+    Un Système pour les gouverner tous
+}
 \author{
-    Valentin \textsc{Fries}
+    Valentin \textsc{Fries} \\ Master Architecture des Logiciels 
     \and
-    Vincent \textsc{Milano}
+    Vincent \textsc{Milano} \\ Master Architecture des Logiciels
+    \and
+    M. ? \\ Directeur de mémoire
 }
 %\date{} % Defaults to compilation date.
 
@@ -47,6 +56,7 @@
 \newpage
 \pagenumbering{arabic}
 
+\chapter{Titre du chapitre}
 \section{Section}
     Hello World!
 
