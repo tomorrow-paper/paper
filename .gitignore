@@ -5,5 +5,10 @@
 # LaTeX
 *.pdf
 *.aux
-*log
+*.log
 *.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz

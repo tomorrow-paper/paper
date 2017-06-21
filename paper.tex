@@ -4,31 +4,24 @@
 \usepackage[utf8]{inputenc}
 %\usepackage[frenchb]{babel}
 \usepackage[english]{babel}
-
-\usepackage{geometry}
-\geometry{
-    a4paper,
-    total={170mm, 257mm},
-    left=20mm,
-    top=20mm
-}
+\usepackage[a4paper,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
 
 \usepackage{listings}
 \usepackage{color}
 
 \lstset{
-    language=C,
-    basicstyle=\small\sffamily,
-    numbers=left,
-    numberstyle=\tiny,
-    frame=tb,
-    tabsize=4,
-    columns=fixed,
-    showstringspaces=false,
-    showtabs=false,
-    keepspaces,
-    commentstyle=\color{red},
-    keywordstyle=\color{blue}
+   language=C,
+   basicstyle=\small\sffamily,
+   numbers=left,
+   numberstyle=\tiny,
+   frame=tb,
+   tabsize=4,
+   columns=fixed,
+   showstringspaces=false,
+   showtabs=false,
+   keepspaces,
+   commentstyle=\color{red},
+   keywordstyle=\color{blue}
 }
 
 \usepackage{amsmath}
@@ -70,30 +63,34 @@
             Even more text.
 
 \section{Maths}
-    \begin{equation*}
-      f(x) = x^2
-    \end{equation*}
+   \begin{equation*}
+     f(x) = x^2
+   \end{equation*}
 
-    \begin{align*}
-      f(x) &= x^2\\
-      g(x) &= \frac{1}{x}\\
-      F(x) &= \int^a_b \frac{1}{3}x^3
-    \end{align*}
+   \begin{align*}
+     f(x) &= x^2\\
+     g(x) &= \frac{1}{x}\\
+     F(x) &= \int^a_b \frac{1}{3}x^3
+   \end{align*}
 
 \section{Source code}
-    \subsection{Code highlithing}
-    \begin{lstlisting}
-        #include <stdio.h>
+   \subsection{Code highlithing}
+   \begin{lstlisting}
+       #include <stdio.h>
 
-        int main(int argc, char **argv)
-        {
-            printf("Hello World!");
-            return 0;
-        }
-    \end{lstlisting}
+       int main(int argc, char **argv)
+       {
+           printf("Hello World!");
+           return 0;
+       }
+   \end{lstlisting}
 
 \section{Bibliography}
     Some citation \cite{some_reference}.
+
+    Text with a footnote\footnote{\label{testfootnote}Lorem ispum footnote sit amet.}.
+
+    Referencing footnote \ref{testfootnote}.
 
 \newpage
 
