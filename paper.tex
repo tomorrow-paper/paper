@@ -26,21 +26,24 @@
    showstringspaces=false,
    showtabs=false,
    keepspaces,
+   showtabs=false,
+   morekeywords={*, include},
    commentstyle=\color{red},
-   keywordstyle=\color{blue}
+   keywordstyle=\color{blue},
+   stringstyle=\color{green}
 }
 
 % Document metadata
 \title{
-    Données centralisées et intelligences interconnectées \\
-    Un Système pour les gouverner tous
+    \huge Données centralisées et intelligences interconnectées \\
+    \LARGE Un Système pour les gouverner tous
 }
 \author{
     Valentin \textsc{Fries} \\ Master Architecture des Logiciels 
     \and
     Vincent \textsc{Milano} \\ Master Architecture des Logiciels
     \and
-    M. ? \\ Directeur de mémoire
+    M. ? \\ Maître de mémoire
 }
 %\date{} % Defaults to compilation date.
 
@@ -86,21 +89,19 @@
 \section{Source code}
    \subsection{Code highlithing}
    \begin{lstlisting}
-       #include <stdio.h>
+        #include <stdio.h>
 
-       int main(int argc, char **argv)
-       {
-           printf("Hello World!");
-           return 0;
-       }
+        int main(int argc, char **argv)
+        {
+            printf("Hello World!");
+            return 0;
+        }
    \end{lstlisting}
 
 \section{Bibliography}
-    Some citation \cite{some_reference}.
+    Some citation \cite{Foucault:0}.
 
-    Text with a footnote\footnote{\label{testfootnote}Lorem ispum footnote sit amet.}.
-
-    Referencing footnote \ref{testfootnote}.
+    Text with a footnote\footnote{Lorem ispum footnote sit amet.}.
 
 \newpage
 
