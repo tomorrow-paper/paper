@@ -53,19 +53,8 @@
 \pagenumbering{gobble}
 \maketitle
 
-\newpage
-\chapter*{Remerciements}
-Cupidatat proident ullamco do eu reprehenderit veniam pariatur consectetur esse exercitation adipisicing enim duis. Nostrud voluptate dolore quis adipisicing esse. Minim aute sunt est fugiat proident veniam. Veniam enim consectetur laborum sit non.
-
-\newpage 
-\section*{Résumé}
-    \paragraph{} Qu'adviendrait-il si nos données personnelles étaient centralisées ?
-    \paragraph{} Si des IA interconnectées ou des systèmes de Machine Learning distribués parvenaient à les exploiter ?
-    \paragraph{} Smartphones, objets connectés, réseaux sociaux et démocratisation de la robotique : quels socles pour une société de contrôle ?
-
-\newpage
-\section*{Abstract}
-Exercitation ad aliquip occaecat deserunt ipsum aliqua eiusmod incididunt. Ad excepteur mollit nostrud elit. Do qui sit sint elit ut ullamco proident incididunt eiusmod. Nisi labore ea et deserunt nulla cupidatat aute. Irure deserunt non qui eu nostrud nulla laboris nostrud irure. Amet minim officia sunt sunt do quis enim amet veniam.
+\include{preludes/acknowledgment}
+\include{preludes/abstract} 
 
 \newpage
 \tableofcontents
@@ -73,86 +62,9 @@ Exercitation ad aliquip occaecat deserunt ipsum aliqua eiusmod incididunt. Ad ex
 \newpage
 \pagenumbering{arabic}
 
-% Réflexion sociétale
-\chapter{Les Technosociétés}
-    % Pré-internet/réseau, 20ème siècle, faut que ça claque
-    % Comment les modèles de soc. nous ont-ils amené à réfléchir l'individu en termes technologiques ?
-    \section{De nouveaux modèles de sociétés}
-    % Pourquoi collecter ?
-    % Que collecter ? Argent, pouvoir => pourquoi et comment est-il exercé ? 
-    \section{L'irruption des technologies}
-    % Pourquoi accepter ?
-    % Se savoir surveillé restreint-il les instincts pervers ?
-    \section{Les sociétés de contrôle}
-
-% Systèmes possibles
-\chapter{Un Système pour les gouverner tous}
-    % Réseau universel, omniprésent, omnipotent
-    % Réseaux parallèles (tor), blockchains
-    % Neutralisation du réseau par le réseau
-    \section{Un Réseau}
-    % Scalabilité, résilience..
-    % OS, Suprématie windows/osx
-    \section{Des contraintes architecturales}
-    % Systèmes distribués, mise en oeuvre à grande échelle
-    % Chaque foyer comme noeud du réseau, chaque individu comme neurone du système
-    \section{L'Homme gouverne l'Homme}
-
-% Développement technique
-\chapter{L'intelligence envahissante de votre quotidien}
-    % Qu'est-ce que l'IA ? Quelle est sa place ?
-    % Quelles sont ses contraintes ?
-    % Quels apports et quelle utilité ?
-    \section{Intelligence as a Service}
-    % Différences et similitudes avec IA
-    % Evolution logique et inévitable de l'IA 
-    % Systèmes intelligents,  
-    \section{Machine Learning}
-    % Déterminisme, cas d'utilisations
-    % Eugénisme, dérives
-    % Améliorations de vie et sociales
-    \section{Usages, dérives \and éthique}
-
-% Quels moyens nous sont donnés, aujourd'hui,
-% pour parvenir à créer un système de contrôle
-% omniscient ?
-
-% I - Récolte des données
-% II - Distribution / Réseaux
-% III - ML / Intelligence
-
-% Un système distribué (II)
-% Récolte de données automatisée (I)
-% Intelligence, traitement des datas (III)
-%   - tendances actuelles
-%   - prévisions 
-%   - analyses psychologiques
-%   - géolocalisation
-% Scalabilité (II)
-% Résilience applicative (II)
-
-\newpage
-\cite{Asimov:0}
-\cite{Damasio:0}
-\cite{Damasio:1}
-\cite{Deleuze:0}
-\cite{Foucault:0}
-\cite{Huxley:0}
-\cite{Klein:0}
-\cite{Marx:0}
-\cite{Marx:1}
-\cite{Moore:0}
-\cite{Negri:0}
-\cite{Nietzsche:0}
-\cite{Pieces:0}
-\cite{Rabhi:0}
-\cite{MachineLearning:0}
-\cite{MachineLearning:1}
-\cite{ProgrammableCity:0}
-\cite{ProgrammableCity:1}
-\cite{GhostInTheShell}
-\cite{Gunnm}
-\cite{PsychoPass}
+\include{chapters/01/00_les_technosocietes}
+\include{chapters/02/00_un_systeme}
+\include{chapters/03/00_l_intelligence}
 
 \bibliography{references}
 \bibliographystyle{ieeetr}
