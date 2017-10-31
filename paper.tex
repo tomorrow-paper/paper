@@ -11,6 +11,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{amsmath}
+\usepackage{hyperref}
 
 \definecolor{lightgray}{gray}{0.75}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}\textcolor{lightgray}{|}\hspace{20pt}}{0pt}{\Huge\bfseries}
@@ -27,10 +28,18 @@
     showtabs=false,
     keepspaces,
     showtabs=false,
-    morekeywords={*, include},
-    commentstyle=\color{red},
+    morekeywords={*, include, let, u8, u16, u32, u64},
+    commentstyle={\color{gray}\textit},
     keywordstyle=\color{blue},
     stringstyle=\color{green}
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,      % color of file links
+    urlcolor=blue           % color of external links
 }
 
 % Document metadata
@@ -56,10 +65,7 @@
 \include{preludes/acknowledgment}
 \include{preludes/abstract} 
 
-\newpage
 \tableofcontents
-
-\newpage
 \pagenumbering{arabic}
 
 \include{chapters/01/00_les_technosocietes}
@@ -68,8 +74,6 @@
 \include{chapters/04/00_conclusion}
 
 \include{preludes/annexes}
-
-\bibliography{references}
-\bibliographystyle{ieeetr}
+\include{preludes/bibliography}
 
 \end{document}
