@@ -1,17 +1,19 @@
-# Données centralisées et intelligences interconnectées 
-> Un Système pour les gouverner tous
+# Tomorrow Paper
+> Données centralisées et intelligences interconnectées : un Système pour les gouverner tous.
 
-## Installation
+[![](https://api.travis-ci.org/tomorrow-paper/paper.svg?branch=master)](https://travis-ci.org/tomorrow-paper/paper)
+
+## LaTeX to PDF
 
 ### Windows
 
-1. Installer MiKTeX
-2. Installer le package `listings` en utilisant le `MiKTeX Package Manager`.
-3. Compiler le PDF avec la commande `make`.
+1. Install [MiKTeX](https://miktex.org/download);
+2. Install the following packages using `MiKTeX Package Manager`: `listings`;
+3. Create a PDF document using `make`.
 
 ### Linux
 
 ```sh
-$ sudo apt-get install texlive texlive-latex-extra texlive-lang-french
+$ sudo apt-get install make texlive texlive-latex-extra texlive-lang-french
 $ make
 ```
