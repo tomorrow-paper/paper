@@ -20,3 +20,8 @@ deploy:
   file: paper.pdf
   on:
     branch: master
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
