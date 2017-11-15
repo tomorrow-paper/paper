@@ -24,49 +24,6 @@
 \cite{Gunnm}
 \cite{PsychoPass}
 
-\section*{Prototype}
-
-\paragraph{} Pour étayer notre propos, un prototype servira de fil rouge tout au
-long de votre lecture. Nous nous intéresserons ici à la récupération de données personnelles,
-focus de cette première partie. Pour cela, nous avons restreint notre champs d'action à quelques
-services pertinents pouvant nous apporter un maximum d'informations :
-
-\begin{itemize}
-    \item Facebook : récupération des données publiques des profils utilisateurs ;
-    \item Twitter : récupération du profil et des derniers messages de l'utilisateur, jugés
-    représentatifs de son \emph{opinion} ;
-    \item Instagram : récupération des photos de l'utilisateur ; 
-    \item Google Maps API : récupération des coordonnées géographiques associées à une adresse
-    (\url{https://maps.google.com/maps/api/geocode/json?address={ADDRESS}}) ;
-    \item Google : récupération des suggestions de pages liées à la personne concernée par le
-    premier moteur de recherche mondial (\url{https://encrypted.google.com/search?q={SEARCH_TERMS}}) ;
-    \item LinkedIn : récupération du profil professionnel de l'utilisateur (\emph{nécessite une clé d'API ?}).
-\end{itemize}
-
-\paragraph{} Afin de permettre une aggrégation simple de l'ensemble de ces données, une 
-API REST sert de façade pour d'éventuelles applications ou un usage à des fins de recherche
-par un être humain. La récupération concertée des informations concernant une personne peut
-être effectuée grâce à une requête \lstinline{GET} sur l'URL \url{https://{API_URL}/people/{NAME}}
-- la réponse est au format JSON.
-
-\paragraph{} En arrière plan, plusieurs composants entrent en jeu. Pour chacun des services
-ci-dessus, un \emph{récupérateur} dédié a la charge de l'obtention et du formatage des données
-exposées. Ces différentes informations sont ensuite retravaillées et aggrégées de manière 
-à créer un "\emph{profil utilisateur}" le plus complet possible à partir des informations
-disponibles publiquement sur internet.
-
-\paragraph{} Pour cette première version de notre prototype, aucun \emph{état} ni aucune
-donnée ne sont persistés. Les \emph{endpoints} de notre API sont les suivants :
-
-\begin{itemize}
-    \item \url{/people/{NAME}}
-    \item \url{/services/facebook/{NAME}}
-    \item \url{/services/twitter/{NAME}}
-    \item \url{/services/instagram/{NAME}}
-    \item \url{/services/google/{NAME}}
-    \item \url{/services/linkedin/{NAME}}
-\end{itemize}
-
 \input{chapters/01/01_modeles_de_societes}
 \input{chapters/01/02_irruption_des_technologies}
 \input{chapters/01/03_societes_de_controle} 

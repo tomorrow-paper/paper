@@ -3,6 +3,10 @@
 
 [![](https://api.travis-ci.org/tomorrow-paper/paper.svg?branch=master)](https://travis-ci.org/tomorrow-paper/paper)
 
+## Download
+
+Download the latest release of the paper on [Github](https://github.com/tomorrow-paper/paper/releases).
+
 ## LaTeX to PDF
 
 ### Windows
