@@ -38,7 +38,7 @@ industriel en Russie, permettant au contremaître de surveiller constamment le t
 \begin{figure}[h]
     \centering
     \includegraphics[width=350px]{chapters/01/images/panoptique.jpg}
-    \caption{\label{Panoptique} \emph{Stateville Correctional Center}, Illinois, États-Unis : Prison construite sur le modèle panoptique}
+    \caption{\label{panoptique} \emph{Stateville Correctional Center}, Illinois, États-Unis : Prison construite sur le modèle panoptique}
 \end{figure}
 
 \paragraph{} On retrouvera le panoptique dans la littérature de science fiction et d'anticipation du XX\up{ème} siècle.
@@ -59,12 +59,89 @@ des informations et observations à propos des détenus, les analysant, les cat�
 
 \paragraph{} Si l'on repense à la volonté initiale de Bentham d'appliquer le modèle panoptique à toutes sortes d'institutions
 (universités, hôpitaux, ...), on assiste alors à l'objectification de l'individu, qui n'est plus considéré que comme le 
-noeud du complexe maillage qu'est la \emph{Société}, entité transcendentale se nourrissant de ses - ou plutôt \emph{ces} ? - 
-individus pour évoluer, pour le meilleur comme pour le pire.
+n\oe{}ud du complexe maillage qu'est la \emph{Société}, entité transcendentale se nourrissant de ses - ou plutôt de 
+\emph{ces} ? - individus pour évoluer, pour le meilleur comme pour le pire.
 
-\paragraph{} Mais de quoi les sociétés sont-elles consitutées sinon d'Hommes ? De là, ce sont bien les aspirations de
-ceux qui les composent qu'elles reflètent à l'identique, et c'est justement cette volonté de contrôle que la technologie
-viendra par la suite outiller. Nous sommes bien loin de l'Oasis de Pierre Rabhi, pleine de paix et de simplicité \cite{Rabhi1}.
+\paragraph{} Mais de quoi les sociétés sont-elles consitutées sinon d'Hommes ? De là, ce sont bien les aspirations et 
+motivations de ceux qui les composent qu'elles reflètent à l'identique, et c'est justement cette volonté de contrôle que
+la technologie viendra par la suite outiller. Nous sommes bien loin de l'Oasis de Pierre Rabhi, pleine de paix et de
+simplicité \cite{Rabhi1}. Nous allons donc d'abord nous intéresser à l'origine du Réseau, épine dorsale de nôtre Moi 
+numérique, sans laquelle aucun des services que nous utilisons au quotidien n'aurait pu voir le jour.
+
+\paragraph{} Les premières recherches ayant pour objectif la mise en place d'un réseau capable de résister à une frappe
+nucléaire massive datent de 1957 \cite{Internet0}, quand le \emph{United States Department of Defense} (DoD) prend la
+décision de fonder l'\emph{Advanced Research Projects Agency} (ARPA), un groupe scientifique ayant pour mission de concevoir
+des innovations technologiques pour l'armée. Épaulés par les chercheurs de la \emph{RAND Corporation} à partir de 1962,
+leurs travaux aboutiront un an plus tard sur l'ébauche d'un réseau décentralisé pouvant continuer à fonctionner dans le
+cas où une ou plusieurs machines le composant viendraient à s'arrêter. L'idée d'un système décentralisé vient de Paul Baran,
+qui inventa avec Donald Davies la communication de données par paquets, ajoutant ainsi à la résilience du système : le réseau
+formant un maillage anarchique, chaque paquet pourra emprunter la route la plus courte possible afin de parvenir à sa 
+destination, et aura la capacité de patienter durant un laps de temps maximal prédéfini s'il se trouvait dans l'incapacité
+de la joindre.
+
+\paragraph{} Le projet fut cependant refusé par l'armée, et il faudra attendre 1969, 6 ans plus tard, pour que celui-ci
+se concrétise sous le nom d'\emph{Arpanet}. \emph{Bolt Beranek and Newman Inc.} (BBN) mettra en place, sur commande de
+l'ARPA, un réseau reliant quatre des grands centres universitaires américains en utilisant le \emph{Network Control Protocol}
+(NCP), sur des lignes pouvant atteindre 50 kilobits par seconde. Les universités concernées sont l'Université de Californie
+à Los Angeles (UCLA), l'Institut de Recherche de Stanford (SRI), l'Université de Californie à Santa Barbara (UCSB) et
+l'Université de l'Utah.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=400px]{chapters/01/images/arpanet_map.jpg}
+    \caption{\label{arpanet} Carte du réseau Arpanet, mars 1977}
+\end{figure}
+
+\paragraph{} Il faudra attendre encore deux avancées majeures pour que ce réseau soit utilisable par le grand public :
+le protocole TCP/IP, et le DNS.
+
+\paragraph{TCP/IP} La suite TCP/IP, nommée après les deux premiers protocoles qui la compose (le \emph{Transmission Control
+Protocol} et l'\emph{Internet Protocol}), est développée en 1973 par Vinton Cerf et Bob Kahn. Son modèle est constitué de
+quatre couches prenant en charge la transmission de données : les couches hautes manipulent les données abstraites
+présentées à l'utilisateur, tandis que les couches basses permettent la représentation de ces données sur un médium
+physique (aujourd'hui : connecteurs 8P8C - abusivement appelés RJ45 -, fibres optiques, ...). Adopté pour l'Arpanet en
+1976 sur décision du DoD, il faudra attendre 1983 pour sa mise en place effective.
+
+\paragraph{Note} \emph{Serait-il pertinent de parler du modèle OSI ? Faire une comparaison entre les 7 couches OSI et les
+4 couches IP, et expliquer pourquoi ce dernier n'a pas été retenu.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=400px]{chapters/01/images/tcpip_dataflow.png}
+    \caption{\label{tcpip_dataflow} Flux de données du protocole TCP/IP}
+\end{figure}
+
+\paragraph{DNS} Le \emph{Domain Name System} (DNS) est la solution qui a été trouvée pour résoudre les problèmes survenus
+suite à l'augmentation de la popularité du réseau Arpanet. En effet, de manière à ce que les différentes machines du 
+réseau puissent communiquer entre elles, il était nécessaire qu'elles maintiennent à jour un fichier \emph{hosts.txt}
+permettant d'effectuer la conversion entre un nom d'hôte et l'adresse correspondante sur le réseau. En réalité, ce fichier
+était maintenu à jour par le \emph{Network Information Center} (NIC) de l'institut de recherche de Stanford, qui centralisait
+les modifications qui lui étaient transmises par les différents administrateurs du système et qui s'occupait de redistribuer
+périodiquement le fichier mis à jour. Cependant, avec l'augmentation progressive du traffic, le NIC se retrouva dans
+l'incapacité de supporter la charge réseau et des problèmes de collision de nom survinrent de plus en plus fréquemment.
+
+\paragraph{} Jon Postel, Paul Mockapetris et Craig Partridge rédigèrent donc 1983 les spécifications de ce qui devait 
+devenir l'un des piliers d'Internet tel que nous le connaissons aujourd'hui : le DNS. Il s'agit d'une base de données
+distribuée stockant les noms de domaines, et divisée en zones. Chacune de ces zones était prise en charge par un ou plusieurs
+serveurs de noms (\emph{Name Servers}) répondant aux requêtes des résolveurs (\emph{resolvers}), petits programmes se
+chargeant de transformer un nom de domaine en adresse. En 1984, les suffixes DNS, ou \emph{Top Level Domains} (TLD),
+font leur apparition. Disposant chacun de leur propre zone DNS, ils permettront dans un premier temps de regrouper les
+noms de domaine par fonction : \emph{.com} pour les sites commerciaux, \emph{.gov} pour les sites gouvernementaux des
+États-Unis, etc. Avec le temps, certaines de ces particularités furent dépréciés (les sites en \emph{.com}
+ne fournissent plus obligatoirement des services d'ordre commerciaux), et l'on vit apparaître les TLD nationaux (\emph{.fr},
+\emph{.us}, \emph{.uk}, ...) dont l'obtention est soumise aux lois du pays concerné.
+
+\paragraph{} Une fois ces systèmes mis en place, le réseau qui n'était à l'origine destiné qu'à des fins de recherche
+militaire avait atteint un seuil majeur d'évolutivité. L'invention du "Web" est historiquement située en 1989 et
+attribuée à Sir Timothy John Berners-Lee, alors chercheur au \emph{Conseil Européen pour la Recherche Nucléaire} (CERN)
+de Genève, et à son texte \guillemotleft Information Management: A Proposal \guillemotright \cite{Internet1}. Sa volonté
+est alors de mettre en place un système d'information global pour la recherche, à l'image d'Arpanet - mais accessible par tous.
+Il est l'auteur d'\emph{httpd}, le premier serveur HTTP, et de \emph{WWW} (\emph{World Wide Web}), le premier client.
+Il préside depuis 1994 le \emph{World Wide Web Consortium} (W3C), organisme qu'il a lui-même fondé et chargé de mettre
+au point les nouveaux standards des technologies Web.
+
+\paragraph{} Toutes les briques étaient en place pour l'adoption par le grand public : les technologies, réseaux comme
+logicielles, étaient fin prêtes.
 
 \section*{Brouillon}
 
@@ -87,49 +164,6 @@ qui génère lui-même des données le concernant, par l'utilisation au quotidie
 Cela doit être démontré par la mise en place d'un prototype récupérant des données de différents
 services (ie facebook, twitter...)
 
-\paragraph{Damasio : Très humain plutôt que transhumain}
-
-\begin{quotation}
-    L'homme réinvente sans cesse ce qu'il est par la technologie. Nous réinventons notre
-    rapport au monde, notre rapport aux autres ; peut être et même surtout notre rapport à soi, 
-    notre construction de soi, par la technologie. \cite{Damasio2}
-\end{quotation}
-
-Extension de soi - dispositifs tactils et bienveillants autour de nous, qui nous assistent,
-nous prolongent, et font de nous de jeunes dieux agiles auxquels le fantôme digital du monde répondrait
-; au doigt, et à l'oeil - évidemment.
-
-On y gagne une maitrise, un pouvoir accru sur le monde. Mais n'y perd-on pas quelque chose ?
-La "puissance" de Spinoza : celle de vivre, d'agir, d'habiter le monde, de persévérer dans mon être.
-
-Le pouvoir = faire faire - déléguer l'action.
-La puissance = la capacité de faire - de déployer l'action par soi-même.
-
-Image de l'oignon technologique, que l'on ne sait plus ni éplucher ni cuisiner à notre
-sauce sans risquer de pleurer.
-
-La technologie vient outiller nos paresses. Faciliter nos vies, les fluidifier : on lui
-délègue nos efforts, on lui sous-traite nos fatigues. Externalisation des capacités physiques :
-voitures, métro, tapis roulant, ... Externalisation des capacités cognitives dans la machine :
-mémoire = moteur de recherche, orientation = GPS, organisation = applications de
-calendrier/planning - c'est aujourd'hui notre quotidien.
-
-La technologie conjure nos peurs, principalement celles de la solitude et de l'abandon :
-le réseau, le portable. Plus jamais SEUL.
-
-La technologie est une eau qui s'infiltre dans tous les interstices, dans tous les blancs,
-dans tous les doutes, dans tous les temps morts angoissés de nos vies pour les combler.
-On lui demande de pouvoir contrôler notre environnement. Tout bouge sans que rien n'arrive. 
-
-La technologie donne l'espoir de dépasser notre finitude. Le transhumanisme vise à
-externaliser dans la technique ce que notre chaire et notre esprit ne sont supposément
-pas capables de faire par eux-même.
-
-La technologie ne nous pousse pas à *agir*, mais à *réagir* à des stimulis extérieurs :
-notifications, mails, SMS, discussions instantanées, ...
-
-Agir, c'est produire un événement qui libère un peu de vie là où les dispositifs de contrôle
-l'étouffe en la gérant. C'est sentir qu'indépendamment de nos outils, nous sommes une puissance.
 
 
 \section*{Prototype}
