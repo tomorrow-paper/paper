@@ -9,3 +9,6 @@
 *.fls
 *.synctex.gz
 *.out
+*.glo
+*.glsdefs
+*.ist
