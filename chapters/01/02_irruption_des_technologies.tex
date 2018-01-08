@@ -1,23 +1,10 @@
 \section{L'irruption des technologies}
-\paragraph{Références} \cite{Damasio0} \cite{Marx1} \cite{TechnoSocio0} \cite{GhostInTheShell}
-
-\paragraph{Collecte des données} Que collecter ? Et surtout, \emph{pourquoi} collecter ?
-\begin{itemize}
-    \item Argent
-    \item Pouvoir : pourquoi et comment est-il exercé ? Parle-t-on d'un pouvoir exercé de
-    manière \emph{directe} (pressions, ...), ou \emph{indirecte} (pression sociale,
-    narcissisme, ...) ?
-    \item Prévention : données utilisées à des fins de prévention des crimes, épidémies, ...
-    \item Avancées scientifiques : utilisation bénéfique de la masse de données collectées
-    pour profiter à la recherche scientifique et aux innovations. Risques de dérives ? Il y
-    en a toujours eu : expérimentations sur des êtres humains ; tests nucléaires... 
-\end{itemize}
 
 \paragraph{Collecter : hier et aujourd'hui}
 
-\paragraph{} Le terme de 'collecte' n'est pas récent; en effet il nous viendrait vraisemblablement
-du XIVe siècle et du terme 'collete' en latin, qui signifie la << levée des impositions >>, soit
-la période pendant laquelle un collecteur était en fonction. Cette définition relève de plusieurs notions
+\paragraph{} Le terme de \emph{collecte} n'est pas récent ; en effet il nous viendrait vraisemblablement
+du XIVe siècle et du terme \emph{collete} en latin, qui signifie la \guillemotleft levée des impositions \guillemotright,
+soit la période pendant laquelle un collecteur était en fonction. Cette définition relève de plusieurs notions
 qui nous intéressent plus particulièrement.
 
 \paragraph{} Tout d'abord, la collecte c'est la levée d'un impôt. C'est donc que le collecté \emph{doit}
@@ -29,14 +16,14 @@ dans une situation de \emph{prêt}, car il ne pourrait pas, en effet, mettre à 
 il ne contrôle pas le flux. Cela l'empêcherait de pratiquer sa \emph{condition de collecteur}, n'étant pas en
 \emph{situation de force} par rapport aux collectés.
 
-\paragraph{} Il y a donc un rapport de pouvoir entre collecteur et collecté. Le collecteur s'apparente à un noeud
+\paragraph{} Il y a donc un rapport de pouvoir entre collecteur et collecté. Le collecteur s'apparente à un n\oe{}ud
 parent, qui exerce le même contrôle sur tous ses noeuds enfants, qui eux-mêmes ne peuvent finalement qu'accepter
 le pouvoir émis par ce dernier, à partir du moment où il n'existe pas d'autre collecteur offrant le \emph{même
 service} pour une \emph{peine moindre}. On reconnait là une première forme de centralisation des données.
 Au départ, la collecte concerne évidemment les revenus, l'argent d'un foyer ou d'un particulier. Car cet
 argent est le pouvoir de vie (ou de \emph{survie}) d'un Homme, il doit accepter d'en laisser, d'en léguer un peu
 s'il souhaite avoir accès à un bien. Mais l'argent étant assez mal réparti au sein des sociétés, tous ne peuvent se
-permettre de payer. Ce sont alors d'autres biens qui sont collectés : récoltes, créations artisanales.. C'est le
+permettre de payer. Ce sont alors d'autres biens qui sont collectés : récoltes, créations artisanales... C'est le
 produit de la \emph{technique} de l'Homme qui est récolté. Ce sont son \emph{temps} et ses \emph{capacités techniques}
 qui lui permettent de payer.
 
@@ -88,7 +75,7 @@ implique donc qu'une collecte est \emph{inconsciente} uniquement si elle n'est p
 par le collecté. On se rend alors immédiatement compte que c'est l'arrivée de nouvelles techniques et de la
 technologie qui permet une collecte de données \emph{inconsciente}. En s'infiltrant dans les interstices de nos vies -
 smartphone, ordinateur, internet, transports, paiements - la technologie \emph{traque tout} et \emph{tout le temps},
-sans que nous nous en aperçevions. Une évolution importante de nos jours, et que nous détaillerons par la suite, est
+sans que nous ne nous en aperçevions. Une évolution importante de nos jours, et que nous détaillerons par la suite, est
 celle de l'IoT (Internet of Things) et des objets connectés en général. Leur utilisation permet une collecte plus
 poussée mais surtout \emph{plus proche} de l'utilisateur, et donc une récolte de données bien plus \emph{précise}. Or
 nous verrons lorsque nous aborderons le thème du Machine Learning qu'il existe un lien fort entre la précision d'une
@@ -111,3 +98,71 @@ alors invité à accepter ou non que l'application ait à son tour accès à un 
 données personnelles, agenda...) sur le smartphone. C'est la partie \emph{consciente} du choix. Une fois qu'elle est
 \emph{acceptée}, la partie \emph{inconsciente est alors acceptée également par défaut}. En effet le collecté accepte que
 l'utilisation qu'il va faire de l'application soit collectée \emph{de facto}, par la \emph{nécessité d'accès à un service}.
+
+\paragraph{Prototype}
+
+\paragraph{} Pour étayer notre propos, un prototype servira de fil rouge tout au long de votre lecture : \lstinline{Tomorrow}
+(\url{https://github.com/tomorrow-paper}). Nous détaillerons à la fois les objectifs remplis par chacun de ses modules
+ainsi que les choix techniques que nous avons effectués.
+
+\paragraph{TODO} \emph{Est-il nécessaire de préciser que nous utilisons le langage Rust et de justifier ce choix ici ?}
+
+\paragraph{} Pour accompagner ce premier chapitre, nous avons souhaité mettre en place un service permettant d'aggréger
+des données depuis n'importe quelle source pour ensuite pouvoir les consommer de manière normalisée.
+Nous nous intéresserons ici à la récupération de données personnelles, et avons donc pour cela restreint notre champs
+d'action à quelques services pertinents :
+
+\begin{itemize}
+    \item Google : récupération des suggestions de pages liées à la personne concernée par le
+    premier moteur de recherche mondial (\url{https://encrypted.google.com/search?q={SEARCH_TERMS}}) ;
+    \item Google Maps API : récupération des coordonnées géographiques associées à une adresse
+    (\url{https://maps.google.com/maps/api/geocode/json?address={ADDRESS}}) ;
+    \item Facebook : recherche et récupération des données publiques des profils utilisateurs
+    (\url{https://www.facebook.com/public/{PEOPLE}}).
+\end{itemize}
+
+\paragraph{} De manière à préserver la séparation des responsabilités des composants de notre prototype, plusieurs modules
+ont été développés : 
+
+\begin{itemize}
+    \item \lstinline{tomorrow-core} (\url{https://github.com/tomorrow-paper/tomorrow-core}) : contient la logique et les
+    structures de données communes à tous les composants du prototype (gestion d'erreur, type résultat, ...) ;
+    \item \lstinline{tomorrow-http} (\url{https://github.com/tomorrow-paper/tomorrow-http}) : contient les interfaces et
+    implémentations la logique de requêtage à travers le protocole HTTP.
+    \item \lstinline{tomorrow-recuperator} (\url{https://github.com/tomorrow-paper/tomorrow-recuperator}) : contient les interfaces
+    de récupération de données.
+\end{itemize}
+
+\paragraph{} Ce découpage n'est pas anodin. Il nous permet par exemple de développer, pour chaque service cible, un module
+dédié dépendant implémentant les interfaces définies dans \lstinline{tomorrow-recuperator}  :
+
+\begin{lstlisting}
+use tomorrow_core::Result;
+
+pub trait Request {}
+pub trait Response {}
+
+pub trait Recuperator<Req, Res> where Req: Request, Res: Response {
+    fn compute(&self, request: Req) -> Result<Res>;
+}\end{lstlisting}
+
+\paragraph{} Ces différents \emph{récupérateurs} sont ensuite utilisés pour constituer un composant à plus haut niveau
+d'abstraction : \lstinline{tomorrow-api} (\url{https://github.com/tomorrow-paper/tomorrow-api}). API REST produisant des
+documents JSON, elle sert de façade pour d'éventuelles applications ou un usage à des fins de recherche par un être humain. 
+Pour cette première version de notre prototype, aucun \emph{état} ni aucune donnée ne sont persistés. Les informations 
+sont lues à un instant \emph{T} quand l'utilisateur en fait la demande et lui sont immédiatement renvoyées par l'API.
+Les \emph{endpoints} actuels sont les suivants (tous les modules peuvent être trouvés sur notre dépôt) :
+
+\begin{itemize}
+    \item \url{/services/maps/{ADDRESS}} : Google Maps grâce au module \lstinline{recuperator-google-maps} ;
+    \item \url{/services/search/{QUERY}} : Google Search grâce au module \lstinline{recuperator-google} ;
+    \item \url{/services/facebook/public/{PEOPLE}} : Facebook Public Search grâce au module \lstinline{recuperator-facebook}.
+\end{itemize}
+
+\paragraph{} Nos objectifs en développant ce service étaient triples. Tout d'abord, il se devait d'être agnostique en terme
+d'utilisation : une API REST ne repose que sur le protocole HTTP, et le format JSON est aujourd'hui un standard en terme
+de transfert d'information. Ensuite, nous souhaitions l'architecturer de manière évolutive : pour récupérer les données
+depuis un nouveau service, il suffit de créer un module implémentant les interfaces \lstinline{tomorrow-recuperator} et
+de l'intégrer à l'API derrière un nouvel \emph{endpoint}. Enfin nous espérons qu'il vous aidera à prendre conscience que
+rien n'empêche l'exploitation d'une donnée accessible publiquement sur Internet de nos jours. Car peu importe le nombre
+de services différents que nous pourrions intégrer à ce prototype : c'est sa nature même qui doit vous interpeler.

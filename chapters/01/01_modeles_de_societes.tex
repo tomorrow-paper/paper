@@ -96,7 +96,7 @@ l'Université de l'Utah.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=400px]{chapters/01/images/arpanet_map.jpg}
+    \includegraphics[width=350px]{chapters/01/images/arpanet_map.jpg}
     \caption{\label{arpanet} Carte du réseau Arpanet, mars 1977}
 \end{figure}
 
@@ -110,12 +110,14 @@ présentées à l'utilisateur, tandis que les couches basses permettent la repr�
 physique (aujourd'hui : connecteurs 8P8C - abusivement appelés RJ45 -, fibres optiques, ...). Adopté pour l'Arpanet en
 1976 sur décision du DoD, il faudra attendre 1983 pour sa mise en place effective.
 
-\paragraph{Note} \emph{Serait-il pertinent de parler du modèle OSI ? Faire une comparaison entre les 7 couches OSI et les
-4 couches IP, et expliquer pourquoi ce dernier n'a pas été retenu.}
+\paragraph{} Il est important aujourd'hui de bien faire la distinction entre le modèles TCP/IP et le modèle OSI 
+(\emph{Open Systems Interconnection}, publié en 1984). Ce dernier, plus rigoureux, est composé de 7 couches et ne
+propose pas d'interopérabilité à proprement parler avec le modèle TCP/IP. Il est utilisé presque exclusivement par des
+équipements réseau.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=400px]{chapters/01/images/tcpip_dataflow.png}
+    \includegraphics[width=350px]{chapters/01/images/tcpip_dataflow.png}
     \caption{\label{tcpip_dataflow} Flux de données du protocole TCP/IP}
 \end{figure}
 
@@ -151,68 +153,7 @@ au point les nouveaux standards des technologies Web.
 \paragraph{} Toutes les briques étaient en place pour l'adoption par le grand public : les technologies, réseaux comme
 logicielles, étaient fin prêtes.
 
-\section*{Brouillon}
-
-\paragraph{Références} \cite{Marx0} \cite{Marx1} \cite{Nietzsche0}
-
-\paragraph{Ère pré-internet} Analyse des dernières décénnies du XX\up{ème} siècle :
-comment les sociétés ont évoluées avec l'arrivée des nouvelles technologies : du
-pré-internet à l'ère des réseaux ; jusqu'à aujourd'hui. Quels étaient les objectifs
-premiers des ces technos. (la raison de leur développement) ? Comment ont-elles réellement
-été utilisées/ont été amenées à évoluer ? Est-ce réellement une mauvaise chose (n'y
-a-t-il que du mal qui en soit ressorti) ? Est-il pertinent/nécessaire d'effectuer un bref
-historique des technologies \emph{disruptives} (machine de Turing, architecture
-Von Neumann, premiers réseaux, ...) ?
-
-\paragraph{L'individu technique} Comment les modèles de sociétés nous ont-ils amené à
-réfléchir l'individu en termes technologiques ?
-
-\paragraph{Objectif} L'objectif ici est de démontrer que, suite au développement des technologies, c'est l'Homme
-qui génère lui-même des données le concernant, par l'utilisation au quotidien des services (entre autres).
-Cela doit être démontré par la mise en place d'un prototype récupérant des données de différents
-services (ie facebook, twitter...)
-
-
-
-\section*{Prototype}
-
-\paragraph{} Pour étayer notre propos, un prototype servira de fil rouge tout au
-long de votre lecture. Nous nous intéresserons ici à la récupération de données personnelles,
-focus de cette première partie. Pour cela, nous avons restreint notre champs d'action à quelques
-services pertinents pouvant nous apporter un maximum d'informations :
-
-\begin{itemize}
-    \item Facebook : récupération des données publiques des profils utilisateurs ;
-    \item Twitter : récupération du profil et des derniers messages de l'utilisateur, jugés
-    représentatifs de son \emph{opinion} ;
-    \item Instagram : récupération des photos de l'utilisateur ; 
-    \item Google Maps API : récupération des coordonnées géographiques associées à une adresse
-    (\url{https://maps.google.com/maps/api/geocode/json?address={ADDRESS}}) ;
-    \item Google : récupération des suggestions de pages liées à la personne concernée par le
-    premier moteur de recherche mondial (\url{https://encrypted.google.com/search?q={SEARCH_TERMS}}) ;
-    \item LinkedIn : récupération du profil professionnel de l'utilisateur (\emph{nécessite une clé d'API ?}).
-\end{itemize}
-
-\paragraph{} Afin de permettre une aggrégation simple de l'ensemble de ces données, une 
-API REST sert de façade pour d'éventuelles applications ou un usage à des fins de recherche
-par un être humain. La récupération concertée des informations concernant une personne peut
-être effectuée grâce à une requête \lstinline{GET} sur l'URL \url{https://{API_URL}/people/{NAME}}
-- la réponse est au format JSON.
-
-\paragraph{} En arrière plan, plusieurs composants entrent en jeu. Pour chacun des services
-ci-dessus, un \emph{récupérateur} dédié a la charge de l'obtention et du formatage des données
-exposées. Ces différentes informations sont ensuite retravaillées et aggrégées de manière 
-à créer un "\emph{profil utilisateur}" le plus complet possible à partir des informations
-disponibles publiquement sur internet.
-
-\paragraph{} Pour cette première version de notre prototype, aucun \emph{état} ni aucune
-donnée ne sont persistés. Les \emph{endpoints} de notre API sont les suivants :
-
-\begin{itemize}
-    \item \url{/people/{NAME}}
-    \item \url{/services/facebook/{NAME}}
-    \item \url{/services/twitter/{NAME}}
-    \item \url{/services/instagram/{NAME}}
-    \item \url{/services/google/{NAME}}
-    \item \url{/services/linkedin/{NAME}}
-\end{itemize}
+\paragraph{} Nous assistons depuis à une démocratisation à marche forcée des technologies dans notre quotidien. 
+Interconnectés, nous le sommes de plus en plus : à tel point que les industries commes les pouvoirs politiques ne
+peuvent plus ignorer ni l'usage ni les réactions des réseaux. Un battement d'ailes de papillon peut provoquer de nos
+jour bien plus qu'une simple tornade.
