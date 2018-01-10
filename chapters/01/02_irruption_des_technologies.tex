@@ -134,7 +134,7 @@ ont été développés :
 \end{itemize}
 
 \paragraph{} Ce découpage n'est pas anodin. Il nous permet par exemple de développer, pour chaque service cible, un module
-dédié dépendant implémentant les interfaces définies dans \lstinline{tomorrow-recuperator}  :
+dédié implémentant les interfaces définies dans \lstinline{tomorrow-recuperator}  :
 
 \begin{lstlisting}
 use tomorrow_core::Result;
@@ -161,7 +161,7 @@ Les \emph{endpoints} actuels sont les suivants (tous les modules peuvent être t
 
 \paragraph{} Nos objectifs en développant ce service étaient triples. Tout d'abord, il se devait d'être agnostique en terme
 d'utilisation : une API REST ne repose que sur le protocole HTTP, et le format JSON est aujourd'hui un standard en terme
-de transfert d'information. Ensuite, nous souhaitions l'architecturer de manière évolutive : pour récupérer les données
+d'encodage d'information. Ensuite, nous souhaitions l'architecturer de manière évolutive : pour récupérer les données
 depuis un nouveau service, il suffit de créer un module implémentant les interfaces \lstinline{tomorrow-recuperator} et
 de l'intégrer à l'API derrière un nouvel \emph{endpoint}. Enfin nous espérons qu'il vous aidera à prendre conscience que
 rien n'empêche l'exploitation d'une donnée accessible publiquement sur Internet de nos jours. Car peu importe le nombre
