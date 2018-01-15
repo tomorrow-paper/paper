@@ -1,5 +1,5 @@
 \section{Machine Learning}
-\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{MachineLearning0} \cite{Internet4} \cite{Internet5}
+\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{MachineLearning0} \cite{Internet4} \cite{Internet5}
 
 \paragraph{Une machine capable d'apprendre}
 
@@ -77,10 +77,10 @@ Il nous est impossible aujourd'hui d'imaginer la gestion des transports sans inf
 permettre des analyses poussées, ou encore la finance sans tout le support des machines qui permettent notamment \emph{l'existence des marchés}. 
 
 \paragraph{Une solution: le Machine Learning} Là où l'humain ne peut pas conçevoir la complexité liée à la compréhension d'Ada, il semblerait que les
-ordinateurs puissent eux approcher une solution exploitable. D'ordinaire, afin de résoudre des problèmes, les ordinateurs utilisent des \emph{affectations}
+ordinateurs puissent quant à eux approcher une solution exploitable. D'ordinaire, afin de résoudre des problèmes, les ordinateurs utilisent des \emph{affectations}
 (\emph{mapping}) de questions ou problèmes (en entrée) à des réponses ou solutions (en sortie). Tout le principe réside dans les étapes à respecter lors de
 cette affectation, et nous avons pu voir qu'un développeur n'a pas toujours la réponse à cette question. De fait, pourquoi ne pas demander à une 
-machine de se rendre compte \emph{elle-même} de la meilleure manière de faire cette affectation ? \cite{MachineLearning0} C'est exactement le propos du Machine
+machine de se rendre compte \emph{elle-même} de la meilleure manière de réaliser cette affectation ? \cite{MachineLearning0} C'est exactement le propos du Machine
 Learning. Il s'agit en général de renseigner \emph{d'immenses quantités} de données du problème afin qu'il adopte l'algorithme qui répond le mieux à
 comment configurer ce \emph{mapping}. Cela est rendu possible, comme nous l'avons vu précédemment dans la section sur \emph{le cerveau et l'ordinateur},
 par l'immense faculté de calcul \emph{infatiguable} et \emph{infaillible} de la machine.
@@ -98,12 +98,51 @@ sous aucun aspect au domaine : finance, médecine, informatique.. Ces données s
 \paragraph{} Il existe toujours une large variété de manières pour résoudre un problème donné. En informatique, cela se concrétise par la possiblité
 d'appliquer différents algorithmes à un problème, pour le résoudre de manières différentes. Un des exemples les plus connus est \emph{le tri} : tri à
 bulles, tri rapide, tri par insertion, tri avec pile.. Chaque approche possédant ses avantages et ses inconvéniants. Néanmoins, dans la plupart des
-situations, la majorité arrive à s'accorder sur un nombre restreint de solutions (une, deux) permettant de résoudre \emph{la majorité} des cas.
+situations, la majorité arrive à s'accorder sur un nombre restreint de solutions (une, deux) permettant de résoudre \emph{la majorité} des cas, de \emph{manière optimisée}.
 Lorsque l'on résoud un problème on suit le processus suivant : test d'une sélection d'algorithmes, évaluation de leur performance selon certains
 modèles, décision sur l'utilisation du modèle ou de la combinaison de modèles à utiliser. Il faut cependant constater que l'utilisation de \emph{plusieurs}
 modèles rend la conception plus complexe. Cela explique aussi l'extrême complexité d'adaptation d'un \emph{même programme} à des \emph{problèmes différents}.
+Le Machine Learning se découpe en deux approches : l'apprentissage supervisé (\emph{Supervised learning}) et l'apprentissage non supervisé
+(\emph{Unsupervised leaning}). 
 
 \paragraph{Supervised Learning}
+
+\paragraph{} Un algorithme d'apprentissage supervisé est dit \emph{supervisé} au sens où il lui est fourni des exemples de problèmes \emph{résolus} desquels
+il doit effectuer son apprentissage, où \emph{un intermédiaire humain} à pris le temps \emph{d'étiquetter} un certain nombre de cas avec la bonne réponse.
+L'apprentissage de l'algorithme s'effectue alors à partir du fait qu'il devient meilleur à l'exécution d'une même tâche donnée en se référant aux examples
+de ce qu'il est supposé accomplir. Et pour ce faire, cet algorithme d'apprentissage supervisé à besoin d'un outil particulier : \emph{un modèle}.
+
+\paragraph{Qu'est-ce qu'un modèle ?} Comme nous l'avons vu précédemment, le Machine Learning intervient lorsque l'Homme devient \emph{incapable de modéliser un mapping},
+c'est-à-dire lorsque nous ne pouvons deviner l'affectation qu'il doit y avoir entre des entrées données et les sorties possibles. Un modèle dans ce contexte se réfère 
+exactement \emph{au mapping} : c'est un ensemble de règles que prend un problème en entrée et qui possède une réponse. Ce modèle peut être très simple (une règle seule et simple)
+tout comme il peut être arbitrairement complexe (combinaisons de jeux de règles complexes et inter-indépendants). On peut également dire qu'un modèle est la solution à un en problème
+\emph{en général}, en donnant les réponses à des \emph{instances de problèmes spécifiques}. Autrement dit, un modèle permet de répondre à des \emph{use-cases spécifiques} du
+\emph{domaine d'un problème} \cite{Internet3} : lorsqu'il lui est fourni un \emph{ensemble de valeurs numériques} représentant une instance de problème spécifique, il répondra
+avec \emph{un ensemble de valeurs numériques} représentant la réponse à cette instance spécifique.
+
+\paragraph{Comment l'entrainer ?} Il existe de nombreuses théories quant à la manière d'entraîner un modèle, aussi nous focaliserons-nous ici sur le \emph{procédé global}
+permettant d'aboutir à un modèle entrainé. Au départ, l'algorithme commence avec un plan de modèle, assimiliable à un \emph{modèle vierge}, qui renvoie des solutions 
+absolument incorrectes. Ce modèle à un nombre de \emph{paramétrages} qui déterminent les réponses fournies. Ce sont ces paramétrages que l'algorithme de machine learning va
+modifier, tester, régler jusqu'à ce que le modèle \emph{fournisse des solutions plutôt précises} - la notion de \emph{plutôt} étant elle-même déterminée par la machine.
+Pour ce faire, l'algorithme va \emph{considérer chaque exemple fourni} (par notre jeu de données, soigneusement préparé) et \emph{l'essayer sur le modèle}. Il compare ensuite
+la réponse obtenue à la réponse correcte, et remodifie ses \emph{paramétrages} afin qu'il produise par la suite une réponse \emph{un peu meilleure} que celle qu'il a fournie.
+Ce processus peut être répété plusieurs fois sur le même jeu de données, pour tenter d'améliorer \emph{la précision} de l'algorithme. Dans la plupart des cas, à l'instar d'AlphaGo
+Zero \cite{AlphaGo2}, la courbe d'apprentissage s'apparente à une courbe logarithmique : plus l'apprentissage avance, plus il est compliqué d'améliorer l'algorithme en question.
+Une fois l'apprentissage terminé, le modèle, qui à été entraîné sur un jeu de données particulier, doit en théorie être appliquable à \emph{toute instance de problème spécifique}.
+
+\paragraph{Comment l'utiliser ?} L'apprentissage supervisé est utilisé principalement lorsque nous voulons qu'un ordinateur accomplisse une tâche pour laquelle nous avons un grand nombre
+d'exemples avec une réponse associée, sans pour autant connaître les étapes pour parvenir à cette réponse. Ce type d'algorithmes est largement utilisé et nous avons déjà évoqué plusieurs
+systèmes s'appuyant sur ces algorithmes, à l'exemple de :
+\begin{itemize}
+\item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux examples de spams
+\item La reconnaissance d'objets ou de comportement - A partir d'images ou de vidéos
+\item La reconnaissance de l'écriture - Aussi appelés OCR (Optical Character Recognition), ces logiciels permettent par exemple de reconnaître les adresses sur les
+enveloppes postales ou encore les signatures
+\item Biologie génétique - Reconnaître des séquences d'allèles
+\item Médecine préventive - Dépister à l'avance certaines maladies par l'étude de diagnostics médicaux
+\end{itemize}
+
+\paragraph{Classification et Regression}
 
 \paragraph{Unsupervised Learning}
 
