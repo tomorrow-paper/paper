@@ -140,13 +140,13 @@ Une fois l'apprentissage terminé, le modèle, qui à été entraîné sur un je
 d'exemples avec une réponse associée, sans pour autant connaître les étapes pour parvenir à cette réponse. Ce type d'algorithmes est largement utilisé et nous avons déjà évoqué plusieurs
 systèmes s'appuyant sur ces algorithmes, à l'exemple de :
 \begin{itemize}
-\item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux examples de spams
-\item La reconnaissance d'objets ou de comportement - A partir d'images ou de vidéos
-\item La reconnaissance de l'écriture - Aussi appelés OCR (Optical Character Recognition), ces logiciels permettent par exemple de reconnaître les adresses sur les
-enveloppes postales ou encore les signatures
-\item Biologie génétique - Reconnaître des séquences d'allèles
-\item Médecine préventive - Dépister à l'avance certaines maladies par l'étude de diagnostics médicaux
-\item La prédiction - Deviner une information à l'avance \cite{Internet7}
+    \item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux examples de spams
+    \item La reconnaissance d'objets ou de comportement - A partir d'images ou de vidéos
+    \item La reconnaissance de l'écriture - Aussi appelés OCR (Optical Character Recognition), ces logiciels permettent par exemple de reconnaître les adresses sur les
+    enveloppes postales ou encore les signatures
+    \item Biologie génétique - Reconnaître des séquences d'allèles
+    \item Médecine préventive - Dépister à l'avance certaines maladies par l'étude de diagnostics médicaux
+    \item La prédiction - Deviner une information à l'avance \cite{Internet7}
 \end{itemize}
 
 \paragraph{Classification et Regression} Lorque nous pratiquons l'apprentissage supervisé, il faut choisir en amont entre deux catégories d'algorithmes : classification ou
@@ -176,11 +176,8 @@ questionner l'éthique d'utilisation des techniques du Machine Learning. Etant d
 \emph{une connaissance plus précise du fonctionnement de l'ensemble de la population}, elles contribuent en un sens à \emph{accentuer les disparités entre les classes sociales}. Nous reviendrons
 sur ce point important lorsque nous aborderons les usages et dérives associés à l'intelligence artificielle.
 
-\paragraph{Apprentissage non supervisé et par renforcement}
-
-** Explications sommaires du principe pour les deux
-** Quelques exemples d'application
-** Ouverture : Generative Adversarial Networks ?
+\paragraph{Apprentissage non supervisé et par renforcement} Explications sommaires du principe pour les deux --
+Quelques exemples d'application -- Ouverture : Generative Adversarial Networks ?
 
 \paragraph{AlphaGo, AlphaGo Zero}
 
@@ -231,17 +228,32 @@ contre la version non distribuée, ce qui signifie qu'AlphaGo est aussi bien \em
 
 \paragraph{AlphaGo Zero, la révolution}
 
-\paragraph{}
+\paragraph{} Contrairement à AlphaGo qui à été entrainé au départ par l'étude de parties de professionnels, la version Zero d'AlphaGo saute
+cette étape et apprend en jouant directement contre elle-même. Une nouvelle forme \cite{AlphaGo2} d'apprentissage par renforcement lui permet
+d'être son propre professeur. Au départ, le réseau neural ne connait rien du jeu de go si ce n'est les règles, et joue donc des coups aléatoires.
+Pendant la partie, le réseau neural se met à jour afin d'améliorer son système de prédiction. AlphaGo Zero joue ainsi contre sa nouvelle version,
+et ainsi de suite jusqu'à ce qu'il gagne réellement en niveau et que le réseau s'optimise. Cette technique est bien plus puissante que les anciennes
+versions d'AlphaGo car elle n'est plus contrainte par \emph{les limites de la connaissance humaine}. 
 
-** AlphaGo Zero : le défi de l'apprentissage from scrach
-** Les clés de la réussite d'AlphaGo Zero
-** Discussion autour des sorties multiples - adapter le ML à des problèmes multi-domaines
-** Des applications possibles aux données humaines
+\paragraph{} La version Zero se démarque aussi des précédentes par trois points :
+
+\begin{itemize}
+    \item Elle n'utilise \emph{que les pierres noires et blanches comme input}
+    \item Elle n'utilise \emph{qu'un réseau de neurones} plutôt que deux. La version Zero combine ici le réseau stratégique et le réseau de valorisation.
+    \item Elle n'utilise plus le principe \emph{de rollouts}, qui lui permettait de prédire plus rapidement mais moins précisément a partir de l'étude de parties d'autre programmes. 
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=300px]{chapters/03/images/alphago-consumption.png}
+    \caption{\label{comparatif}, \emph{Power consumption for each AlphaGo version}, \url{https://deepmind.com/blog/alphago-zero-learning-scratch/}}
+\end{figure}
+
+\paragraph{} Les clés de la réussite d'AlphaGo Zero -- Discussion autour des sorties multiples - adapter le
+ML à des problèmes multi-domaines -- Des applications possibles aux données humaines
 
 \paragraph{Systèmes intelligents}
 
-** Le TLN, faire discuter des IAs entre elles
-** Quels modèles optimaux ?
-** Des systèmes pour générer des systèmes mieux faits que par l'Homme
-** Des systèmes autonomes ? Réplication et Création automatiques par la machine
-** Un peu de science-fiction : quels systèmes intelligents de demain ?
+\paragraph{} Le TLN, faire discuter des IAs entre elles -- Quels modèles optimaux ? -- Des systèmes pour
+générer des systèmes mieux faits que par l'Homme -- Des systèmes autonomes ? Réplication et Création
+automatiques par la machine -- Un peu de science-fiction : quels systèmes intelligents de demain ?
