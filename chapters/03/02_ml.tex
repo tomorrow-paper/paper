@@ -1,6 +1,6 @@
 \section{Machine Learning}
-\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{MachineLearning0} \cite{Internet3} \cite{Internet4}
-\cite{Internet5} \cite{Internet6} \cite{Internet7} \cite{University0}
+\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{Heuristics0} \cite{Internet3}
+\cite{Internet4} \cite{Internet5} \cite{Internet6} \cite{Internet7} \cite{MachineLearning0} \cite{University0}
 
 \paragraph{Une machine capable d'apprendre}
 
@@ -19,7 +19,7 @@ comportement similaire qui est utilisé en Machine Learning : un agent est entra
 d'entrées, dont il tire une sortie. Ce résultat est comparé à celui qui était attendu, puis la machine est
 \emph{reparamétrée}, de sorte à ce qu'une prochaine expérience similaire aboutisse à un résultat plus proche 
 de celui escompté. Ce processus de reconfiguration par l'apprentissage intervient notamment au niveau du cerveau
-chez l'Homme, ce qui est concrétisé en, ML par l'utilisation de Réseaux Neuronaux ou Neural Networks (NN), dont
+chez l'Homme, ce qui est concrétisé en ML par l'utilisation de Réseaux Neuronaux ou Neural Networks (NN), dont
 nous détaillerons l'utilisation par la suite. Ce qu'il faut retenir de la différence entre la méthode d'apprentissage
 d'un Homme et d'une machine, c'est la capacité d'adaptation du tissu neuronal de l'Homme à une variété de situations
 et de problèmes que la machine n'est pas capable d'appréhender seule.
@@ -35,7 +35,7 @@ apprendre par la projection de son expérience. \cite{Internet5}
 
 \paragraph{} De plus, le cerveau humain possède une centaine de milliards de neurones, eux-mêmes connectés à plus de 10.000
 de leurs voisins. Cette structure gigantesque n'est pas encore égalée par l'ordinateur, dont le nombre de cellules est de
-l'ordre de 5 milliards, et dont les cellules sont contigües en mémoire. On remarquera néanmoins que l'information y circule
+l'ordre de 5 milliards, et sont contigües en mémoire. On remarquera néanmoins que l'information y circule
 beaucoup plus rapidement que dans le cerveau, où les impulsions synaptiques atteignent 6 à 10 m/s. Enfin on remarquera que la
 nature des mémoires est totalement différente : là où l'ordinateur est capable de \emph{stocker de l'information}, et est donc
 capable de restituer une information de manière \emph{infaillible}, l'Homme doit compter sur les mémoires à court et long termes,
@@ -49,11 +49,11 @@ ainsi que sur ses registres sensoriels - ce qu'il connait de \emph{l'expérience
 
 \paragraph{Résoudre des problèmes complexes}
 
-\paragraph{} Pour mettre en avant la valeur ajoutée du Machine Learning, nous allons nous intéresser à l'exemple pertinent
+\paragraph{} Pour mettre en avant la valeur ajoutée du Machine Learning, nous allons nous intéresser à l'exemple
 du possesseur du chat appellé Ada \cite{MachineLearning0}. Il tente de poser la question suivante : qu'est-ce qu'Ada essaie de dire
 à son maître lorsqu'elle ronronne quelques instants après avoir fait tomber la télécommande de la table basse ? Cela ne semble
-pas avoir de réponse absolue en premier lieu, car il n'est pas possible de \emph{parler la langue d'Ada}, si tant est qu'on puisse
-parler le chat.. De fait, nous cherchons donc une réponse \emph{appropriée}, c'est-à-dire au plus proche des attentes qu'avait eu
+pas avoir de réponse absolue en premier lieu, car il n'est pas possible de \emph{parler la langue d'Ada}. De fait, nous cherchons
+donc une réponse \emph{appropriée}, c'est-à-dire au plus proche des attentes qu'avait eu
 Ada auparavant, quand \emph{elle avait ronronné de la même manière}, ou \emph{dans un contexte similaire}. Une multitude de réponses
 possibles s'ouvrent alors à nous : elle à peut-être faim, ou encore elle cherche de l'attention, ou bien elle n'aime pas les
 télécommandes, ou elle aime simplement faire tomber des objets.. 
@@ -72,7 +72,7 @@ la représentation d'un problème particulier pour aboutir à la solution correc
 Ada afin que l'ordinateur puisse atteindre la même compréhension, or nous réalisons bien que c'est impossible.
 
 \paragraph{} Ce qu'il faut comprendre ici, c'est simplement que l'humain est \emph{faillible}. Il est toujours \emph{possible} qu'il se trompe
-ou qu'il n'ait pas considéré les variables \emph{dans leur ensemble}. Ce n'est pas un mal en soi, et c'est bien le fait d'avoir accepté cette
+ou qu'il n'ait pas considéré les variables \emph{dans leur ensemble}. Nous pensons que ce n'est pas un mal en soi, et c'est bien le fait d'avoir accepté cette
 faiblesse de l'humain par rapport à la machine qui lui a permis de remplacer l'un par l'autre dans des domaines où l'erreur n'est pas possible.
 Il nous est impossible aujourd'hui d'imaginer la gestion des transports sans informatique, la santé sans matériel haute technologie afin de
 permettre des analyses poussées, ou encore la finance sans tout le support des machines qui permettent notamment \emph{l'existence des marchés}. 
@@ -94,9 +94,7 @@ d'une part à tenter de fournir des jeux de données \emph{restreints ou contrô
 sous aucun aspect au domaine : finance, médecine, informatique.. Ces données sont une \emph{mauvaise herbe} et risquent de \emph{ralentir} ou de
 \emph{compromettre} l'apprentissage de la machine. 
 
-\paragraph{Plusieurs formes de Machine Learning}
-
-\paragraph{} Il existe toujours une large variété de manières pour résoudre un problème donné. En informatique, cela se concrétise par la possiblité
+\paragraph{Plusieurs formes de Machine Learning} Il existe toujours une large variété de manières pour résoudre un problème donné. En informatique, cela se concrétise par la possiblité
 d'appliquer différents algorithmes à un problème, pour le résoudre par différents procédés. Un des exemples les plus connus est \emph{le tri} : tri à
 bulles, tri rapide, tri par insertion, tri avec pile.. Chaque approche possédant ses avantages et ses inconvéniants. Néanmoins, dans la plupart des
 situations, la majorité arrive à s'accorder sur un nombre restreint de solutions (une, deux) permettant de résoudre \emph{la majorité} des cas, de \emph{manière optimisée}.
@@ -109,13 +107,13 @@ Globalement, le Machine Learning se découpe en quelques approches : apprentissa
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=350px]{chapters/03/images/machine_learning.png}
-    \caption{\label{machine learning}, \url{https://wiki.seg.org/images/1/10/Machine_learning_workflow_.png}}
+    \includegraphics[width=350px]{chapters/03/images/machine-learning.png}
+    \caption{\label{machine learning}, Machine Learning, \url{https://wiki.seg.org/images/1/10/Machine_learning_workflow_.png}}
 \end{figure}
 
 \paragraph{Apprentissage supervisé}
 
-\paragraph{} Un algorithme d'apprentissage supervisé est dit \emph{supervisé} au sens où il lui est fourni des exemples de problèmes \emph{résolus} desquels
+\paragraph{} Un algorithme d'apprentissage est dit \emph{supervisé} au sens où il lui est fourni des exemples de problèmes \emph{résolus} desquels
 il doit effectuer son apprentissage, où \emph{un intermédiaire humain} à pris le temps \emph{d'étiquetter} un certain nombre de cas avec la bonne réponse.
 L'apprentissage de l'algorithme s'effectue alors à partir du fait qu'il devient meilleur à l'exécution d'une même tâche donnée en se référant aux examples
 de ce qu'il est supposé accomplir. Et pour ce faire, cet algorithme d'apprentissage supervisé à besoin d'un outil particulier : \emph{un modèle}.
@@ -157,7 +155,7 @@ regression. Leur différence peut s'illustrer de manière très simple par l'exe
 \begin{figure}[h]
     \centering
     \includegraphics[width=350px]{chapters/03/images/classification-regression.jpg}
-    \caption{\label{supervised learning} \emph{Classification and Regression}, \url{https://medium.com/@ali_88273/regression-vs-classification-87c224350d69}}
+    \caption{\label{supervised learning}, \emph{Classification and Regression}, \url{https://medium.com/@ali_88273/regression-vs-classification-87c224350d69}}
 \end{figure}
 
 \paragraph{} Un algorithme d'apprentissage supervisé par regression prédit une valeur \emph{continue}, c'est à dire la valeur \emph{précise} attendue pour une instance de problème donnée.
@@ -167,15 +165,15 @@ domaines de la statistique et de l'analyse, permettent la mise en place de ces a
 solution à un \emph{groupe} donné. Ce n'est pas une valeur qui est prédite : l'algorithme se contente de \emph{classer} les solutions en plusieurs catégories (d'où le terme de classification)
 et, lorsqu'il lui est donné une nouvelle entrée, d'arriver à déterminer quelle catégorie est la plus appropriée pour cette entrée. On remarquera dans la pratique que les réseaux neuronaux
 permettant de modéliser ces algorithmes sont \emph{pratiquement semblables}. En effet, les premières couches auront le rôle \emph{d'approcher} une solution existante, dans les deux cas en
-s'appuyant sur l'ensemble des données fournies. Ce sont les dernières couches du réseau, les couches \emph{décisionnelles}, qui se chargeront de transformer l'information reçu en une décision
+s'appuyant sur l'ensemble des données fournies. Ce sont les dernières couches du réseau, les couches \emph{décisionnelles}, qui se chargeront de transformer l'information reçue en une décision
 de type \emph{regression ou classification}. Le procédé reste donc globalement similaire.
 
 \paragraph{} On remarquera que \emph{les accès} aux méthodes du Machine Learning sont encore restreints : ce domaine nécessite à la fois des connaissances conséquentes dans des domaines 
 à forte composante mathématique ainsi que des systèmes informatiques développés afin de \emph{stocker de large quantités de données} et \emph{d'effectuer efficacement des calculs} sur ces
 dernières. De plus, il n'existe pas d'outil \emph{simple et libre} permettant d'appliquer les principes du ML sans apprentissage préalable. Le background nécessaire pour participer à la création 
-et l'entrainement d'un modèle est riche, et l'utilisation de ces techniques est donc réservé à une \emph{population possédant un niveau élevé de formation}. Dans cette mesure, nous pouvons
+et l'entrainement d'un modèle est riche, et l'utilisation de ces techniques est donc réservé à une \emph{population possédant un niveau de formation élevé}. Dans cette mesure, nous pouvons
 questionner l'éthique d'utilisation des techniques du Machine Learning. Etant donné que ces techniques sont réservées à une partie de la population, et qu'elles lui permettent d'acquérir 
-\emph{une connaissance plus précise du fonctionnement du reste de la population}, elles contribuent en un sens à \emph{accentuer les disparités entre les classes sociales}. Nous reviendrons
+\emph{une connaissance plus précise du fonctionnement de l'ensemble de la population}, elles contribuent en un sens à \emph{accentuer les disparités entre les classes sociales}. Nous reviendrons
 sur ce point important lorsque nous aborderons les usages et dérives associés à l'intelligence artificielle.
 
 \paragraph{Apprentissage non supervisé et par renforcement}
@@ -186,8 +184,55 @@ sur ce point important lorsque nous aborderons les usages et dérives associés 
 
 \paragraph{AlphaGo, AlphaGo Zero}
 
-** Le Go, un jeu avec une complexité 'infinie'
-** AlphaGo, une application réussie de l'apprentissage supervisé
+\paragraph{} Courant 2016 et 2017, une annonce à fait grand bruit dans le milieu de l'intelligence artificielle
+suite à un événement particulier : une IA avait enfin réussi à battre un des meilleurs joueurs professionnels de Go
+au monde, Lee Sedol. Nous allons revenir sur l'évolution du projet AlphaGo de \emph{Google DeepMind} ces deux dernières
+années et essayer de comprendre pourquoi cela marque une des avancées les plus importantes des cinq dernières années
+dans le milieu de l'IA et du \emph{Deep Learning} en particulier.
+
+\paragraph{Jeu de Go, complexité infinie ?} Le jeu de Go est né en Chine il y a plus de 2500 ans. C'est un jeu de stratégie
+se déroulant sur un plateau, le \emph{Goban}, sur lequel est tracé un quadrillage de 19 lignes sur 19 colonnes. Chaque joueur
+pose, chacun son tour, une pierre de sa couleur (noire ou blanche) afin de tenter de posséder plus de \emph{territoire} que
+son adversaire. Allégorie de l'Univers dans le monde oriental, le go se distingue en effet de tous les autres jeux de stratégie
+par son immense complexité combinatoire. Le nombre de positions légales est estimé à \begin{math}10^{170}\end{math} sur un goban
+de 19x19 contre \begin{math}10^{40}\end{math} aux échecs, et l'arbre de jeu couvre à lui seul plus de \begin{math}10^{600}\end{math}
+parties plausibles contre environ \begin{math}10^{120}\end{math} aux échecs. A titre indicatif, le nombre d'atomes dans l'Univers est
+de l'ordre de \begin{math}10^{79}\end{math}, la complexité du jeu de go est donc \emph{bien trop importante} pour essayer de l'approcher
+avec des algorithmes classiques, ce qui explique qu'aucune IA d'un niveau réellement acceptable (c'est-à-dire proche de celui de
+professionnel) n'ait été conçue avant AlphaGo.
+
+\paragraph{AlphaGo, application réussie du Machine Learning}
+
+\paragraph{} Quels sont les secrets d'AlphaGo ? Afin de calculer la valeur 
+d'une partie \emph{dans un état donné}, AlphaGo utilise le MCTS ou Monte Carlo Tree Search. Cet algorithme permet d'analyser
+quels sont les coups les plus pertinents à partir de l'étude de l'expansion \emph{d'une arborescence} \cite{Heuristics0}.
+Néanmoins l'utilisation seule du MCTS à elle seule ne permet d'atteindre qu'un niveau semi-professionnel, c'est pourquoi il a été
+utilisé un système de Deep Learning mettant en jeu des réseaux de neurones avec deux responsabilités distinctes : le
+\emph{Policy Network} (ou réseau stratégique) et le \emph{Value Network} (ou réseau de valorisation) \cite{AlphaGo0}.
+
+\paragraph{Réseau stratégique} L'entrainement de ce réseau à nécessité deux étapes de machine learning. Une première partie à 
+consisté en l'apprentissage supervisé du réseau, auquel à été fourni 30 millions de positions à partir des parties recensées sur 
+le KGS Go Server (serveur mondial de jeu de go). Suite à cet entraînement le réseau à été capable de prédire les coups joués par 
+des professionnels avec une précision de \begin{math}57\%\end{math}. Une deuxième étape à été consacrée à l'apprentissage par renforcement, afin d'aider
+à la prédiction des meilleurs coups possibles. Suite à un entrainement de plus d'un million de parties contre lui-mêmme, le réseau
+renforcé à été capable de battre le réseau non renforcé dans plus de \begin{math}80\%\end{math} des cas. A ce stage le réseau possède encore un niveau
+d'amateur - environ 3d sur le KGS Go Server. \cite{AlphaGo1}
+
+\paragraph{Réseau de valorisation} L'objectif du réseau de valorisation est de se focaliser sur l'évaluation de la position à un
+instant donné. L'entrainement précédent ayant conduit à de \emph{l'overfitting} (le réseau tente de mémoriser les issues des parties
+plutôt que \emph{généraliser des positions nouvelles}), un nouvel entraînement à été généré à partir des parties jouées contre
+lui-même, soit plus de 30 millions de positions provenant d'autant de parties.
+
+\paragraph{Les Résultats} En 2015, AlphaGo est la première machine à remporter des parties contre un professionnel, Fan HUI (2d professionnel
+français). Il est ensuite le gagnant de parties importantes : contre Lee Sedol (9d coréen), considéré comme un des meilleurs professionnels
+au monde, puis contre Ke Jie (9d chinois) qui est alors classé 1er au rang mondial. Il gagne aussi dans \begin{math}99.8\%\end{math} des cas contre
+les meilleurs programmes, comme Crazy Stone, Pachi ou Zen. De plus, la version distribuée d'AlphaGo gagne \begin{math}77\%\end{math} de ses parties
+contre la version non distribuée, ce qui signifie qu'AlphaGo est aussi bien \emph{performant que scalable}.
+
+\paragraph{AlphaGo Zero, la révolution}
+
+\paragraph{}
+
 ** AlphaGo Zero : le défi de l'apprentissage from scrach
 ** Les clés de la réussite d'AlphaGo Zero
 ** Discussion autour des sorties multiples - adapter le ML à des problèmes multi-domaines
@@ -196,6 +241,7 @@ sur ce point important lorsque nous aborderons les usages et dérives associés 
 \paragraph{Systèmes intelligents}
 
 ** Le TLN, faire discuter des IAs entre elles
+** Quels modèles optimaux ?
 ** Des systèmes pour générer des systèmes mieux faits que par l'Homme
 ** Des systèmes autonomes ? Réplication et Création automatiques par la machine
 ** Un peu de science-fiction : quels systèmes intelligents de demain ?
