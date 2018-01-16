@@ -1,9 +1,10 @@
 \section{Machine Learning}
-\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{MachineLearning0} \cite{Internet4} \cite{Internet5}
+\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{MachineLearning0} \cite{Internet3} \cite{Internet4}
+\cite{Internet5} \cite{Internet6} \cite{University0}
 
 \paragraph{Une machine capable d'apprendre}
 
-\paragraph {} Commençons par nous arrêter un instant sur le terme de \emph{Machine Learning}. En français,
+\paragraph{} Commençons par nous arrêter un instant sur le terme de \emph{Machine Learning}. En français,
 cela pourrait se traduire par \emph{L'apprentissage de la machine}. Mais quel apprentissage ? N'est-ce pas
 le rôle de l'Homme, comme nous l'avons soutenu jusqu'ici, d'apprendre à la machine ? Nous verrons que dans
 le cas du Machine Learning, le concepteur ne fait que \emph{construire un système}, et lui donner
@@ -96,13 +97,14 @@ sous aucun aspect au domaine : finance, médecine, informatique.. Ces données s
 \paragraph{Plusieurs formes de Machine Learning}
 
 \paragraph{} Il existe toujours une large variété de manières pour résoudre un problème donné. En informatique, cela se concrétise par la possiblité
-d'appliquer différents algorithmes à un problème, pour le résoudre de manières différentes. Un des exemples les plus connus est \emph{le tri} : tri à
+d'appliquer différents algorithmes à un problème, pour le résoudre par différents procédés. Un des exemples les plus connus est \emph{le tri} : tri à
 bulles, tri rapide, tri par insertion, tri avec pile.. Chaque approche possédant ses avantages et ses inconvéniants. Néanmoins, dans la plupart des
 situations, la majorité arrive à s'accorder sur un nombre restreint de solutions (une, deux) permettant de résoudre \emph{la majorité} des cas, de \emph{manière optimisée}.
 Lorsque l'on résoud un problème on suit le processus suivant : test d'une sélection d'algorithmes, évaluation de leur performance selon certains
 modèles, décision sur l'utilisation du modèle ou de la combinaison de modèles à utiliser. Il faut cependant constater que l'utilisation de \emph{plusieurs}
 modèles rend la conception plus complexe. Cela explique aussi l'extrême complexité d'adaptation d'un \emph{même programme} à des \emph{problèmes différents}.
-Le Machine Learning se découpe en deux approches : l'apprentissage supervisé (\emph{Supervised learning}) et l'apprentissage non supervisé
+En effet, plus les domaines ou problèmes à couvrir sont nombreux, plus notre algorithme devra être adaptatif et utiliser des méthodes \emph{différentes mais complémentaires}. 
+Globalement, le Machine Learning se découpe en deux approches : l'apprentissage supervisé (\emph{Supervised learning}) et l'apprentissage non supervisé
 (\emph{Unsupervised leaning}). 
 
 \paragraph{Supervised Learning}
@@ -114,11 +116,11 @@ de ce qu'il est supposé accomplir. Et pour ce faire, cet algorithme d'apprentis
 
 \paragraph{Qu'est-ce qu'un modèle ?} Comme nous l'avons vu précédemment, le Machine Learning intervient lorsque l'Homme devient \emph{incapable de modéliser un mapping},
 c'est-à-dire lorsque nous ne pouvons deviner l'affectation qu'il doit y avoir entre des entrées données et les sorties possibles. Un modèle dans ce contexte se réfère 
-exactement \emph{au mapping} : c'est un ensemble de règles que prend un problème en entrée et qui possède une réponse. Ce modèle peut être très simple (une règle seule et simple)
-tout comme il peut être arbitrairement complexe (combinaisons de jeux de règles complexes et inter-indépendants). On peut également dire qu'un modèle est la solution à un en problème
+exactement \emph{au mapping} : c'est un ensemble de règles que prend un problème en entrée et qui possède une réponse. Ce modèle peut être très simple (une règle seule)
+tout comme il peut être arbitrairement complexe (combinaisons de jeux de règles complexes et inter-indépendants). On peut également dire qu'un modèle est la solution à un problème
 \emph{en général}, en donnant les réponses à des \emph{instances de problèmes spécifiques}. Autrement dit, un modèle permet de répondre à des \emph{use-cases spécifiques} du
 \emph{domaine d'un problème} \cite{Internet3} : lorsqu'il lui est fourni un \emph{ensemble de valeurs numériques} représentant une instance de problème spécifique, il répondra
-avec \emph{un ensemble de valeurs numériques} représentant la réponse à cette instance spécifique.
+avec \emph{un ensemble de valeurs numériques} représentant la réponse à cette instance.
 
 \paragraph{Comment l'entrainer ?} Il existe de nombreuses théories quant à la manière d'entraîner un modèle, aussi nous focaliserons-nous ici sur le \emph{procédé global}
 permettant d'aboutir à un modèle entrainé. Au départ, l'algorithme commence avec un plan de modèle, assimiliable à un \emph{modèle vierge}, qui renvoie des solutions 
@@ -142,7 +144,32 @@ enveloppes postales ou encore les signatures
 \item Médecine préventive - Dépister à l'avance certaines maladies par l'étude de diagnostics médicaux
 \end{itemize}
 
-\paragraph{Classification et Regression}
+\paragraph{Classification et Regression} Lorque nous pratiquons l'apprentissage supervisé, il faut choisir en amont entre deux catégories d'algorithmes : classification ou
+regression. Leur différence peut s'illustrer de manière très simple par l'exemple suivant :
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=350px]{chapters/03/images/classification-regression.jpg}
+    \caption{\label{supervised learning} \emph{Classification and Regression}, \url{https://medium.com/@ali_88273/regression-vs-classification-87c224350d69}}
+\end{figure}
+
+\paragraph{} Un algorithme d'apprentissage supervisé par regression prédit une valeur \emph{continue}, c'est à dire la valeur \emph{précise} attendue pour une instance de problème donnée.
+La réponse de cet algorithme n'est donc pas \emph{binaire} : c'est une valeur, un pourcentage, un indice, un indicateur. Plusieurs outils mathématiques, appartenant en particulier aux
+domaines de la statistique et de l'analyse, permettent la mise en place de ces algorithmes \cite{Internet3} : régression linéaire \cite{Internet6}, régression polynomiale, régression pas à pas 
+\cite{University0}, régression Ridge et LASSO \cite{University0}. De leur côté, les algorithmes d'apprentissage supervisé par classification permettent de prédire \emph{l'appartenance} de la
+solution à un \emph{groupe} donné. Ce n'est pas une valeur qui est prédite : l'algorithme se contente de \emph{classer} les solutions en plusieurs catégories (d'où le terme de classification)
+et, lorsqu'il lui est donné une nouvelle entrée, d'arriver à déterminer quelle catégorie est la plus appropriée pour cette entrée. On remarquera dans la pratique que les réseaux neuronaux
+permettant de modéliser ces algorithmes sont \emph{pratiquement semblables}. En effet, les premières couches auront le rôle \emph{d'approcher} une solution existante, dans les deux cas en
+s'appuyant sur l'ensemble des données fournies. Ce sont les dernières couches du réseau, les couches \emph{décisionnelles}, qui se chargeront de transformer l'information reçu en une décision
+de type \emph{regression ou classification}. Le procédé reste donc globalement similaire.
+
+\paragraph{} On remarquera que \emph{les accès} aux méthodes du Machine Learning sont encore restreints : ce domaine nécessite à la fois des connaissances conséquentes dans des domaines 
+à forte composante mathématique ainsi que des systèmes informatiques développés afin de \emph{stocker de large quantités de données} et \emph{d'effectuer efficacement des calculs} sur ces
+dernières. De plus, il n'existe pas d'outil \emph{simple et libre} permettant d'appliquer les principes du ML sans apprentissage préalable. Le background nécessaire pour participer à la création 
+et l'entrainement d'un modèle est riche, et l'utilisation de ces techniques est donc réservé à un \emph{milieu aisé}. Dans cette mesure, nous pouvons questionner l'éthique d'utilisation des
+techniques du Machine Learning. Etant donné que ces techniques sont réservées à une partie de la population, et qu'elles lui permettent d'acquérir \emph{une connaissance plus précise du fonctionnement
+du reste de la population}, elles contribuent en un sens à \emph{accentuer les disparités entre les classes sociales}. Nous reviendrons sur ce point important lorsque nous aborderons les usages
+et dérives associés à l'intelligence artificielle.
 
 \paragraph{Unsupervised Learning}
 
