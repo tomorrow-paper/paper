@@ -105,7 +105,13 @@ l'utilisation qu'il va faire de l'application soit collectée \emph{de facto}, p
 (\url{https://github.com/tomorrow-paper}). Nous détaillerons à la fois les objectifs remplis par chacun de ses modules
 ainsi que les choix techniques que nous avons effectués.
 
-\paragraph{TODO} \emph{Est-il nécessaire de préciser que nous utilisons le langage Rust et de justifier ce choix ici ?}
+\paragraph{} Nous avons choisi le \lstinline{Rust} \cite{Rust0} comme principal langage de programmation, car il allie une syntaxe
+de haut niveau moderne avec tous les avantages en terme de performance apportés par des exécutables natifs compilés.
+Multi-paradigmes, l'une des grandes forces de ce langage est sa gestion extrêmement stricte de la mémoire, introduisant
+des concepts nouveaux comme l'\emph{ownership} (propriété) et le \emph{borrowing} (emprunt) d'espaces et de références 
+mémoires permettant d'assurer que le code produit est exempt de fuites, \emph{data races}, problèmes de parallélisation...
+Son gestionnaire de dépendances, \lstinline{cargo}, ainsi que son riche écosystème de \emph{crates} (bibliothèques) sont
+à même de réconcilier les plus réfractaires avec les langages de programmation système.
 
 \paragraph{} Pour accompagner ce premier chapitre, nous avons souhaité mettre en place un service permettant d'aggréger
 des données depuis n'importe quelle source pour ensuite pouvoir les consommer de manière normalisée.
