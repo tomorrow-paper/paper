@@ -1,7 +1,8 @@
 \section{Learning Machines}
-\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{Brain0} \cite{Brain1}
- \cite{Heuristics0} \cite{MachineLearning0} \cite{MachineLearning2} \cite{MachineLearning3}
- \cite{MachineLearning4} \cite{University0}
+\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{AlphaGo3} \cite{Brain0}
+\cite{Brain1} \cite{Heuristics0} \cite{MachineLearning0} \cite{MachineLearning2} \cite{MachineLearning3}
+\cite{MachineLearning4} \cite{MachineLearning5} \cite{MachineLearning6} \cite{NeuralNets0}
+\cite{University0}
 
 \paragraph{Une machine capable d'apprendre}
 
@@ -45,7 +46,7 @@ ainsi que sur ses registres sensoriels - ce qu'il connait de \emph{l'expérience
 \begin{figure}[h]
     \centering
     \includegraphics[width=350px]{chapters/03/images/cerveau-robot.jpg}
-    \caption{\label{comparatif} \emph{Comparaison entre cerveau humain et ordinateur}, \url{http://intelligence-artificielle-tpe.e-monsite.com/pages/limites-technologiques-et-ethique-de-l-ia/cerveau-humain-et-robot.html}}
+    \caption{\label{comparatif} \emph{Comparaison entre cerveau humain et ordinateur}, \cite{Brain1}}
 \end{figure}
 
 \paragraph{Résoudre des problèmes complexes}
@@ -156,7 +157,7 @@ regression. Leur différence peut s'illustrer de manière très simple par l'exe
 \begin{figure}[h]
     \centering
     \includegraphics[width=300px]{chapters/03/images/classification-regression.jpg}
-    \caption{\label{supervised learning}, \emph{Classification and Regression}, \url{https://medium.com/@ali_88273/regression-vs-classification-87c224350d69}}
+    \caption{\label{supervised learning}, \emph{Classification and Regression}, \cite{MachineLearning6}}
 \end{figure}
 
 \paragraph{} Un algorithme d'apprentissage supervisé par regression prédit une valeur \emph{continue}, c'est à dire la valeur \emph{précise} attendue pour une instance de problème donnée.
@@ -177,8 +178,44 @@ questionner l'éthique d'utilisation des techniques du Machine Learning. Etant d
 \emph{une connaissance plus précise du fonctionnement de l'ensemble de la population}, elles contribuent en un sens à \emph{accentuer les disparités entre les classes sociales}. Nous reviendrons
 sur ce point important lorsque nous aborderons les usages et dérives associés à l'intelligence artificielle.
 
-\paragraph{Apprentissage non supervisé et par renforcement} Explications sommaires du principe pour les deux --
-Quelques exemples d'application -- Ouverture : Generative Adversarial Networks ?
+\paragraph{Apprentissage non supervisé, GANs}
+
+\paragraph{} Lorsque nous parlons d'apprentissage non supervisé, on entend que les algorithmes n'ont au départ \emph{aucune
+réponse} sur laquelle s'appuyer, et qu'ils doivent donc apprendre la structure des données par eux-même. Pour apprendre, il
+est fourni à cet algorithme un \emph{très grand nombre} de données. Il essaie d'y discerner des groupes, des similarités ou
+des déviations, ainsi que des \emph{patterns} (modèles) particuliers. Ces algorithmes sont en particulier utilisés afin de
+discerner \emph{des groupes ou segments} dans les données, ou encore afin de construire des représentations visuelles de la
+donnée.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=300px]{chapters/03/images/clustering.png}
+    \caption{\label{clustering} \emph{Group distinction by unsupervised learning}, \cite{MachineLearning0}}
+\end{figure}
+
+\paragraph{} Ces algorithmes apprennent en particulier à détecter les anomalies dans les groupes, ce qui permet par 
+exemple de déterminer \emph{un comportement suspect} dans un lieu public. En sécurité informatique, sur internet, 
+les algorithmes de machine learning peuvent détecter des éléments anormaux dans une source aussi riche que le trafic
+d'un réseau. 
+
+\paragraph{Generative Adversarial Networks} Selon Yann Le Cun, ils seraient une des inventions les plus pertinentes
+des 10 dernières années dans le milieu du machine learning. Les Generative Adversarial Networks, simplifié par GAN,
+consistent en deux types de modèles utilisés ensemble :
+
+\begin{itemize}
+    \item Un modèle \emph{discriminatif}, qui se charge d'apprendre à faire la différence entre une donnée \emph{authentique}
+    et une donnée \emph{créée} par un modèle génératif.
+    \item Un modèle \emph{génératif}, qui va essayer d'apprendre \emph{comment générer} une donnée de sorte à ce 
+    qu'un modèle discriminatif \emph{n'arrive pas} à faire la différence avec une donnée authentique.
+\end{itemize} 
+
+\paragraph{} Bien que ces deux modèles soient utiles séparemment, ils le sont encore davantage couplés, appliqué à des cas
+du monde réel, ou \emph{l'étiquettage de la donnée est souvent cher} \cite{MachineLearning5}. On peut assimiler leur travail
+à celui \emph{d'un faussaire et d'un policier} (génératif et discriminatif). C'est un fait qui nous interpelle et nous fait
+comprendre l'importance que leur apportent les chercheurs : en prenant à la fois le rôle de \emph{créateur de faux} et de
+\emph{distinguer le vrai du faux}, les GANs permettent de saisir le \emph{comportement sous-jacent} d'un système, qu'il serait
+impossible d'approcher pour un humain. Cela ouvre de nouvelles perspectives pour la compréhension de problèmes complexes de
+domaines aussi divers que les mathématiques, l'informatique, la finance, la médecine.. ou des problèmes tels que celui d'Ada !
 
 \paragraph{AlphaGo, AlphaGo Zero}
 
@@ -251,17 +288,24 @@ bien plus faible.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300px]{chapters/03/images/alphago-consumption.png}
-    \caption{\label{comparatif}, \emph{Power consumption for each AlphaGo version}, \url{https://deepmind.com/blog/alphago-zero-learning-scratch/}}
+    \caption{\label{comparatif}, \emph{Power consumption for each AlphaGo version}, \cite{AlphaGo2}}
 \end{figure}
 
-\paragraph{La clé de la réussite d'AlphaGo Zero}
+\paragraph{La clé de la réussite d'AlphaGo Zero} Ce dernier se démarque également par son architecture un peu particulière,
+aussi qualifiée de \guillemotleft monstre à deux têtes\guillemotright. \cite{AlphaGo3} En effet, après les 20 premières
+couches ou \emph{blocks}, se trouvent deux \emph{têtes} : une qui va faire une prévision sur le joueur qui est actuellement
+en train de gagner, une qui calcule la probabilité de jouer tel ou tel coup. C'est un fait inhabituel en comparaison à tous
+les systèmes dont il à été question jusqu'ici, qui ne restituaient qu'\emph{une sortie unique} (comme une image, l'appartenance
+à un groupe, une valeur précise).
 
-\paragraph{De la puissance multi-domaines des sorties multples}
+\paragraph{} La question se pose alors du \emph{fonctionnement} d'un tel système. Et il est en fait \emph{identique}
+à ce que nous avons vu jusqu'alors : lorsque la première \emph{tête} fait une prédiction, cela met à jour le modèle
+du \emph{corps}; et de la même manière pour la seconde tête. De cette façon, l'évolution à chaque tour est plus importante
+puisque ce ne sont plus une mais deux mise à jour des couches neuronales qui sont effectuées. Cela permet bien évidemment
+un renforcement plus important et plus rapide de notre système, mais cela ouvre également à la création de nouveaux systèmes :
+les réseaux neuronaux \emph{multi-têtes}.
+
+\paragraph{De la puissance multi-domaines des sorties multiples}
 
 \paragraph{Applications aux données humaines}
 
-\paragraph{Systèmes intelligents}
-
-\paragraph{} Le TLN, faire discuter des IAs entre elles -- Quels modèles optimaux ? -- Des systèmes pour
-générer des systèmes mieux faits que par l'Homme -- Des systèmes autonomes ? Réplication et Création
-automatiques par la machine -- Un peu de science-fiction : quels systèmes intelligents de demain ?
