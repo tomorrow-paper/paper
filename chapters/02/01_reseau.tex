@@ -106,7 +106,34 @@ le service).
 
 \paragraph{Réseaux parallèles}
 
-\paragraph{} C'est ce constat qui a servi de base au développement de réseaux dits \emph{parallèles}.
+\paragraph{} C'est ce constat qui a servi de base au développement de réseaux dits \emph{parallèles}. Il nous est
+impossible d'en donner une définition exacte ; en effet, chacun va adresser une solution à un problème particulier,
+offrant une alternative voire induisant une évolution des usages dans le domaine concerné.
+
+\paragraph{} Cependant, il est important de bien faire dès à présent la distinction entre un \emph{réseau parallèle} et 
+ce que l'on se complait à appeler le "\emph{dark web}", ou "\emph{deep web}". En effet, le terme "réseau profond" ne
+désigne rien de plus que le contenu non indexé par les moteurs de recherche sur internet. Il ne s'agit en aucun cas d'un
+réseau alternatif nécessitant une manipulation technique particulière pour y accéder : il vous suffit de saisir le nom de
+domaine ou l'adresse IP en question dans la barre d'adresse de votre navigateur pour y accéder.
+
+\paragraph{} Cette notion de \emph{dark web} a fait son apparition dans le langage journalistique courant avec la 
+démocratisation du réseau Tor (The Onion Router) \cite{Internet4}, permettant d'anonymiser un canal d'échange en chiffrant
+le flux et en le faisant transiter par un ensemble non déterminé de relais avant d'arriver à destination. Cette technologie
+offre plusieurs avantages : 
+
+\begin{itemize}
+    \item C'est un moyen de contourner la censure : si un opérateur ou un État prend la décision de couper ou restreindre
+    l'accès à un service, celui-ci sera toujours accessible à traver le réseau Tor ;
+    \item Il permet de protéger les utilisateurs des attaques \emph{Man in the Middle} (MitM), consistant pour l'attaquant
+    à venir se placer entre le flux de la victime et le serveur de destination pour y récupérer des informations ;
+    \item Le trafic passant à travers un ensemble de relais avant d'arriver à destination, les seuls informations personnelles
+    qui pourront vous être subtilisées seront celles que \emph{vous} donnez ;
+    \item Il est possible de rendre un service (site web) accessible uniquement à travers le réseau Tor en utilisant une
+    adresse en \lstinline{.onion}.
+\end{itemize}
+
+\paragraph{} Cette dernière fonctionnalité, désormais baptisée \emph{onion services} - en référence au système de routage
+multi-couches du projet -, était auparavant appelée \emph{hidden services} \cite{Internet5}. Les services accessibles 
 
 \paragraph{TODO} Réseaux parallèles. Verra-t-on un jour la disparition des réseaux parallèles
 (TOR, blockchains, ...) ? Ces technologies \emph{disruptives} seront-elles un jour vouées
