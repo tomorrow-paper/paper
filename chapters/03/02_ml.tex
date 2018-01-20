@@ -12,7 +12,7 @@ le rôle de l'Homme, comme nous l'avons soutenu jusqu'ici, d'apprendre à la mac
 le cas du Machine Learning, le concepteur ne fait que \emph{construire un système}, et lui donner
 \emph{les clés} pour parvenir à la résolution d'un \emph{problème complexe}. On remarque ici l'importance
 de \emph{cibler} un domaine: lorsque nous parlons de ML, nous ne prétendons pas créer un système à l'image
-humaine, qui serait capable d'avoir une faculté d'apprentissage \emph{globale}, quelque soit le support. 
+humaine, qui serait capable d'avoir une faculté d'apprentissage \emph{globale}, quel que soit le support. 
 
 \paragraph{} Justement, n'est-ce pas là une réelle différence entre l'apprentissage humain et celui de la machine ?
 Lorsque l'Homme apprend, c'est par \emph{l'expérience}. Il fait l'expérience de son environnement et la
@@ -79,14 +79,14 @@ faiblesse de l'humain par rapport à la machine qui lui a permis de remplacer l'
 Il nous est impossible aujourd'hui d'imaginer la gestion des transports sans informatique, la santé sans matériel haute technologie afin de
 permettre des analyses poussées, ou encore la finance sans tout le support des machines qui permettent notamment \emph{l'existence des marchés}. 
 
-\paragraph{Une solution: le Machine Learning} Là où l'humain ne peut pas conçevoir la complexité liée à la compréhension d'Ada, il semblerait que les
+\paragraph{Une solution: le Machine Learning} Là où l'humain ne peut pas concevoir la complexité liée à la compréhension d'Ada, il semblerait que les
 ordinateurs puissent quant à eux approcher une solution exploitable. D'ordinaire, afin de résoudre des problèmes, les ordinateurs utilisent des \emph{affectations}
 (\emph{mapping}) de questions ou problèmes (en entrée) à des réponses ou solutions (en sortie). Tout le principe réside dans les étapes à respecter lors de
 cette affectation, et nous avons pu voir qu'un développeur n'a pas toujours la réponse à cette question. De fait, pourquoi ne pas demander à une 
 machine de se rendre compte \emph{elle-même} de la meilleure manière de réaliser cette affectation ? \cite{MachineLearning0} C'est exactement le propos du Machine
 Learning. Il s'agit en général de renseigner \emph{d'immenses quantités} de données du problème afin qu'il adopte l'algorithme qui répond le mieux à
 comment configurer ce \emph{mapping}. Cela est rendu possible, comme nous l'avons vu précédemment dans la section sur \emph{le cerveau et l'ordinateur},
-par l'immense faculté de calcul \emph{infatiguable} et \emph{infaillible} de la machine.
+par l'immense faculté de calcul \emph{infatigable} et \emph{infaillible} de la machine.
 
 \paragraph{Sélectionner les données}\label{select_data_ml} Lorsque nous avons abordé le sujet de la collecte des données plus tôt, nous avons rapidement constaté la 
 multiplication \emph{exponentielle} des données disponibles pour \emph{nourrir} de nouveaux logiciels d'apprentissage. Leur nombre n'est pas
@@ -117,7 +117,7 @@ Globalement, le Machine Learning se découpe en quelques approches : apprentissa
 
 \paragraph{} Un algorithme d'apprentissage est dit \emph{supervisé} au sens où il lui est fourni des exemples de problèmes \emph{résolus} desquels
 il doit effectuer son apprentissage, où \emph{un intermédiaire humain} à pris le temps \emph{d'étiquetter} un certain nombre de cas avec la bonne réponse.
-L'apprentissage de l'algorithme s'effectue alors à partir du fait qu'il devient meilleur à l'exécution d'une même tâche donnée en se référant aux examples
+L'apprentissage de l'algorithme s'effectue alors à partir du fait qu'il devient meilleur à l'exécution d'une même tâche donnée en se référant aux exemples
 de ce qu'il est supposé accomplir. Et pour ce faire, cet algorithme d'apprentissage supervisé à besoin d'un outil particulier : \emph{un modèle}.
 
 \paragraph{Qu'est-ce qu'un modèle ?} Comme nous l'avons vu précédemment, le Machine Learning intervient lorsque l'Homme devient \emph{incapable de modéliser un mapping},
@@ -142,7 +142,7 @@ Une fois l'apprentissage terminé, le modèle, qui à été entraîné sur un je
 d'exemples avec une réponse associée, sans pour autant connaître les étapes pour parvenir à cette réponse. Ce type d'algorithmes est largement utilisé et nous avons déjà évoqué plusieurs
 systèmes s'appuyant sur ces algorithmes, à l'exemple de :
 \begin{itemize}
-    \item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux examples de spams
+    \item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux exemples de spams
     \item La reconnaissance d'objets ou de comportement - A partir d'images ou de vidéos
     \item La reconnaissance de l'écriture - Aussi appelés OCR (Optical Character Recognition), ces logiciels permettent par exemple de reconnaître les adresses sur les
     enveloppes postales ou encore les signatures
@@ -241,7 +241,7 @@ professionnel) n'ait été conçue avant AlphaGo.
 \paragraph{} Quels sont les secrets d'AlphaGo ? Afin de calculer la valeur 
 d'une partie \emph{dans un état donné}, AlphaGo utilise le MCTS ou Monte Carlo Tree Search. Cet algorithme permet d'analyser
 quels sont les coups les plus pertinents à partir de l'étude de l'expansion \emph{d'une arborescence} \cite{Heuristics0}.
-Néanmoins l'utilisation seule du MCTS à elle seule ne permet d'atteindre qu'un niveau semi-professionnel, c'est pourquoi il a été
+Néanmoins l'utilisation du MCTS à elle seule ne permet d'atteindre qu'un niveau semi-professionnel, c'est pourquoi il a été
 utilisé un système de Deep Learning mettant en jeu des réseaux de neurones avec deux responsabilités distinctes : le
 \emph{Policy Network} (ou réseau stratégique) et le \emph{Value Network} (ou réseau de valorisation) \cite{AlphaGo0}.
 
@@ -251,16 +251,16 @@ le KGS Go Server (serveur mondial de jeu de go). Suite à cet entraînement le r
 des professionnels avec une précision de \begin{math}57\%\end{math}. Une deuxième étape à été consacrée à l'apprentissage par renforcement, afin d'aider
 à la prédiction des meilleurs coups possibles. Suite à un entrainement de plus d'un million de parties contre lui-mêmme, le réseau
 renforcé à été capable de battre le réseau non renforcé dans plus de \begin{math}80\%\end{math} des cas. A ce stage le réseau possède encore un niveau
-d'amateur - environ 3d sur le KGS Go Server. \cite{AlphaGo1}
+d'amateur - environ 3e dan sur le KGS Go Server. \cite{AlphaGo1}
 
 \paragraph{Réseau de valorisation} L'objectif du réseau de valorisation est de se focaliser sur l'évaluation de la position à un
 instant donné. L'entrainement précédent ayant conduit à de \emph{l'overfitting} (le réseau tente de mémoriser les issues des parties
 plutôt que \emph{généraliser des positions nouvelles}), un nouvel entraînement à été généré à partir des parties jouées contre
 lui-même, soit plus de 30 millions de positions provenant d'autant de parties.
 
-\paragraph{Les Résultats} En 2015, AlphaGo est la première machine à remporter des parties contre un professionnel, Fan HUI (2d professionnel
-français). Il est ensuite le gagnant de parties importantes : contre Lee Sedol (9d coréen), considéré comme un des meilleurs professionnels
-au monde, puis contre Ke Jie (9d chinois) qui est alors classé 1er au rang mondial. Il gagne aussi dans \begin{math}99.8\%\end{math} des cas contre
+\paragraph{Les Résultats} En 2015, AlphaGo est la première machine à remporter des parties contre un professionnel, Fan HUI (2e dan professionnel
+français). Il est ensuite le gagnant de parties importantes : contre Lee Sedol (9e dan coréen), considéré comme un des meilleurs professionnels
+au monde, puis contre Ke Jie (9e dan chinois) qui est alors classé 1er au rang mondial. Il gagne aussi dans \begin{math}99.8\%\end{math} des cas contre
 les meilleurs programmes, comme Crazy Stone, Pachi ou Zen. De plus, la version distribuée d'AlphaGo gagne \begin{math}77\%\end{math} de ses parties
 contre la version non distribuée, ce qui signifie qu'AlphaGo est aussi bien \emph{performant que scalable}.
 
@@ -282,8 +282,7 @@ versions d'AlphaGo car elle n'est plus contrainte par \emph{les limites de la co
 \end{itemize}
 
 \paragraph{} Après seulement trois jours d'auto-apprentissage, AlphaGo Zero arrivait à battre la version la plus aboutie d'AlphaGo à raison de 100 parties à 0,
-et devenait alors la meilleure IA jamais conçue pour le jeu de go. Enfin, la version Zero possède aussi une consommation en énergie relativement
-bien plus faible.
+et devenait alors la meilleure IA jamais conçue pour le jeu de go. Enfin, la version Zero possède aussi une consommation en énergie bien plus faible.
 
 \begin{figure}[h]
     \centering
