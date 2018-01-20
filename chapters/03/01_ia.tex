@@ -1,8 +1,5 @@
 \section{Intelligence as a Service}
-\paragraph{Références} \cite{AI0}
-
-\paragraph{Quelle est sa place ?} Comment ce domaine s'est-il démocratisé ? Quels exemples avons-nous
-de son utilisation dans des systèmes actuels ?
+\paragraph{Références} \cite{AI0} \cite{AI1} \cite{AI2} \cite{Language0} \cite{Therapy0} \cite{Turing0}
 
 \paragraph{Qu'est-ce que l'IA ?}
 
@@ -28,18 +25,59 @@ scénarii qui ne se révèlent pas nécessairement exacts.
 \paragraph{Objet d'étude} Les domaines d'études usuels de la recherche en intelligence artificielle sont le
 \emph{raisonnement}, la \emph{perception}, l'\emph{apprentissage}, la \emph{connaissance}, la
 \emph{prévision}, le \emph{traitement du langage naturel} (ou TLN, Natural Language Processing en anglais),
-et en robotique l'abileté de \emph{se déplacer}, ou encore de \emph{déplacer} ou \emph{manipuler} des
+et en robotique l'habileté de \emph{se déplacer}, ou encore de \emph{déplacer} ou \emph{manipuler} des
 objets. Son application nécessite l'utilisation d'outils comme l'\emph{optimisation}, la \emph{théorie des graphes},
-mais aussi des méthodes statistiques et des notions de probabilité. Dans ce cadre, notre étude se focalisera
-sur son application au domaine informatique en particulier, bien que son utilisation se fasse à travers des domaines
-aussi divers que les mathématiques, la psychologie ou la philosophie.
+mais aussi des méthodes statistiques et des notions de probabilité. 
 
-\paragraph{Un peu d'histoire}
+\paragraph{Turing, adaptabilité, approches symbolique et connexionniste}
+
+\paragraph{} Historiquement, c'est au milieu des années 50 qu'apparaît le termne d'intelligence artificielle, que l'on
+doit à John McCarthy, aussi connu pour être le \emph{père de l'intelligence artificielle}. \cite{AI2} C'est également
+dans les mêmes années qu'Alan Turing réalise un essai bien connu, \emph{The Imitation Game} (ou jeu d'imitation), procédé
+permettant de déterminer si une machine est intelligente ou non. Pour cela, dans sa dernière version, le test de turing
+propose à un être humain, placé dans une salle, de discuter avec deux personnes : une réelle, une autre simulée par une
+machine. Si le sujet n'arrive pas à reconnaître quelle personne est réelle dans plus de la moitié des cas, alors on
+considère que la machine à passé le test de Turing. \cite{Turing0}
+
+\paragraph{} Ce test subit, à l'instar du test de QI, de nombreuses critiques. Il ne s'applique pas, en effet, à toutes
+les formes d'intelligence mais uniquement aux programmes destinés à la communication. De plus, un programme \guillemotleft
+non intelligent\guillemotright, c'est-à-dire conçu pour ruser le test, peut très bien le faire à l'exemple d'ELIZA.
+\cite{Language0} Il utilise pour cela des mots de phrases précédentes qu'il réutilise pour poser des questions. Ce logiciel
+se retrouve aussi comme psychologue dans l'éditeur de texte Emacs. \cite{Therapy0} Il est également intéressant de constater
+que les logiciels \emph{trop intelligents} ne fonctionnent pas : en ne faisant jamais de fautes et en pratiquant une grammaire
+et des tournures parfaites, le sujet se doute rapidement que son interlocuteur n'est pas humain.
+
+\paragraph{} L'intelligence artificielle est donc une recherche \emph{d'adaptabilité}. Elle cherche à mettre en place des
+stratégies \emph{souples}, qui répondent \emph{au mieux dans la plupart des cas}. On peut, dans ce grand courant, découper
+deux types d'approches en particulier :
+\begin{itemize}
+    \item Symbolique : l'environnement et les lois qui s'y appliquent sont décrites avec le plus de précision possible,
+    et il attendu du programme de choisir la meilleure option. C'est le cas par exemple des systèmes experts ou des
+    logiques floues. Cette approche nous intéresse moins que la seconde car elle demande que les systèmes soient \emph{
+    explicites}, et s'adapte donc mal à des cas \emph{réels}.
+    \item Connexionniste : seul est donné au logiciel le moyen d'évaluer si ce qu'il fait est bien ou non - on le laisse
+    en effet trouver des solutions \emph{seul, par émergence}. Les réseaux de neurones font partie de cette catégorie.
+\end{itemize}
 
 \paragraph{} ------------------------------------
 
-\paragraph{} Quel avenir pour l'IA ? Un peu de science-fiction. Ce qui arrive et ce qui 
-n'arrive pas. La révolution du smartphone. La démocratisation de l'IA dans le smartphone.
+\paragraph{} L'utilisation de l'IA dans différents domaines: jeu vidéo, informatique,
+robotique, médecine, finance, domotique...
+
+\paragraph{} ------------------------------------
+
+\paragraph{} Les métaheuristiques d'optimisation, optimums locaux et globaux, exemples. 
+Leur domaine d'application
+
+\paragraph{} ------------------------------------
+
+\paragraph{} La recherche de chemins. Théorie des graphes, Bellman-Ford, Dijkstra, A*.
+Ouverture sur le GPS et les services type Uber
+
+\paragraph{} ------------------------------------
+
+\paragraph{} La révolution du smartphone. La démocratisation de l'IA dans le smartphone.
+Quel avenir pour l'IA ?
 
 \paragraph{} ------------------------------------
 
@@ -58,11 +96,6 @@ une tentative d'application de l'IA (pas du ML !) au calcul du BTC ?
 de l'IA ? Quels domaines sont les plus concernés ? Est-il possible de distinguer
 des \emph{patterns d'implémentation} permettant d'apporter des réponses systématiques
 à des problèmes connus ?
-
-\paragraph{} L'utilisation de l'IA dans différents domaines: jeu vidéo, informatique,
-robotique, médecine, finance, domotique (pathfinding aspis)...
-
-\paragraph{} Le principe de l'heuristique. La recherche de la solution optimale.
 
 \paragraph{Objectif} L'objectif est d'ajouter ici des traitements de données automatisés au section
 du Réseau.

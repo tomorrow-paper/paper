@@ -1,7 +1,8 @@
 \section{Learning Machines}
-\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{Brain0} \cite{Brain1}
- \cite{Heuristics0} \cite{MachineLearning0} \cite{MachineLearning2} \cite{MachineLearning3}
- \cite{MachineLearning4} \cite{University0}
+\paragraph{Références} \cite{AlphaGo0} \cite{AlphaGo1} \cite{AlphaGo2} \cite{AlphaGo3} \cite{Brain0}
+\cite{Brain1} \cite{Heuristics0} \cite{MachineLearning0} \cite{MachineLearning2} \cite{MachineLearning3}
+\cite{MachineLearning4} \cite{MachineLearning5} \cite{MachineLearning6} \cite{NeuralNets0}
+\cite{University0}
 
 \paragraph{Une machine capable d'apprendre}
 
@@ -11,7 +12,7 @@ le rôle de l'Homme, comme nous l'avons soutenu jusqu'ici, d'apprendre à la mac
 le cas du Machine Learning, le concepteur ne fait que \emph{construire un système}, et lui donner
 \emph{les clés} pour parvenir à la résolution d'un \emph{problème complexe}. On remarque ici l'importance
 de \emph{cibler} un domaine: lorsque nous parlons de ML, nous ne prétendons pas créer un système à l'image
-humaine, qui serait capable d'avoir une faculté d'apprentissage \emph{globale}, quelque soit le support. 
+humaine, qui serait capable d'avoir une faculté d'apprentissage \emph{globale}, quel que soit le support. 
 
 \paragraph{} Justement, n'est-ce pas là une réelle différence entre l'apprentissage humain et celui de la machine ?
 Lorsque l'Homme apprend, c'est par \emph{l'expérience}. Il fait l'expérience de son environnement et la
@@ -45,7 +46,7 @@ ainsi que sur ses registres sensoriels - ce qu'il connait de \emph{l'expérience
 \begin{figure}[h]
     \centering
     \includegraphics[width=350px]{chapters/03/images/cerveau-robot.jpg}
-    \caption{\label{comparatif} \emph{Comparaison entre cerveau humain et ordinateur}, \url{http://intelligence-artificielle-tpe.e-monsite.com/pages/limites-technologiques-et-ethique-de-l-ia/cerveau-humain-et-robot.html}}
+    \caption{\label{comparatif} \emph{Comparaison entre cerveau humain et ordinateur}, \cite{Brain1}}
 \end{figure}
 
 \paragraph{Résoudre des problèmes complexes}
@@ -78,14 +79,14 @@ faiblesse de l'humain par rapport à la machine qui lui a permis de remplacer l'
 Il nous est impossible aujourd'hui d'imaginer la gestion des transports sans informatique, la santé sans matériel haute technologie afin de
 permettre des analyses poussées, ou encore la finance sans tout le support des machines qui permettent notamment \emph{l'existence des marchés}. 
 
-\paragraph{Une solution: le Machine Learning} Là où l'humain ne peut pas conçevoir la complexité liée à la compréhension d'Ada, il semblerait que les
+\paragraph{Une solution: le Machine Learning} Là où l'humain ne peut pas concevoir la complexité liée à la compréhension d'Ada, il semblerait que les
 ordinateurs puissent quant à eux approcher une solution exploitable. D'ordinaire, afin de résoudre des problèmes, les ordinateurs utilisent des \emph{affectations}
 (\emph{mapping}) de questions ou problèmes (en entrée) à des réponses ou solutions (en sortie). Tout le principe réside dans les étapes à respecter lors de
 cette affectation, et nous avons pu voir qu'un développeur n'a pas toujours la réponse à cette question. De fait, pourquoi ne pas demander à une 
 machine de se rendre compte \emph{elle-même} de la meilleure manière de réaliser cette affectation ? \cite{MachineLearning0} C'est exactement le propos du Machine
 Learning. Il s'agit en général de renseigner \emph{d'immenses quantités} de données du problème afin qu'il adopte l'algorithme qui répond le mieux à
 comment configurer ce \emph{mapping}. Cela est rendu possible, comme nous l'avons vu précédemment dans la section sur \emph{le cerveau et l'ordinateur},
-par l'immense faculté de calcul \emph{infatiguable} et \emph{infaillible} de la machine.
+par l'immense faculté de calcul \emph{infatigable} et \emph{infaillible} de la machine.
 
 \paragraph{Sélectionner les données}\label{select_data_ml} Lorsque nous avons abordé le sujet de la collecte des données plus tôt, nous avons rapidement constaté la 
 multiplication \emph{exponentielle} des données disponibles pour \emph{nourrir} de nouveaux logiciels d'apprentissage. Leur nombre n'est pas
@@ -116,7 +117,7 @@ Globalement, le Machine Learning se découpe en quelques approches : apprentissa
 
 \paragraph{} Un algorithme d'apprentissage est dit \emph{supervisé} au sens où il lui est fourni des exemples de problèmes \emph{résolus} desquels
 il doit effectuer son apprentissage, où \emph{un intermédiaire humain} à pris le temps \emph{d'étiquetter} un certain nombre de cas avec la bonne réponse.
-L'apprentissage de l'algorithme s'effectue alors à partir du fait qu'il devient meilleur à l'exécution d'une même tâche donnée en se référant aux examples
+L'apprentissage de l'algorithme s'effectue alors à partir du fait qu'il devient meilleur à l'exécution d'une même tâche donnée en se référant aux exemples
 de ce qu'il est supposé accomplir. Et pour ce faire, cet algorithme d'apprentissage supervisé à besoin d'un outil particulier : \emph{un modèle}.
 
 \paragraph{Qu'est-ce qu'un modèle ?} Comme nous l'avons vu précédemment, le Machine Learning intervient lorsque l'Homme devient \emph{incapable de modéliser un mapping},
@@ -141,7 +142,7 @@ Une fois l'apprentissage terminé, le modèle, qui à été entraîné sur un je
 d'exemples avec une réponse associée, sans pour autant connaître les étapes pour parvenir à cette réponse. Ce type d'algorithmes est largement utilisé et nous avons déjà évoqué plusieurs
 systèmes s'appuyant sur ces algorithmes, à l'exemple de :
 \begin{itemize}
-    \item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux examples de spams
+    \item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux exemples de spams
     \item La reconnaissance d'objets ou de comportement - A partir d'images ou de vidéos
     \item La reconnaissance de l'écriture - Aussi appelés OCR (Optical Character Recognition), ces logiciels permettent par exemple de reconnaître les adresses sur les
     enveloppes postales ou encore les signatures
@@ -156,7 +157,7 @@ regression. Leur différence peut s'illustrer de manière très simple par l'exe
 \begin{figure}[h]
     \centering
     \includegraphics[width=300px]{chapters/03/images/classification-regression.jpg}
-    \caption{\label{supervised learning}, \emph{Classification and Regression}, \url{https://medium.com/@ali_88273/regression-vs-classification-87c224350d69}}
+    \caption{\label{supervised learning}, \emph{Classification and Regression}, \cite{MachineLearning6}}
 \end{figure}
 
 \paragraph{} Un algorithme d'apprentissage supervisé par regression prédit une valeur \emph{continue}, c'est à dire la valeur \emph{précise} attendue pour une instance de problème donnée.
@@ -177,8 +178,44 @@ questionner l'éthique d'utilisation des techniques du Machine Learning. Etant d
 \emph{une connaissance plus précise du fonctionnement de l'ensemble de la population}, elles contribuent en un sens à \emph{accentuer les disparités entre les classes sociales}. Nous reviendrons
 sur ce point important lorsque nous aborderons les usages et dérives associés à l'intelligence artificielle.
 
-\paragraph{Apprentissage non supervisé et par renforcement} Explications sommaires du principe pour les deux --
-Quelques exemples d'application -- Ouverture : Generative Adversarial Networks ?
+\paragraph{Apprentissage non supervisé, GANs}
+
+\paragraph{} Lorsque nous parlons d'apprentissage non supervisé, on entend que les algorithmes n'ont au départ \emph{aucune
+réponse} sur laquelle s'appuyer, et qu'ils doivent donc apprendre la structure des données par eux-même. Pour apprendre, il
+est fourni à cet algorithme un \emph{très grand nombre} de données. Il essaie d'y discerner des groupes, des similarités ou
+des déviations, ainsi que des \emph{patterns} (modèles) particuliers. Ces algorithmes sont en particulier utilisés afin de
+discerner \emph{des groupes ou segments} dans les données, ou encore afin de construire des représentations visuelles de la
+donnée.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=300px]{chapters/03/images/clustering.png}
+    \caption{\label{clustering} \emph{Group distinction by unsupervised learning}, \cite{MachineLearning0}}
+\end{figure}
+
+\paragraph{} Ces algorithmes apprennent en particulier à détecter les anomalies dans les groupes, ce qui permet par 
+exemple de déterminer \emph{un comportement suspect} dans un lieu public. En sécurité informatique, sur internet, 
+les algorithmes de machine learning peuvent détecter des éléments anormaux dans une source aussi riche que le trafic
+d'un réseau. 
+
+\paragraph{Generative Adversarial Networks} Selon Yann Le Cun, ils seraient une des inventions les plus pertinentes
+des 10 dernières années dans le milieu du machine learning. Les Generative Adversarial Networks, simplifié par GAN,
+consistent en deux types de modèles utilisés ensemble :
+
+\begin{itemize}
+    \item Un modèle \emph{discriminatif}, qui se charge d'apprendre à faire la différence entre une donnée \emph{authentique}
+    et une donnée \emph{créée} par un modèle génératif.
+    \item Un modèle \emph{génératif}, qui va essayer d'apprendre \emph{comment générer} une donnée de sorte à ce 
+    qu'un modèle discriminatif \emph{n'arrive pas} à faire la différence avec une donnée authentique.
+\end{itemize} 
+
+\paragraph{} Bien que ces deux modèles soient utiles séparemment, ils le sont encore davantage couplés, appliqué à des cas
+du monde réel, ou \emph{l'étiquettage de la donnée est souvent cher} \cite{MachineLearning5}. On peut assimiler leur travail
+à celui \emph{d'un faussaire et d'un policier} (génératif et discriminatif). C'est un fait qui nous interpelle et nous fait
+comprendre l'importance que leur apportent les chercheurs : en prenant à la fois le rôle de \emph{créateur de faux} et de
+\emph{distinguer le vrai du faux}, les GANs permettent de saisir le \emph{comportement sous-jacent} d'un système, qu'il serait
+impossible d'approcher pour un humain. Cela ouvre de nouvelles perspectives pour la compréhension de problèmes complexes de
+domaines aussi divers que les mathématiques, l'informatique, la finance, la médecine.. ou des problèmes tels que celui d'Ada !
 
 \paragraph{AlphaGo, AlphaGo Zero}
 
@@ -204,7 +241,7 @@ professionnel) n'ait été conçue avant AlphaGo.
 \paragraph{} Quels sont les secrets d'AlphaGo ? Afin de calculer la valeur 
 d'une partie \emph{dans un état donné}, AlphaGo utilise le MCTS ou Monte Carlo Tree Search. Cet algorithme permet d'analyser
 quels sont les coups les plus pertinents à partir de l'étude de l'expansion \emph{d'une arborescence} \cite{Heuristics0}.
-Néanmoins l'utilisation seule du MCTS à elle seule ne permet d'atteindre qu'un niveau semi-professionnel, c'est pourquoi il a été
+Néanmoins l'utilisation du MCTS à elle seule ne permet d'atteindre qu'un niveau semi-professionnel, c'est pourquoi il a été
 utilisé un système de Deep Learning mettant en jeu des réseaux de neurones avec deux responsabilités distinctes : le
 \emph{Policy Network} (ou réseau stratégique) et le \emph{Value Network} (ou réseau de valorisation) \cite{AlphaGo0}.
 
@@ -214,16 +251,16 @@ le KGS Go Server (serveur mondial de jeu de go). Suite à cet entraînement le r
 des professionnels avec une précision de \begin{math}57\%\end{math}. Une deuxième étape à été consacrée à l'apprentissage par renforcement, afin d'aider
 à la prédiction des meilleurs coups possibles. Suite à un entrainement de plus d'un million de parties contre lui-mêmme, le réseau
 renforcé à été capable de battre le réseau non renforcé dans plus de \begin{math}80\%\end{math} des cas. A ce stage le réseau possède encore un niveau
-d'amateur - environ 3d sur le KGS Go Server. \cite{AlphaGo1}
+d'amateur - environ 3e dan sur le KGS Go Server. \cite{AlphaGo1}
 
 \paragraph{Réseau de valorisation} L'objectif du réseau de valorisation est de se focaliser sur l'évaluation de la position à un
 instant donné. L'entrainement précédent ayant conduit à de \emph{l'overfitting} (le réseau tente de mémoriser les issues des parties
 plutôt que \emph{généraliser des positions nouvelles}), un nouvel entraînement à été généré à partir des parties jouées contre
 lui-même, soit plus de 30 millions de positions provenant d'autant de parties.
 
-\paragraph{Les Résultats} En 2015, AlphaGo est la première machine à remporter des parties contre un professionnel, Fan HUI (2d professionnel
-français). Il est ensuite le gagnant de parties importantes : contre Lee Sedol (9d coréen), considéré comme un des meilleurs professionnels
-au monde, puis contre Ke Jie (9d chinois) qui est alors classé 1er au rang mondial. Il gagne aussi dans \begin{math}99.8\%\end{math} des cas contre
+\paragraph{Les Résultats} En 2015, AlphaGo est la première machine à remporter des parties contre un professionnel, Fan HUI (2e dan professionnel
+français). Il est ensuite le gagnant de parties importantes : contre Lee Sedol (9e dan coréen), considéré comme un des meilleurs professionnels
+au monde, puis contre Ke Jie (9e dan chinois) qui est alors classé 1er au rang mondial. Il gagne aussi dans \begin{math}99.8\%\end{math} des cas contre
 les meilleurs programmes, comme Crazy Stone, Pachi ou Zen. De plus, la version distribuée d'AlphaGo gagne \begin{math}77\%\end{math} de ses parties
 contre la version non distribuée, ce qui signifie qu'AlphaGo est aussi bien \emph{performant que scalable}.
 
@@ -245,23 +282,29 @@ versions d'AlphaGo car elle n'est plus contrainte par \emph{les limites de la co
 \end{itemize}
 
 \paragraph{} Après seulement trois jours d'auto-apprentissage, AlphaGo Zero arrivait à battre la version la plus aboutie d'AlphaGo à raison de 100 parties à 0,
-et devenait alors la meilleure IA jamais conçue pour le jeu de go. Enfin, la version Zero possède aussi une consommation en énergie relativement
-bien plus faible.
+et devenait alors la meilleure IA jamais conçue pour le jeu de go. Enfin, la version Zero possède aussi une consommation en énergie bien plus faible.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=300px]{chapters/03/images/alphago-consumption.png}
-    \caption{\label{comparatif}, \emph{Power consumption for each AlphaGo version}, \url{https://deepmind.com/blog/alphago-zero-learning-scratch/}}
+    \caption{\label{comparatif}, \emph{Power consumption for each AlphaGo version}, \cite{AlphaGo2}}
 \end{figure}
 
-\paragraph{La clé de la réussite d'AlphaGo Zero}
+\paragraph{La clé de la réussite d'AlphaGo Zero} Ce dernier se démarque également par son architecture un peu particulière,
+aussi qualifiée de \guillemotleft monstre à deux têtes\guillemotright. \cite{AlphaGo3} En effet, après les 20 premières
+couches ou \emph{blocks}, se trouvent deux \emph{têtes} : une qui va faire une prévision sur le joueur qui est actuellement
+en train de gagner, une qui calcule la probabilité de jouer tel ou tel coup. C'est un fait inhabituel en comparaison à tous
+les systèmes dont il à été question jusqu'ici, qui ne restituaient qu'\emph{une sortie unique} (comme une image, l'appartenance
+à un groupe, une valeur précise).
 
-\paragraph{De la puissance multi-domaines des sorties multples}
+\paragraph{} La question se pose alors du \emph{fonctionnement} d'un tel système. Et il est en fait \emph{identique}
+à ce que nous avons vu jusqu'alors : lorsque la première \emph{tête} fait une prédiction, cela met à jour le modèle
+du \emph{corps}; et de la même manière pour la seconde tête. De cette façon, l'évolution à chaque tour est plus importante
+puisque ce ne sont plus une mais deux mise à jour des couches neuronales qui sont effectuées. Cela permet bien évidemment
+un renforcement plus important et plus rapide de notre système, mais cela ouvre également à la création de nouveaux systèmes :
+les réseaux neuronaux \emph{multi-têtes}.
+
+\paragraph{De la puissance multi-domaines des sorties multiples}
 
 \paragraph{Applications aux données humaines}
 
-\paragraph{Systèmes intelligents}
-
-\paragraph{} Le TLN, faire discuter des IAs entre elles -- Quels modèles optimaux ? -- Des systèmes pour
-générer des systèmes mieux faits que par l'Homme -- Des systèmes autonomes ? Réplication et Création
-automatiques par la machine -- Un peu de science-fiction : quels systèmes intelligents de demain ?
