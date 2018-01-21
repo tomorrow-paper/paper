@@ -183,9 +183,57 @@ lui-même.
     \caption{\label{weighted_graph}, \emph{Graph with weights}, \cite{GraphTheory1}}
 \end{figure}
 
-\paragraph{Algorithmes naïfs et intelligents, applications}
+\paragraph{} Afin de travailler sur des graphes, nous pouvons utiliser deux catégories d'algorithmes : ceux dit \emph{naïfs},
+et ceux dits \emph{intelligents}. L'ensemble des algorithmes présentés le seront sur leur démarche. Le code associé est
+disponible en annexe pour le lecteur qui souhaiterait en connaître une application algorithmique.
 
-\paragraph{} Ouverture sur le GPS et les services type Uber
+\paragraph{Algorithmes naïfs} Ces derniers sont appelés ainsi car ils n'utilisent pas de connaissances sur le problème
+pour agir. Ils vont donc, dans le pire des cas, tester tous les chemins possibles pour vérifier l'existence d'un chemin
+entre deux n\oe{}uds. De plus, ils ne garantissent pas que le chemin trouvé est bien le plus court ; ils sont 
+néanmoins \emph{faciles à implémenter}. Deux exemples connus de ces algorithmes sont les suivants :
+\begin{itemize}
+    \item Le \emph{parcours en profondeur}. C'est celui qu'on utilise \emph{naturellement} dans un labyrinthe, il consiste
+    à avancer le plus possible jusqu'à être coincé, puis revenir sur la dernière intersection et tester un nouveau chemin.
+    Cet approche repose en immense partie sur \emph{la stratégie de parcours} que de l'on décide d'appliquer. Dans un labyrinthe
+    par exemple, il est possible que choisir l'ordre d'importance (gauche, droite, milieu) nous aurait fait parvenir plus vite
+    à la sortie que (droite, milieu, gauche). Cet algorithme n'est donc pas souvent efficace, de plus il faut qu'il teste
+    en moyenne un grand nombre de possibilités pour trouver un chemin.
+    \item Le \emph{parcours en largeur}, que l'on peut assimilier au trajet que fait \emph{la police pour retrouver un
+    coupable}. On part du derner point où il à été vu et on s'en éloigne en cercles concentriques. Ainsi, il n'est plus
+    question d'ordre, mais cet algorithme n'est \emph{pas du tout efficace}. Néanmoins, si tous les arcs \emph{ont le
+    même poids}, nous serons assurés de \emph{trouver le chemin le plus court}.
+\end{itemize}
+
+\paragraph{Algorithmes intelligents} Etant donné que les parcours présentés ne permettent pas de trouver le chemin
+le plus court, ni de le faire dans un temps acceptable, il nous faut utiliser d'autres algorithmes. Nous avons pour
+cela plusieurs options dont nous allons présenter les trois les plus connues : algorithme de Bellman-Ford, de Dijkstra,
+et A* (ou A étoile).
+
+\paragraph{} L'algorithme de Bellman-Ford nous garantit de trouver le chemin le plus court s'il en existe un. Ce n'est pas
+le plus optimisé mais celui qui fonctionne dans le plus de cas, car il accepte en effet des valeurs \emph{négatives} pour les
+arcs. De plus, s'il y a un circuit dont le \emph{poids total est négatif}, il peut le réperer et statuer qu'il n'existe alors
+pas de chemin le plus court. Il utilise la matrice des longueurs et est itératif. Après avoir initialisé à $+\infty$ la 
+longueur minimale de chaque n\oe{}ud, il parcourt chaque arc et met à jour les distances au n\oe{}ud courant si elles sont
+plus faibles. Il passe ensuite au n\oe{}ud suivant avec le poids le plus faible et réitère son procédé jusqu'à ce qu'il ait
+obtenu le chemin \emph{le plus court}.
+
+\paragraph{} L'algorithme de Dijkstra, certainement le plus connus des algorithmes de \emph{pathfinding}, est une amélioration
+de l'algorithme de Bellman-Ford, qui ne fonctionne que si toutes les distances sont positives. En remarquera que c'est généralement
+le cas dans les problèmes réels. Il se démarque en choisissant plus intelligemment l'ordre d'application des distances. En effet,
+au lieu de s'appliquer sur les arcs, il s'applique \emph{sur les noeuds}, et il ne revient jamais en arrière. De cette manière,
+chaque arc ne sera appliqué \emph{qu'une fois}. L'application des distances n\oe{}ud par n\oe{}ud permet une \emph{réelle
+optimisation} en termes de calculs et donc en terme \emph{de temps}.
+
+\paragraph{} Enfin, l'algorithme A* ne teste pas tous les chemins et ne peut pas assurer quer le chemin trouvé est le
+plus court. Dans des cas comme le labyrinthe il sera très peu ou pas efficace, alors que c'est sur des espaces ouverts,
+avec peu d'obstacles qu'il sera très performant. Cet algorithme utilise des informations sur la localisation de son
+objectif afin de choisir la direction. En effet, à la manière d'un homme qui se repère dans une ville, A* se fonde sur le
+fait que la distance la plus courte \emph{est généralement la ligne droite}. Plus son approximation de la distance 
+restante entre chaque n\oe{}ud et la sortie est précise, et plus l'algorithme sera efficace. Dans son fonctionnement, A*
+est semblable aux algorithmes précédents à l'exception importante qu'il visite toujours \emph{le n\oe{}ud le plus
+prometteur} en suivant.
+
+\paragraph{Domaines d'application}
 
 \paragraph{} ------------------------------------
 
@@ -200,15 +248,6 @@ volumétrie, de scalabilité, de puissance de calculs ? Nous verrons comment
 l'intégration de systèmes intelligents s'est faire avec plus ou moins de succès
 selon et les projets, ainsi que les solutions et évolutions qui ont été apportéées,
 permettant de simplifier la mise en place et l'utilisation d'IAs.
-
-\paragraph{} Systèmes simples et systèmes complexes. Des patterns gourmands et
-des optimisations parfois compliquées. Parallèle avec le bruteforce. Que donnerait 
-une tentative d'application de l'IA (pas du ML !) au calcul du BTC ?
-
-\paragraph{Quels apports et quelle utilité ?} Quels sont les apports \emph{concrets}
-de l'IA ? Quels domaines sont les plus concernés ? Est-il possible de distinguer
-des \emph{patterns d'implémentation} permettant d'apporter des réponses systématiques
-à des problèmes connus ?
 
 \paragraph{Objectif} L'objectif est d'ajouter ici des traitements de données automatisés au section
 du Réseau.
