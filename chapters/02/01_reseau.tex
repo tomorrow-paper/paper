@@ -18,7 +18,7 @@ réseau routier qui est un graphe \emph{orienté}, car il possède des rues \emp
 \begin{figure}[h]
     \centering
     \includegraphics[width=400px]{chapters/02/images/reseaux.png}
-    \caption{\label{Réseaux, graphes} Différentes formes de graphes}
+    \caption{\label{network_graphs} Différentes formes de graphes}
 \end{figure}
 
 \paragraph{} On peut retrouver naturellement certaines de ces constructions. Le réseau hiérarchique (2) existe
@@ -243,11 +243,26 @@ par le Réseau, induisant à la fois une plus grande transparence de tous et une
 
 \paragraph{Réseau... universel ?}
 
-\paragraph{} Ainsi, puisque notre vecteur d'échange est déjà en place, 
+\paragraph{} Qu'entend-on exactement par \emph{réseau universel} ? Un réseau \guillemotleft dont la juridiction s'étend de
+droit à la terre entière\guillemotright \cite{Universel0}, omniprésent et omniscient. Le vecteur d'échange est, comme nous 
+l'avons vu précédemment, déjà en place : internet \emph{est} un réseau global, permettant de connecter deux individus d'un 
+bout à l'autre de la planète. Entrons alors, si vous le voulez bien, dans le domaine de l'imaginaire.
 
-\paragraph{TODO} "Idéal" de la mise en place d'un Réseau universel, omniprésent
-et omniscient. Un tel système global impliquerait la mise en place d'un système hautement
-distribué, voire \emph{"participatif"}.
+\paragraph{} Imaginons un état au sein duquel serait déployé une véritable \emph{blockchain nationale} ! Tous les services
+publics y seraient déployés sous forme de ÐApps, rendant toutes les interactions des citoyens avec l'administration aisées
+et rapides, tout en garantissant une transparence totale d'un côté comme de l'autre. 
 
-\paragraph{TODO} Qu'est-ce qu'un réseau 'universel' ? Quels sont ses avantages ? Ses inconvénients ?
-Qu'implique techniquement sa mise en place ? Est-ce réalisable aujourd'hui ? Qu'est-ce qu'un réseau distribué ? 
+\paragraph{} Imaginons à présent que nous utilisions notre prototype de \lstinline{recuperator} (voir section \ref{prototype_recuperator}
+page \pageref{prototype_recuperator}) pour aggréger le profil complet d'une personne, des simples faits la concernant jusqu'à
+son profil psychologique construit à partir de ses interactions sur les réseaux, et que nous le maintenions à jour dans 
+ce même réseau étatique.
+
+\paragraph{} Imaginons qu'au niveau mondial, chaque État fonctionne de cette exacte manière, et qu'un réseau supplémentaire,
+situé au dessus des réseaux étatiques, y puise toute sorte d'information. Un Réseau universel. Quels pourraient alors être
+les usages fait de ces données ? Du profil d'un citoyen à l'ensemble de ses interactions avec l'administration fiscale 
+locale, nous serions tous mis à nu... Mais sur un même pied d'égalité.
+
+\paragraph{TODO} Ce monde imaginaire alternatif, c'est exactement ce que nous vous proposons avec ce second prototype : 
+\lstinline{tomorrow-network} (\url{https://github.com/tomorrow-paper/tomorrow-network}), contenant une infrastructure clé
+en main déployable sous Docker et un exemple simple de Smart Contracts permettant d'enregistrer et de mettre à jour le 
+profil d'un utilisateur.
