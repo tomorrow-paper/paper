@@ -82,12 +82,67 @@ En \emph{informatique industrielle} l'IA est utilisée en logistique, pour optim
 encore le remplissage de ces derniers. Le rangement d'un entrepôt peut également être optimisé grâce à des algorithme d'IA.
 Les composants fabriqués peuvent être rendus plus efficaces, moins chèrs, en modifiant leur forme, leur composition ou 
 leur disposition. L'intelligence artificielle s'applique en fait à \emph{toute situation à entrées données qui peut
-être optimisable}. 
+être optimisable}.
 
-\paragraph{} ------------------------------------
+\paragraph{Métaheuristiques, optimums, applications}
 
-\paragraph{} Les métaheuristiques d'optimisation, optimums locaux et globaux, exemples. 
-Leur domaine d'application
+\paragraph{} Ces problèmes d'optimisation sont très courants dans la vie de tous les jours, et sont pourtant
+difficiles à résoudre par un ordinateur - et encore plus par un humain - car le nombre de solutions est en
+général très grand. Nous allons ici présenter les différentes techniques pour les résoudre, qui consistent 
+en la recherche d'optimums globaux. Ces techniques sont aussi appellées métaheuristiques, des mots grecs \emph{meta}
+(au-delà) et \emph{heuriskein} (trouver). Même s'il n'y a pas de consensus sur la définition d'une heuristique, nous
+nous alignons avec la définition de S. Le Digabel \cite{Metaheuristics0} :
+
+\begin{itemize}
+    \item Une heuristique est une technique de résolution spécialisée à un problème. Elle ne garantit pas la qualité de
+    la solution obtenue
+    \item Une métaheuristique est une heuristique générique qu’il faut adapter à chaque problème
+\end{itemize}
+
+\paragraph{} Les métaheuristiques sont donc des \emph{stratégies} qui permettent de \emph{guider} la recherche vers une
+solution optimale. Elle peuvent consister et des recherches d'optimums locaux comme en des processus d'apprentissage complexes,
+sont non-déterministes et en ces sens ne garantissent pas l'optimalité.
+
+\paragraph{} Un optimum, c'est un minimum ou un maximum. Lorsqu'il est local, cela signifie que c'est un optimum pour \emph{une
+partie} de l'ensemble de définition de notre problème. Lorsqu'il est global, c'est alors un optimum pour \emph{tout l'ensemble
+de définition} de notre fonction. On remarquera qu'il est possible d'avoir plusieurs optimums globaux. Nous nous interesserons 
+uniquement aux minimisations, maximiser $f(x)$ consistant finalement à minimiser $-f(x)$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=250px]{chapters/03/images/optimums.png}
+    \caption{\label{comparatif} \emph{Local and global optimums}, \cite{Optimums0}}
+\end{figure}
+
+\paragraph{} Pour des fonctions simples, il est possible d'étudier ces dernières afin trouver un minimum global.
+C'est le cas pour des fonctions comme $f(x) = 2 + 1/x$ avec $x \in [1, 3]$ qui à un minimum en 3 où elle vaut $7/3$.
+Cependant, dans la réalité, ces fonctions sont beaucoup trop complexes - en taille, en paramètres, en constructions
+mathématiques - et nous avons alors recours aux \emph{métaheuristiques} et à la \emph{recherche exhaustive} afin
+de trouver des solutions satisfaisantes. Il existe plusieurs métaheuristiques : \emph{algorithmes gloutons, descente
+de gradient, recherche tabou, recuit simulé, par essaims particulaires}.. leur implémentation commentée est laissée
+en annexe au lecteur curieux, aussi nous attarderons-nous ici sur les domaines d'application.
+
+\paragraph{} Ces algorithmes sont régulièrement utilisés car ils interviennent lorsqu'il n'y a pas de moyen pour 
+calculer un optimum de manière mathématique ou lorsque cela prendrait trop de temps. On espère alors obtenir un
+résultat \emph{au plus proche} de la réalité. On les retrouve :
+\begin{itemize}
+    \item En \emph{électronique}, pour améliorer le design de cartes imprimées en minimisant le nombre de fils et 
+    en minimisant la place requise par les différents composants.
+    \item En \emph{finance}, où elles permettent d'optimiser un porte-feuille d'actions en cherchant à \emph{limiter
+    les risques} ou en \emph{maximisant} les gains pour une somme donnée.
+    \item En \emph{logistique}, dans des problèmes \emph{d'ordonnancement} comme par exemple créer les horaires pour
+    des trains, bus ou avions. On va chercher par exemple à garder le moins possible les véhicules sur place (en gare, 
+    aéroport).
+    \item En \emph{conception}, pour trouver facilement les formes ou matériaux adéquats, ainsi qu'en \emph{construction}
+    pour améliorer les formes des structures porteuses.
+    \item Dans le domaine \emph{militaire}, principalement comme aide à l'homme afin \emph{de minimiser l'erreur
+    humaine}. 
+\end{itemize}
+
+\paragraph{} Les applications des ces métaheuristiques sont donc \emph{diverses et variées}, grâce au caractère \emph{
+adaptable} de ces dernières et à leur \emph{faible coût de mise en pratique}. Néanmoins, elle fournissent une
+solution \emph{absolue}, et sont donc moins efficaces que d'autres catégories d'algorithmes lorsqu'il s'agit de traiter
+de problèmes \emph{particuliers, spécialisés}. La recherche de chemins en est un bon exemple. 
 
 \paragraph{} ------------------------------------
 
