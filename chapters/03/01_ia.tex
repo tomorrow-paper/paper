@@ -111,7 +111,7 @@ uniquement aux minimisations, maximiser $f(x)$ consistant finalement à minimise
 \begin{figure}[h]
     \centering
     \includegraphics[width=250px]{chapters/03/images/optimums.png}
-    \caption{\label{comparatif} \emph{Local and global optimums}, \cite{Optimums0}}
+    \caption{\label{optimums} \emph{Local and global optimums}, \cite{Optimums0}}
 \end{figure}
 
 \paragraph{} Pour des fonctions simples, il est possible d'étudier ces dernières afin trouver un minimum global.
@@ -146,8 +146,46 @@ de problèmes \emph{particuliers, spécialisés}. La recherche de chemins en est
 
 \paragraph{} ------------------------------------
 
-\paragraph{} La recherche de chemins. Théorie des graphes, Bellman-Ford, Dijkstra, A*.
-Ouverture sur le GPS et les services type Uber
+\paragraph{Recherche de chemins, Théorie des graphes}
+
+\paragraph{} De nombreux domaines font face à la recherche de chemins, dont le plus connu est certainement aujourd'hui
+celui des GPS. Le champ est en fait bien plus vaste, car tous les problèmes associés peuvent être représentés sous
+forme de \emph{graphes}, dont nous avons vu la forme naturelle précédemment (voir \ref{natural_networks}). Et nombreux
+sont les problèmes pouvant être représentés sous la forme d'un graphe, à l'exemple de l'enchainement des mouvements pour
+gagner au jeu d'echecs ou au jeu de go.
+
+\paragraph{} Un graphe est \guillemotleft Un ensemble de \emph{noeuds} ou \emph{sommets} liés par des \emph{arcs}\guillemotright.
+\cite{AI1} L'exemple suivant est un graphe simple comportant 18 sommets et 17 arcs. On parle de \emph{circuit} lorsqu'on
+peut partir d'un noeud et y revenir en ne passant pas deux fois par le même arc. L'ordre d'un graphe correspond au nombre
+de sommets qu'il contient, et enfin deux n\oe{}uds sont dits \emph{adjacents} s'il existe un arc permettant d'aller de
+l'un à l'autre.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=250px]{chapters/03/images/simple_graph.png}
+    \caption{\label{graph}, \emph{Simple graph}, \cite{GraphTheory0}}
+\end{figure}
+
+\paragraph{} Il existe plusieurs manières de représenter un graphe. La première est \emph{graphique}, comme dans 
+l'exemple ci-dessus. Ici, l'ordre et le placement des n\oe{}uds importent peu, mais on va toujours chercher à placer
+l'ensemble de sorte à rendre le graphe \emph{le plus lisible}, en décroisant les arcs par exemple. Mais cette représentation
+n'étant pas très pratique pour l'utilisation d'algorithmes, on préfèrera alors utiliser une \emph{matrice d'adjacence}.
+Pour cela, il suffit de représenter, \emph{dans un tableau à deux dimensions}, l'ensemble des \emph{adjacences entre les
+sommets} du graphe. Si, comme dans le cas précédent, le graphe ne possède pas \emph{de poids}, on peut alors numéroter
+notre matrice par un système binaire : 0 quand il n'y à pas de connexion et 1 quand il y en à une. Si, comme dans le cas
+suivant, notre graphe possède des poids, c'est à dire que le chemin \emph{entre deux n\oe{}uds possède une valeur}, on
+utilisera le signe $\infty$ lorsque deux n\oe{}uds ne sont pas reliés par un arc, et 0 pour le coût entre un n\oe{}ud et
+lui-même.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=250px]{chapters/03/images/weighted_graph.png}
+    \caption{\label{weighted_graph}, \emph{Graph with weights}, \cite{GraphTheory1}}
+\end{figure}
+
+\paragraph{Algorithmes naïfs et intelligents, applications}
+
+\paragraph{} Ouverture sur le GPS et les services type Uber
 
 \paragraph{} ------------------------------------
 
