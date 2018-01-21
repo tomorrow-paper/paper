@@ -114,7 +114,7 @@ uniquement aux minimisations, maximiser $f(x)$ consistant finalement à minimise
     \caption{\label{optimums} \emph{Local and global optimums}, \cite{Optimums0}}
 \end{figure}
 
-\paragraph{} Pour des fonctions simples, il est possible d'étudier ces dernières afin trouver un minimum global.
+\paragraph{} Pour des fonctions simples, il est possible d'étudier ces dernières afin de trouver un minimum global.
 C'est le cas pour des fonctions comme $f(x) = 2 + 1/x$ avec $x \in [1, 3]$ qui à un minimum en 3 où elle vaut $7/3$.
 Cependant, dans la réalité, ces fonctions sont beaucoup trop complexes - en taille, en paramètres, en constructions
 mathématiques - et nous avons alors recours aux \emph{métaheuristiques} et à la \emph{recherche exhaustive} afin
@@ -139,12 +139,10 @@ résultat \emph{au plus proche} de la réalité. On les retrouve :
     humaine}. 
 \end{itemize}
 
-\paragraph{} Les applications des ces métaheuristiques sont donc \emph{diverses et variées}, grâce au caractère \emph{
+\paragraph{} Les applications de ces métaheuristiques sont donc \emph{diverses et variées}, grâce au caractère \emph{
 adaptable} de ces dernières et à leur \emph{faible coût de mise en pratique}. Néanmoins, elle fournissent une
 solution \emph{absolue}, et sont donc moins efficaces que d'autres catégories d'algorithmes lorsqu'il s'agit de traiter
 de problèmes \emph{particuliers, spécialisés}. La recherche de chemins en est un bon exemple. 
-
-\paragraph{} ------------------------------------
 
 \paragraph{Recherche de chemins, Théorie des graphes}
 
@@ -172,7 +170,7 @@ l'ensemble de sorte à rendre le graphe \emph{le plus lisible}, en décroisant l
 n'étant pas très pratique pour l'utilisation d'algorithmes, on préfèrera alors utiliser une \emph{matrice d'adjacence}.
 Pour cela, il suffit de représenter, \emph{dans un tableau à deux dimensions}, l'ensemble des \emph{adjacences entre les
 sommets} du graphe. Si, comme dans le cas précédent, le graphe ne possède pas \emph{de poids}, on peut alors numéroter
-notre matrice par un système binaire : 0 quand il n'y à pas de connexion et 1 quand il y en à une. Si, comme dans le cas
+notre matrice par un système binaire : 0 quand il n'y a pas de connexion et 1 quand il y en a une. Si, comme dans le cas
 suivant, notre graphe possède des poids, c'est à dire que le chemin \emph{entre deux n\oe{}uds possède une valeur}, on
 utilisera le signe $\infty$ lorsque deux n\oe{}uds ne sont pas reliés par un arc, et 0 pour le coût entre un n\oe{}ud et
 lui-même.
@@ -234,6 +232,28 @@ est semblable aux algorithmes précédents à l'exception importante qu'il visit
 prometteur} en suivant.
 
 \paragraph{Domaines d'application}
+
+\paragraph{} Tous ces algorithmes sont utilisés dans de nombreux domaines. Un premier exemple évident
+est \emph{la recherche d'itinéraires}. Tous les logiciels qui permettent de se déplacer, quelque soit le moyen,
+tous les GPS utilisent des algorithmes de \emph{pathfinding}. Etant donné les modèles complexes sur lesquels
+ils s'appuient parfois (comme par exemple \emph{Google Maps}), ces algorithmes doivent être \emph{bien optimisés},
+et privilégier \emph{les grands axes} quand ils le peuvent. Il est intéressant de constater que le détail de tels
+algorithmes n'est pas communiqué. Nous defendons la publication ouverte de tous les logiciels permettant de près
+ou de loin d'avoir des activités proches du \emph{tracking}.
+
+\paragraph{} Le \emph{pathfinding} est également très utilisé dans les \emph{jeux vidéos}, en particulier l'algorithme qui
+est très efficace comme nous l'avons vu lorsqu'il s'agit de trouver des chemins dans des espaces \emph{ouverts}, ou
+avec \emph{peu d'obstacles}. Son efficacité est particulièrement appréciée dans le milieu de jeu vidéo qui est 
+un environnement riche en contraintes d'optimisation. En \emph{robotique}, la recherche de chemins permet à un robot,
+dans une \emph{situation réelle}, de trouver le meilleur chemin pour aller à un endroit, et ce \emph{en prenant compte des
+modifications en temps réel de l'environnement}.
+
+\paragraph{} Dans \emph{les réseaux}, des algorithmes de \emph{pathfinding} sont utilisés pour le \emph{routage}. Internet
+en est un excellent exemple, où le protocole RIP (pour \emph{Routing Information Protocol}) utilise ainsi Bellman-Ford, en
+envoyant toutes les 30 secondes les nouvelles routes. \cite{AI1} Aussi le protocole OSPF, qui à été inventé en premier lieu
+pour remplacer RIP, fonctionne avec l'algorithme de Dijkstra, qui est comme nous l'avons vu une amélioration de l'algorithme
+de Bellman-Ford. Enfin en \emph{théorie des jeux}, où l'espace de possibilités est en général \emph{bien trop vaste}, ils
+permettent d'approcher des positions gagnantes, ou du moins \emph{plus intéressantes que celle de départ}.
 
 \paragraph{} ------------------------------------
 
