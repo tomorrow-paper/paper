@@ -1,9 +1,22 @@
 \section{Des contraintes architecturales}
 
-\paragraph{Des contraintes à prendre en compte} Scalabilité, résilience..
+\paragraph{Brouillon}
 
-\paragraph{} Solution envisageable : la blockchain, registre distribué mondial, immuable. Cependant, problèmes de scalabilité
-à prendre en compte à l'heure actuelle :
+\begin{enumerate}
+    \item Quelles contraintes architecturales pour la mise en place d'un réseau universel ?
+    Nécessité d'adresser des problèmes de latence, scalabilité et résilience.
+    \item Étude de cas : les microservices. Plus grande scalabilité et réutilisabilité si le couplage entre les composants
+    est faible ; de même celà permet une forte résilience du système, qui peut rester - partiellement - opérationel quand
+    bien même l'un des composants viendrait à disparaître. Induit généralement une augmentation de la latence applicative.
+    Gestion complexe des versions des différents services et augmentation de la complexité du déploiement. Comment, à l'échelle
+    mondiale, serait gérée une telle infrastructure ?
+    \item Étude de cas : la blockchain. Distribution des acteurs et des données, grande résilience du réseau mais scalabilité
+    du système et latence - en fonction de la technologie - potentiellement accompagnée d'un coût d'usage élevé.
+\end{enumerate}
+
+\paragraph{} Dans un système fortement distribué, la latence est le prix à payer de la résilience.
+
+\paragraph{} Problèmes de scalabilité à prendre en compte avec les technologies blockchain :
 
 \begin{itemize}
     \item ETH : CryptoKitties (\url{https://www.cryptokitties.co/}) qui a embourbé le réseau en novembre 2017. 
@@ -15,5 +28,3 @@
 \end{itemize}
 
 \paragraph{Vecteurs d'adhésion} OS, Suprématie Windows/OSX
-
-\paragraph{} Do it Yourself : Mettez en place votre propre télémétrie ! (Keylogger ?)
