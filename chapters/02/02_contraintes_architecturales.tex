@@ -1,21 +1,29 @@
 \section{Des contraintes architecturales}
 
-\paragraph{} Cependant, le choix de l'architecture que l'on souhaiterait mettre en place de manière \emph{globale} doit 
+\paragraph{} Cependant, le choix de l'architecture que l'on souhaite mettre en place de manière \emph{globale} doit 
 être sagement réfléchi. En effet, les contraintes d'un tel déploiement et de l'ampleur de l'utilisation de ce système
 doivent être clairement identifiées et adressées dans le choix même de l'architecture.
 
-\paragraph{} Le premier obstacle à une mise en place d'un service à grande échelle est la \emph{scalabilité}. \cite{Scalability0}
+\paragraph{} Le premier obstacle à une mise en place d'un service à grande échelle est la \emph{scalabilité}, c'est-à-dire
+la capacité qu'a un service à s'adapter à un plus grand trafic tout en conservant une qualité de service et des performances
+identiques ; en bref, c'est sa capacité à \emph{monter en charge} \cite{Scalability0}. Il s'agit là d'un enjeu critique pour
+un service dont l'ambition est d'être déployé et utilisé à l'échelle mondiale ; elle devra donc être capable de prendre en
+charge une forte montée du trafic à un instant \emph{T} sans que l'expérience utilisateur n'en soit pour autant affectée.
 
-\paragraph{TODO} Résilience.
+\paragraph{} La \emph{résilience}, c'est-à-dire la \emph{tolérance à la panne}, est le second obstacle qui devra être franchi.
+En effet, aussi performante soit-elle, une application ne sera jamais capable de durer dans le temps si elle subit ne serait-ce
+que de courtes périodes d'inaccessibilité de manière répétée. Ainsi, un service résilient est en capacité de fournir une
+\emph{continuité de service} quand bien même certains de ses composants viendraient à cesser de fonctionner.
 
-\paragraph{TODO} Dans un système fortement distribué, la latence est le prix à payer de la résilience. Elle nécessite une 
-disponibilité du service dans de nombreuses zones géographiques, réduisant par là même les risques de sinistre. Il est alors
+\paragraph{} Mais dans un système fortement distribué, la \emph{latence} est le prix à payer de la résilience. Cette dernière nécessiterait
+la mise en disponibilité du service dans de nombreuses zones géographiques, réduisant par là même les risques de sinistre. Il serait alors
 nécessaire, soit de mettre en place un cache applicatif ou un CDN (\emph{Content Delivery Network}) pour optimiser les 
-accès aux ressources ; des serveurs proxy ou des tunnels dédiés pour accéder directement au service ; déployer plusieurs
-instances de l'applciation dans les différentes régions couvertes, ce qui nécessite une gestion adéquat des \emph{états}
-au sein de l'application ainsi qu'un moyen de resynchroniser l'ensemble des données de manière à les aggréger.
+accès aux ressources ; des serveurs proxy ou des tunnels dédiés pour accéder directement au service ; voire de déployer plusieurs
+instances de l'application dans les différentes régions couvertes, ce qui nécessiterait une gestion adéquat des \emph{états}
+au sein de l'application ainsi que de prévoir un moyen de resynchroniser l'ensemble des données si cela s'avérait nécessaire.
 
-\paragraph{} La réponse apportée à une contrainte d'architecture peut elle-même lever d'autres questions \& challenges.
+\paragraph{} Il est important d'avoir conscience que la réponse apportée à un problème d'architecture peut elle-même révéler 
+d'autres questions \& challenges.
 
 \paragraph{} Pour étudier les solutions que l'on peut apporter à ces différentes contraintes, nous vous proposons d'étudier
 ci-dessous trois architectures qui adressent chacune d'entre elles de manière différente, disposant de leurs propres
@@ -24,18 +32,40 @@ avantages et inconvénients.
 
 \paragraph{Architecture Monolithique}
 
-\cite{Microservices3} \cite{Microservices4} \cite{Microservices5} \cite{Microservices6}
+\paragraph{} Parler de \emph{monolithe} est de nos jours presque une insulte dans le monde du développement logiciel. Nous 
+l'utilisons - à l'instar du \emph{legacy} - comme un terme péjoratif, sous-entendant que le projet est dôté d'une \emph{codebase}
+mal architecturée, aux couplages forts et aux déploiements longs et laborieux.
 
-\paragraph{TODO} Étude de cas : les monolithes. Développement et déploiement simple. Maintenance et évolution dépendant fortement
-du couplage et de la qualité générale de la codebase. Scalabilité complexe, d'autant plus si le monolithe conserve un 
-état. Association forte à une stack technologique qu'il devient laborieux de faire évoluer. Faible latence au sein de 
-l'application. Nécéssité de mettre en place une architecture supplémentaire (2\up{nd} layer) pour prendre en charge et
-répartir la charge.
+\paragraph{} Mais saviez-vous que \url{https://StackExchange.com}, ainsi que ses \emph{plus de 170 sites} de questions-réponses
+communautaires (dont \url{https://StackOverflow.com}, bien connu des développeurs) étaient des applications monolithiques 
+parvenant à maintenir un temps de réponse moyen de \emph{11.80 millisecondes} \cite{Microservices7} ?
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=400px]{chapters/02/images/stackexchange.png}
+    \caption{\label{stackexchange_architecture} Architecture des services StackExchange.}
+\end{figure}
+
+\paragraph{} Il est donc important de savoir raison garder. Tout d'abord, le grand avantage d'une architecture monolithique
+est que le développement et le déploiement de l'application sont en théorie plus simples à effectuer. La maintenance et 
+les évolutions applicatives dépendent quant à elles fortement du couplage des composants au sein même de l'application et 
+de la qualité générale de la \emph{codebase}. De même, la latence est normalement assez faible au sein de la solution car,
+hors systèmes externes, les appels ne consistent qu'à des exécutions en mémoire.
+
+\paragraph{} Cependant, le monolithe pouvant être amené à grossir rapidement, il va lier très fortement l'équipe de développement
+à une \emph{stack technologique} qu'il sera potentiellement laborieux de faire évoluer. Les changements de version peuvent 
+nécessité une quantité non négligeable de développement s'ils ne sont pas rétro-compatibles, sans parler d'un changement 
+complet de technologie alors que le projet a déjà plusieurs années de vie derrière lui.
+
+\paragraph{} Enfin, la scalabilité peut s'avérer être une contrainte complexe à abattre, d'autant plus si le monolithe
+conserve un \emph{état}, quel qu'il soit, durant son \emph{runtime}. Ainsi, il est bien souvent nécessaire de mettre en place
+des solutions supplémentaires pour servir de pont entre les utilisateurs et le service : on parle alors de \emph{2\up{nd} layer},
+ou \emph{seconde couche}, qui sera alors responsable de la répartition de la charge entre les différentes instances de l'application
+(comme illustré sur la figure \ref{stackexchange_architecture}). Si un état est conservé, un \emph{store} pourra être commun
+à l'ensemble des instances pour qu'elles puissent le récupérer et le mettre à jour si nécessaire.
 
 
-\paragraph{Microservices}
-
-\cite{Microservices0} \cite{Microservices1} \cite{Microservices2}
+\paragraph{Microservices} \cite{Microservices0} \cite{Microservices1} \cite{Microservices2}
 
 \paragraph{TODO} Étude de cas : les microservices. Plus grande scalabilité et réutilisabilité si le couplage entre les composants
 est faible ; de même celà permet une forte résilience du système, qui peut rester - partiellement - opérationel quand
@@ -44,9 +74,7 @@ Gestion complexe des versions des différents services et augmentation de la com
 mondiale, serait gérée une telle infrastructure ?
 
 
-\paragraph{Blockchain}
-
-\cite{Blockchain0} \cite{Blockchain1}
+\paragraph{Blockchain} \cite{Blockchain0} \cite{Blockchain1}
 
 \paragraph{TODO} Étude de cas : la blockchain. Distribution des acteurs et des données, grande résilience du réseau mais scalabilité
 du système et latence - en fonction de la technologie - potentiellement accompagnée d'un coût d'usage élevé.
