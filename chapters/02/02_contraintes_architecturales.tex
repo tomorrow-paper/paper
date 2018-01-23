@@ -1,22 +1,57 @@
 \section{Des contraintes architecturales}
 
-\paragraph{Brouillon}
+\paragraph{} Cependant, le choix de l'architecture que l'on souhaiterait mettre en place de manière \emph{globale} doit 
+être sagement réfléchi. En effet, les contraintes d'un tel déploiement et de l'ampleur de l'utilisation de ce système
+doivent être clairement identifiées et adressées dans le choix même de l'architecture.
 
-\begin{enumerate}
-    \item Quelles contraintes architecturales pour la mise en place d'un réseau universel ?
-    Nécessité d'adresser des problèmes de latence, scalabilité et résilience.
-    \item Étude de cas : les microservices. Plus grande scalabilité et réutilisabilité si le couplage entre les composants
-    est faible ; de même celà permet une forte résilience du système, qui peut rester - partiellement - opérationel quand
-    bien même l'un des composants viendrait à disparaître. Induit généralement une augmentation de la latence applicative.
-    Gestion complexe des versions des différents services et augmentation de la complexité du déploiement. Comment, à l'échelle
-    mondiale, serait gérée une telle infrastructure ?
-    \item Étude de cas : la blockchain. Distribution des acteurs et des données, grande résilience du réseau mais scalabilité
-    du système et latence - en fonction de la technologie - potentiellement accompagnée d'un coût d'usage élevé.
-\end{enumerate}
+\paragraph{} Le premier obstacle à une mise en place d'un service à grande échelle est la \emph{scalabilité}. \cite{Scalability0}
 
-\paragraph{} Dans un système fortement distribué, la latence est le prix à payer de la résilience.
+\paragraph{TODO} Résilience.
 
-\paragraph{} Problèmes de scalabilité à prendre en compte avec les technologies blockchain :
+\paragraph{TODO} Dans un système fortement distribué, la latence est le prix à payer de la résilience. Elle nécessite une 
+disponibilité du service dans de nombreuses zones géographiques, réduisant par là même les risques de sinistre. Il est alors
+nécessaire, soit de mettre en place un cache applicatif ou un CDN (\emph{Content Delivery Network}) pour optimiser les 
+accès aux ressources ; des serveurs proxy ou des tunnels dédiés pour accéder directement au service ; déployer plusieurs
+instances de l'applciation dans les différentes régions couvertes, ce qui nécessite une gestion adéquat des \emph{états}
+au sein de l'application ainsi qu'un moyen de resynchroniser l'ensemble des données de manière à les aggréger.
+
+\paragraph{} La réponse apportée à une contrainte d'architecture peut elle-même lever d'autres questions \& challenges.
+
+\paragraph{} Pour étudier les solutions que l'on peut apporter à ces différentes contraintes, nous vous proposons d'étudier
+ci-dessous trois architectures qui adressent chacune d'entre elles de manière différente, disposant de leurs propres
+avantages et inconvénients.
+
+
+\paragraph{Architecture Monolithique}
+
+\cite{Microservices3} \cite{Microservices4} \cite{Microservices5} \cite{Microservices6}
+
+\paragraph{TODO} Étude de cas : les monolithes. Développement et déploiement simple. Maintenance et évolution dépendant fortement
+du couplage et de la qualité générale de la codebase. Scalabilité complexe, d'autant plus si le monolithe conserve un 
+état. Association forte à une stack technologique qu'il devient laborieux de faire évoluer. Faible latence au sein de 
+l'application. Nécéssité de mettre en place une architecture supplémentaire (2\up{nd} layer) pour prendre en charge et
+répartir la charge.
+
+
+\paragraph{Microservices}
+
+\cite{Microservices0} \cite{Microservices1} \cite{Microservices2}
+
+\paragraph{TODO} Étude de cas : les microservices. Plus grande scalabilité et réutilisabilité si le couplage entre les composants
+est faible ; de même celà permet une forte résilience du système, qui peut rester - partiellement - opérationel quand
+bien même l'un des composants viendrait à disparaître. Induit généralement une augmentation de la latence applicative.
+Gestion complexe des versions des différents services et augmentation de la complexité du déploiement. Comment, à l'échelle
+mondiale, serait gérée une telle infrastructure ?
+
+
+\paragraph{Blockchain}
+
+\cite{Blockchain0} \cite{Blockchain1}
+
+\paragraph{TODO} Étude de cas : la blockchain. Distribution des acteurs et des données, grande résilience du réseau mais scalabilité
+du système et latence - en fonction de la technologie - potentiellement accompagnée d'un coût d'usage élevé.
+
+\paragraph{TODO} Problèmes de scalabilité à prendre en compte avec les technologies blockchain :
 
 \begin{itemize}
     \item ETH : CryptoKitties (\url{https://www.cryptokitties.co/}) qui a embourbé le réseau en novembre 2017. 
@@ -27,4 +62,7 @@
     le réseau Bitcoin.
 \end{itemize}
 
-\paragraph{Vecteurs d'adhésion} OS, Suprématie Windows/OSX
+
+\paragraph{Un Réseau hétérogène}
+
+\paragraph{TODO} L'hétérogénité n'est pas un frein à l'unité. L'unité c'est le tout.
