@@ -65,13 +65,66 @@ ou \emph{seconde couche}, qui sera alors responsable de la répartition de la ch
 à l'ensemble des instances pour qu'elles puissent le récupérer et le mettre à jour si nécessaire.
 
 
-\paragraph{Microservices} \cite{Microservices0} \cite{Microservices1} \cite{Microservices2}
+\paragraph{Microservices}
 
-\paragraph{TODO} Étude de cas : les microservices. Plus grande scalabilité et réutilisabilité si le couplage entre les composants
-est faible ; de même celà permet une forte résilience du système, qui peut rester - partiellement - opérationel quand
-bien même l'un des composants viendrait à disparaître. Induit généralement une augmentation de la latence applicative.
-Gestion complexe des versions des différents services et augmentation de la complexité du déploiement. Comment, à l'échelle
-mondiale, serait gérée une telle infrastructure ?
+\paragraph{} Gagnant en popularité depuis les quatre dernières années, l'architecture microservices part d'un postulat
+simple : s'il devient compliqué de faire évoluer une application monolithique et de conserver un couplage faible entre ses
+composants, il suffit de l'éclater en multiples \emph{microservices} intéragissant entre eux et prenant chacun en charge 
+un aspect de la logique métier de l'application.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=350px]{chapters/02/images/monolith_to_microservices.png}
+    \caption{\label{monolith_to_microservices} Exemple de transformation en microservices d'une plateforme de partage vidéo. \cite{Microservices1}}
+\end{figure}
+
+\paragraph{} Les avantages d'une telle architecture sont multiples :
+
+\paragraph{} Tout d'abord, cela permet une meilleure scalabilité du système dans son ensemble. Dans l'exemple de la plateforme
+de partage de vidéo de la figure \ref{monolith_to_microservices}, s'il y a beaucoup plus de visionnages que de mises en 
+ligne sur le service, il sera alors possible d'allouer plus de ressources au service \emph{Streaming} ou d'en déployer
+plusieurs instances \emph{sans impacter les autres services}. Les économies en terme de ressources sont énormes car, dans 
+le cas d'une architecture monolithique, une augmentation des ressources n'aurait qu'en partie bénéficié à la fonctionnalité 
+concernée, et le déploiement d'une nouvelle instance concernerait évidemment l'application toute entière.
+
+\paragraph{} Il est possible de réutiliser certains composants si le couplage entre ces derniers est \emph{faible}.
+Ainsi, si plusieurs projets au sein d'une entreprise disposent de certaines fonctionnalités en commun, il leur est possible 
+de réutiliser un microservice déjà déployé en production pour satisfaire leur besoin. C'est ici que l'importance d'un couplage
+faible se fait réellement ressentir : si l'intégralité des services dépendent les uns des autres, il est impossible de les
+réutiliser séparément en dehors du contexte de leur projet d'origine.
+
+\paragraph{} De plus, chaque service peut aussi être déployé indépendament des autres. Cela permet une plus grande flexibilité dans
+les cycles de développement de nouvelles fonctionnalités, augmentant la vélocité de l'équipe tout en réduisant les risques.
+Une mise à jour dans le composant \emph{Recommendations}, même si elle induisait une indisponibilité totale de cette fonctionnalité,
+serait quasiment invisible pour les utilisateurs qui continueraient d'utiliser le reste du service.
+
+\paragraph{} Enfin, cette architecture permet une forte résilience du système, qui peut alors rester - partiellement - 
+opérationel quand bien même l'un de ses composants viendrait à cesser de fonctionner. Ainsi, si le composant \emph{Upload}
+devenait innacessible, seule la mise en ligne de vidéos deviendrait inaccessible ; l'intégralité des utilisateurs aurait
+toujours la possibilité de visionner les vidéos présentes sur la plateforme.
+
+\paragraph{} Oui, mais.
+
+\paragraph{} Si, pris indépendament, le déploiement d'\emph{un} service est simplifié, il est important de conserver
+à l'esprit l'\emph{ensemble} de l'architecture dont le déploiement est, lui, énormément complexifié. Là où il suffisait de 
+déployer un service lors d'une mise à jour impactant l'ensemble des fonctionnalités, il est désormais nécessaire de procéder 
+à de nombreux déploiement simultanés, voire parfois séquentiels !
+
+\paragraph{} De même, la gestion de l'ensemble de ces microservices requiert un brin d'infrastructure supplémentaire.
+Un registre permettant d'effectuer du \emph{service discovery} est nécessaire pour savoir où se situe un service particulier.
+Un \emph{circuit breaker} est nécessaire pour permettre un \emph{mode dégradé} du système au cas où un service viendrait
+à s'effondrer. Un \emph{serveur de configuration} est judicieux pour centraliser la configuration de l'ensemble des services
+composant la nouvelle infrastructure. Un \emph{proxy} et un \emph{load balancer} pour abstraire la complexité de l'infrastructure
+aux consommateurs du service et répartir la charge entre les différentes instances. Si l'aspect métier bénéficie grandement
+de cette architecture, l'infrastructure n'en est que plus complexe à gérer.
+
+\paragraph{} Enfin, la latence \emph{peut} devenir un problème de taille si l'architecture n'a pas été correctement conçue.
+Ainsi, concevoir chaque microservice comme une API REST communiquant entre elles grâce à des appels HTTP synchrones est à
+\emph{proscrire absolument}. Il est alors nécessaire de mettre en place un \emph{bus de message} (\emph{message broker})
+permettant la production et la consommation asynchrone de messages (ou \emph{événements}) au sein du système. En fonction
+de la tâche qu'il devra accomplir, chaque microservice pourra alors \emph{produire} un message dans le message broker qui
+sera \emph{consommé} par un ou plusieurs autres microservices qui se seront au préalable \emph{abonnés} à ce type de messages.
+Cela permet de créer un système totalement asynchrone, ne réagissant qu'à des \emph{événements} survenant en son sein.
 
 
 \paragraph{Blockchain} \cite{Blockchain0} \cite{Blockchain1}
