@@ -194,11 +194,22 @@ et ne génère des blocs qu'en théorie toutes les 10 minutes.
 \begin{figure}[h]
     \centering
     \includegraphics[width=350px]{chapters/02/images/lightning_network.png}
-    \caption{\label{lightning_network} Alice et Bob envoient chacun 10\$ dans le canal Lightning. Une fois celui-ci fermé,
-    il n'enverra qu'une transaction unique de 20\$ au réseau principal, signée par des deux participants.}
+    \caption{\label{lightning_network} Alice et Bob s'envoient réciproquement 10\$ à travers un canal Lightning. Une fois
+    celui-ci fermé, il n'enverra qu'une unique transaction de 20\$, signée par les deux participants, au réseau Bitcoin.}
 \end{figure}
+
+\paragraph{} Ce fonctionnement permettra de \emph{désengorger} le réseau, qui n'aurait plus que la responsabilité de pérenniser
+la décision finale des parties prenantes d'un ensemble de transactions \emph{off-chain}, réduisant considérablement le nombre
+de transactions transitant directement sur le réseau et étant inscrites dans la blockchain.
 
 
 \paragraph{Un Réseau hétérogène}
 
-\paragraph{TODO} L'hétérogénité n'est pas un frein à l'unité. L'unité c'est le tout.
+\paragraph{} On constate donc que chaque architecture, bien qu'elle brille sous certains aspects, fait toujours montre de
+lacune. Il serait d'ailleurs puérile de penser pouvoir concevoir l'ensemble des systèmes d'une même manière : une architecture,
+à l'instar d'un système, résout les problèmes pour laquelle elle a été conçue ; sans vocation d'universalité.
+
+\paragraph{} Le paysage architectural de nos réseaux est \emph{hétérogène}, ce qui n'est aucunement un frein à leur unité.
+Car l'architecture, si elle est contrainte de l'agencement interne d'un système, n'influe pas directement sur ses interactions
+extérieures. Internet est ainsi peuplé d'une multitude de services n'ayant pas forcément connaissances des arcanes des uns et
+des autres ; cela n'est ni nécessaire à leur bon fonctionnement, ni à leurs interactions.
