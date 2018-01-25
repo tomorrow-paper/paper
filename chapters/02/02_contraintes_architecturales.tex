@@ -127,21 +127,76 @@ sera \emph{consommé} par un ou plusieurs autres microservices qui se seront au 
 Cela permet de créer un système totalement asynchrone, ne réagissant qu'à des \emph{événements} survenant en son sein.
 
 
-\paragraph{Blockchain} \cite{Blockchain0} \cite{Blockchain1}
+\paragraph{Blockchain}
 
-\paragraph{TODO} Étude de cas : la blockchain. Distribution des acteurs et des données, grande résilience du réseau mais scalabilité
-du système et latence - en fonction de la technologie - potentiellement accompagnée d'un coût d'usage élevé.
+\paragraph{} Les technologies blockchain, vous l'aurez sans doute compris, sont quant à elles totalement \emph{disruptives}.
+Il ne s'agit pas d'une \emph{architecture} à proprement parler mais bien d'un \emph{protocole} complet comprenant lui aussi
+son lot d'avantages et d'inconvénients.
 
-\paragraph{TODO} Problèmes de scalabilité à prendre en compte avec les technologies blockchain :
+\paragraph{} D'un point de vue architectural, le point fort des réseaux blockchain est leur \emph{résilience}. Les données
+étant répliquées sur l'ensemble des n\oe{}uds du réseau, un seul d'entre eux suffit à le recréer si un sinistre venait à se
+produire. Cette distribution des acteurs et des données permet à cette technologie d'assurer une grande tolérance à la faute,
+qu'elle soit humaine ou technologique. C'est un point particulièrement intéressant pour les blockchains permettant l'exécution
+de Smart Contracts telle qu'Ethereum - à laquelle nous nous intéresserons à partir de maintenant - : les applications contenues
+dans cet écosystème sont donc présentes sur l'ensemble du réseau et même \emph{exécutées} de manière totalement décentralisées ;
+il est impossible de prédire quel n\oe{}ud sera le prochain à exécuter les "instructions" contenues dans les transactions 
+transitants sur le réseau.
 
-\begin{itemize}
-    \item ETH : CryptoKitties (\url{https://www.cryptokitties.co/}) qui a embourbé le réseau en novembre 2017. 
-    Développement d'une solution de scaling : le \emph{Sharding}, \url{https://github.com/ethereum/sharding/blob/develop/docs/doc.md}
-    \item BTC : augmentation des frais de transaction due à l'intense usage du réseau.
-    Soft fork avec SegWit, servant de bases à deux solutions au problème de scalabilité : SegWit2x, hard fork du réseau,
-    et Lightning Network, une solution off-chain permettant l'ouverture et la fermeture de canaux transactionnels par dessus
-    le réseau Bitcoin.
-\end{itemize}
+\paragraph{} La latence en lecture est négligeable : chaque n\oe{}ud pouvant interroger sa base de données locale pour obtenir
+une information, il n'est pas nécessaire de la rechercher sur le réseau. Les modifications d'état d'un Smart Contract sont
+quant à eux contenus dans une transaction, qui est propagée sur le réseau et aggregée avec d'autres avant d'être "exécutée"
+lors du calcul du prochain \emph{bloc} de la chaîne. Sur Ethereum, ce processus se déclenche approximativement toutes les
+\emph{20 secondes}. Cela ne représente cependant pas une opération synchrone : une fois la transaction packagée et propagée
+sur le réseau, son intégration dans un bloc ne représente qu'une \emph{confirmation} de sa bonne écriture dans le registre 
+commun à l'ensemble des n\oe{}uds.
+
+\paragraph{} Ainsi, cette technologie apporte une notion d'asynchronisme des événements qui était jusque là absente de nos
+systèmes logiciels : même asynchrone, une opération était soit exécutée, soit annulée ou en échec. Ici l'opération, contenue 
+dans la transaction, est d'abord propagée sur le réseau distribué \emph{puis} réellement exécutée. Il est alors nécessaire 
+de mettre en place des mécanismes de retour en arrière dans l'éventualité - certes très faible - où la transaction serait refusée.
+De même, dans le cas d'une suite séquentielle d'opération, il est nécessaire d'attendre l'inscription de la transaction dans 
+un bloc avant de pouvoir passer à l'étape suivante. Bien que cela puisse apparaître comme une contrainte en terme de développement
+et de mise en place d'un système par dessus cette technologie, nous considérons qu'il s'agit plutôt nécessité inhérente au 
+fonctionnement même de cette nouvelle technologie, qui découle directement de ses propriétés de réseau distribué et \emph{immuable} ;
+un gage de l'intégrité du système, en quelque sorte.
+
+\paragraph{} Le principal problème auquel fait encore face cette technologie est sa difficulté à supporter une forte montée 
+en charge, induisant pour certaines blockchains une augmentation du coût de transaction. En novembre 2017 le phénomène
+\emph{CryptoKitties}, un jeu vidéo permettant de collectionner, d'échanger et de faire se reproduire des chats virtuels,
+avait littéralement \emph{embourbé} le réseau Ethereum à cause de l'afflux soudain de transactions dues à la popularité
+de ces chatons numériques.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=350px]{chapters/02/images/cryptokitties.png}
+    \caption{\label{cryptokitties} Page d'accueil du site \url{https://www.cryptokitties.co/}.}
+\end{figure}
+
+\paragraph{} Une solution de \emph{scaling} pour le réseau Ethereum est cependant en cours de développement : il s'agit du 
+\emph{Sharding} \cite{Blockchain0}. Le principe en est le suivant : plutôt que de propager et traiter les transactions de
+l'ensemble du réseau en même temps, ce dernier serait découpé en plusieurs \emph{partitions} (\emph{shard} signifiant 
+\emph{tesson}, ou \emph{éclat}) prenant chacune en charge la propagation et le traitement des transactions émises par les
+n\oe{}uds en faisant partie. Une fois un bloc généré par l'une des partition du réseau, il serait alors synchronisé à l'ensemble
+du réseau. On peut visualiser le \emph{sharding} comme une surcouche (\emph{2\up{nd} layer}) au réseau Ethereum, mais technologiquement
+intégré dans chaque n\oe{}ud. Il ne s'agit cependant pour l'instant que d'un projet hautement expérimental mais qui, peut-être, 
+permettra à Ethereum de surpasser sa limite moyenne des 7 à 15 transactions par secondes, loins de permettre un usage à grande
+échelle de la technologie à l'heure actuelle.
+
+\paragraph{} Le réseau Bitcoin rencontre quant à lui un problème de scalabilité similaire mais y apporte une réponse légèrement
+différente : le \emph{Lightning Network} \cite{Blockchain2}. Il s'agit ici aussi d'une solution \emph{2\up{nd} layer} mais
+fonctionnant cette fois de manière totalement autonome vis-à-vis du réseau principal (\emph{off-chain network}). Cette 
+technologie permet aux utilisateurs souhaitant effectuer une ou plusieurs transactions d'ouvrir un canal (\emph{channel})
+de paiement bidirectionnel permettant de procéder aux échanges de valeurs directement sur le réseau Lightning. Une fois
+le channel correctement fermé par l'ensemble des participants, les échanges sont aggrégées en un minimum de transactions
+qui seront envoyées au réseau Bitcoin. À l'heure actuelle, ce dernier est limité à en moyenne 3 à 7 transactions par secondes,
+et ne génère des blocs qu'en théorie toutes les 10 minutes.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=350px]{chapters/02/images/lightning_network.png}
+    \caption{\label{lightning_network} Alice et Bob envoient chacun 10\$ dans le canal Lightning. Une fois celui-ci fermé,
+    il n'enverra qu'une transaction unique de 20\$ au réseau principal, signée par des deux participants.}
+\end{figure}
 
 
 \paragraph{Un Réseau hétérogène}
