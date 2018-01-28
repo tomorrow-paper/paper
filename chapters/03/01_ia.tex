@@ -209,20 +209,20 @@ et A* (ou A étoile).
 
 \paragraph{} L'algorithme de Bellman-Ford nous garantit de trouver le chemin le plus court s'il en existe un. Ce n'est pas
 le plus optimisé mais celui qui fonctionne dans le plus de cas, car il accepte en effet des valeurs \emph{négatives} pour les
-arcs. De plus, s'il y a un circuit dont le \emph{poids total est négatif}, il peut le réperer et statuer qu'il n'existe alors
+arcs. De plus, s'il y a un circuit dont le \emph{poids total est négatif}, il peut le repérer et statuer qu'il n'existe alors
 pas de chemin le plus court. Il utilise la matrice des longueurs et est itératif. Après avoir initialisé à $+\infty$ la 
 longueur minimale de chaque n\oe{}ud, il parcourt chaque arc et met à jour les distances au n\oe{}ud courant si elles sont
 plus faibles. Il passe ensuite au n\oe{}ud suivant avec le poids le plus faible et réitère son procédé jusqu'à ce qu'il ait
 obtenu le chemin \emph{le plus court}.
 
-\paragraph{} L'algorithme de Dijkstra, certainement le plus connus des algorithmes de \emph{pathfinding}, est une amélioration
-de l'algorithme de Bellman-Ford, qui ne fonctionne que si toutes les distances sont positives. En remarquera que c'est généralement
+\paragraph{} L'algorithme de Dijkstra, certainement le plus connu des algorithmes de \emph{pathfinding}, est une amélioration
+de l'algorithme de Bellman-Ford, qui ne fonctionne que si toutes les distances sont positives. On remarquera que c'est généralement
 le cas dans les problèmes réels. Il se démarque en choisissant plus intelligemment l'ordre d'application des distances. En effet,
 au lieu de s'appliquer sur les arcs, il s'applique \emph{sur les noeuds}, et il ne revient jamais en arrière. De cette manière,
-chaque arc ne sera appliqué \emph{qu'une fois}. L'application des distances n\oe{}ud par n\oe{}ud permet une \emph{réelle
-optimisation} en termes de calculs et donc en terme \emph{de temps}.
+chaque arc ne sera appliqué \emph{qu'une fois}. L'application des distances n\oe{}ud par n\oe{}ud permet une \emph{
+optimisation} en terme de calculs et donc en terme \emph{de temps}.
 
-\paragraph{} Enfin, l'algorithme A* ne teste pas tous les chemins et ne peut pas assurer quer le chemin trouvé est le
+\paragraph{} Enfin, l'algorithme A* ne teste pas tous les chemins et ne peut pas assurer que le chemin trouvé est le
 plus court. Dans des cas comme le labyrinthe il sera très peu ou pas efficace, alors que c'est sur des espaces ouverts,
 avec peu d'obstacles qu'il sera très performant. Cet algorithme utilise des informations sur la localisation de son
 objectif afin de choisir la direction. En effet, à la manière d'un homme qui se repère dans une ville, A* se fonde sur le
@@ -238,12 +238,12 @@ est \emph{la recherche d'itinéraires}. Tous les logiciels qui permettent de se 
 tous les GPS utilisent des algorithmes de \emph{pathfinding}. Etant donné les modèles complexes sur lesquels
 ils s'appuient parfois (comme par exemple \emph{Google Maps}), ces algorithmes doivent être \emph{bien optimisés},
 et privilégier \emph{les grands axes} quand ils le peuvent. Il est intéressant de constater que le détail de tels
-algorithmes n'est pas communiqué. Nous defendons la publication ouverte de tous les logiciels permettant de près
+algorithmes n'est pas communiqué - nous defendons en effet la publication ouverte de tous les logiciels permettant de près
 ou de loin d'avoir des activités proches du \emph{tracking}.
 
-\paragraph{} Le \emph{pathfinding} est également très utilisé dans les \emph{jeux vidéos}, en particulier l'algorithme qui
-est très efficace comme nous l'avons vu lorsqu'il s'agit de trouver des chemins dans des espaces \emph{ouverts}, ou
-avec \emph{peu d'obstacles}. Son efficacité est particulièrement appréciée dans le milieu de jeu vidéo qui est 
+\paragraph{} Le \emph{pathfinding} est également très utilisé dans les \emph{jeux vidéos}, en particulier l'algorithme A*
+qui est très efficace comme nous l'avons vu lorsqu'il s'agit de trouver des chemins dans des espaces \emph{ouverts}, ou
+avec \emph{peu d'obstacles}. Son efficacité est particulièrement appréciée dans le milieu du jeu vidéo qui est 
 un environnement riche en contraintes d'optimisation. En \emph{robotique}, la recherche de chemins permet à un robot,
 dans une \emph{situation réelle}, de trouver le meilleur chemin pour aller à un endroit, et ce \emph{en prenant compte des
 modifications en temps réel de l'environnement}.
@@ -256,6 +256,8 @@ de Bellman-Ford. Enfin en \emph{théorie des jeux}, où l'espace de possibilité
 permettent d'approcher des positions gagnantes, ou du moins \emph{plus intéressantes que celle de départ}.
 
 \paragraph{} ------------------------------------
+
+\paragraph{Smartphones et IA}
 
 \paragraph{} La révolution du smartphone. La démocratisation de l'IA dans le smartphone.
 Quel avenir pour l'IA ?

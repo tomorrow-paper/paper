@@ -262,7 +262,7 @@ contre la version non distribuée, ce qui signifie qu'AlphaGo est aussi bien \em
 
 \paragraph{} Contrairement à AlphaGo qui à été entrainé au départ par l'étude de parties de professionnels, la version Zero d'AlphaGo saute
 cette étape et apprend en jouant directement contre elle-même. Une nouvelle forme \cite{AlphaGo2} d'apprentissage par renforcement lui permet
-d'être son propre professeur. Au départ, le réseau neural ne connait rien du jeu de go si ce n'est les règles, et joue donc des coups aléatoires.
+d'être son propre professeur. Au départ, le réseau neuronal ne connait rien du jeu de go si ce n'est les règles, et joue donc des coups aléatoires.
 Pendant la partie, le réseau neural se met à jour afin d'améliorer son système de prédiction. AlphaGo Zero joue ainsi contre sa nouvelle version,
 et ainsi de suite jusqu'à ce qu'il gagne réellement en niveau et que le réseau s'optimise. Cette technique est bien plus puissante que les anciennes
 versions d'AlphaGo car elle n'est plus contrainte par \emph{les limites de la connaissance humaine}. 
@@ -294,11 +294,45 @@ les systèmes dont il à été question jusqu'ici, qui ne restituaient qu'\emph{
 \paragraph{} La question se pose alors du \emph{fonctionnement} d'un tel système. Et il est en fait \emph{identique}
 à ce que nous avons vu jusqu'alors : lorsque la première \emph{tête} fait une prédiction, cela met à jour le modèle
 du \emph{corps}; et de la même manière pour la seconde tête. De cette façon, l'évolution à chaque tour est plus importante
-puisque ce ne sont plus une mais deux mise à jour des couches neuronales qui sont effectuées. Cela permet bien évidemment
+puisque ce ne sont plus une mais deux mises à jour des couches neuronales qui sont effectuées. Cela permet bien évidemment
 un renforcement plus important et plus rapide de notre système, mais cela ouvre également à la création de nouveaux systèmes :
 les réseaux neuronaux \emph{multi-têtes}.
 
-\paragraph{De la puissance multi-domaines des sorties multiples}
+\paragraph{Multi-Task Learning} D'ordinaire, le Machine Learning se charge de réaliser une optimisation
+en entraînant un ou plusieurs modèles afin d'accomplir \emph{une tâche}. Bien que les résultats obtenus soient satisfaisants, en se 
+focalisant sur une tâche unique, nous pouvons ignorer des informations qui permettraient une meilleure optimisation. En partageant la 
+\emph{représentation de tâches associées}, nous pouvons permettre à notre modèle de \emph{mieux généraliser} notre tâche d'origine.
+Cette approche se nomme l'apprentissage multi-tâches (\emph{Multi Task Learning} ou MTL) et ses principes ont été proposés en majorité 
+par \emph{Caruana} en 1998. \cite{NeuralNets1}
 
-\paragraph{Applications aux données humaines}
+\paragraph{} Le MTL à déjà été utilisé avec succès dans différents domaines, comme le traitement du langage naturel \cite{MultiLearning0},
+la reconnaissance vocale \cite{MultiLearning1} ou encore la compréhension des drogues \cite{MultiLearning2}. De manière générale, lorsqu'un
+problème de machine learning s'attache à optimiser \emph{plus d'une fonction} de minimisation, il fait effectivement du MTL. Deux méthodes 
+existent pour appliquer ce dernier :
+
+\begin{itemize}
+    \item Le \emph{Hard parameter sharing}, où les couches inférieures sont \emph{partagées entre toutes les tâches}, tout en gardant
+    des couches de sortie \emph{propres à chaque tâche}.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=200px]{chapters/03/images/hard-param-sharing.png}
+        \caption{\label{hard-param-sharing}\emph{Hard parameter sharing for MTL in DNN}, \cite{NeuralNets0}}
+    \end{figure}
+
+    \item Le \emph{Soft parameter sharing}, où chaque tâche possède \emph{ses propres couches inférieures}, mais où toutes les couches
+    inférieures des différentes tâches \emph{sont contraintes entre elles}, c'est-à-dire qu'elles se mettent à jour en fonction de la valeur
+    de leurs voisines.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=250px]{chapters/03/images/soft-param-sharing.png}
+        \caption{\label{soft-param-sharing}\emph{Soft parameter sharing for MTL in DNN}, \cite{NeuralNets0}}
+    \end{figure}
+\end{itemize}
+
+\paragraph{} Bien que le MTL soit de plus en plus utilisé depuis les vingt dernières années, il semblerait que l'utilisation 
+du \emph{hard paramater sharing} soit encore invasive et source de problèmes pour son application aux réseaux de neurones profonds.
+\cite{NeuralNets0} De plus, il est nécessaire de gagner en compréhension sur le fonctionnement des tâches, leurs \emph{similarités,
+relations et hiérarchie}, si nous souhaitons utiliser au mieux les capacités du MTL.
+
+\paragraph{Données humaines}
 
