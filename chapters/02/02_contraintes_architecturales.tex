@@ -40,10 +40,10 @@ mal architecturée, aux couplages forts et aux déploiements longs et laborieux.
 communautaires (dont \url{https://StackOverflow.com}, bien connu des développeurs) étaient des applications monolithiques 
 parvenant à maintenir un temps de réponse moyen de \emph{11.80 millisecondes} \cite{Microservices7} ?
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=400px]{chapters/02/images/stackexchange.png}
-    \caption{\label{stackexchange_architecture} Architecture des services StackExchange.}
+    \caption{\label{stackexchange_architecture}Architecture des services StackExchange.}
 \end{figure}
 
 \paragraph{} Il est donc important de savoir raison garder. Tout d'abord, le grand avantage d'une architecture monolithique
@@ -72,10 +72,10 @@ simple : s'il devient compliqué de faire évoluer une application monolithique 
 composants, il suffit de l'éclater en multiples \emph{microservices} intéragissant entre eux et prenant chacun en charge 
 un aspect de la logique métier de l'application.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=350px]{chapters/02/images/monolith_to_microservices.png}
-    \caption{\label{monolith_to_microservices} Exemple de transformation en microservices d'une plateforme de partage vidéo. \cite{Microservices1}}
+    \caption{\label{monolith_to_microservices}Exemple de transformation en microservices d'une plateforme de partage vidéo \cite{Microservices1}.}
 \end{figure}
 
 \paragraph{} Les avantages d'une telle architecture sont multiples :
@@ -166,10 +166,10 @@ en charge, induisant pour certaines blockchains une augmentation du coût de tra
 avait littéralement \emph{embourbé} le réseau Ethereum à cause de l'afflux soudain de transactions dues à la popularité
 de ces chatons numériques.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=350px]{chapters/02/images/cryptokitties.png}
-    \caption{\label{cryptokitties} Page d'accueil du site \url{https://www.cryptokitties.co/}.}
+    \caption{\label{cryptokitties}Page d'accueil du site \url{https://www.cryptokitties.co/}.}
 \end{figure}
 
 \paragraph{} Une solution de \emph{scaling} pour le réseau Ethereum est cependant en cours de développement : il s'agit du 
@@ -191,10 +191,10 @@ le channel correctement fermé par l'ensemble des participants, les échanges so
 qui seront envoyées au réseau Bitcoin. À l'heure actuelle, ce dernier est limité à en moyenne 3 à 7 transactions par secondes,
 et ne génère des blocs qu'en théorie toutes les 10 minutes.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=350px]{chapters/02/images/lightning_network.png}
-    \caption{\label{lightning_network} Alice et Bob s'envoient réciproquement 10\$ à travers un canal Lightning. Une fois
+    \caption{\label{lightning_network}Alice et Bob s'envoient réciproquement 10\$ à travers un canal Lightning. Une fois
     celui-ci fermé, il n'enverra qu'une unique transaction de 20\$, signée par les deux participants, au réseau Bitcoin.}
 \end{figure}
 

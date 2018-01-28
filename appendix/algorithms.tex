@@ -1,8 +1,8 @@
+\newpage
 \section{Algorithmes}
 \label{algorithms}
 
-\paragraph{} \cite{Algorithm2}, Algorithme de recherche en profondeur.
-
+\subsection{Recherche en profondeur \cite{Algorithm2}}
 \begin{lstlisting}
 using System;
 using System.Collections.Generic;
@@ -11,8 +11,10 @@ namespace KoderDojo.Examples {
     public class Graph<T> {
         public Graph() {}
 
-        public Graph(IEnumerable<T> vertices,
-                     IEnumerable<Tuple<T,T>> edges) {
+        public Graph(
+            IEnumerable<T> vertices,
+            IEnumerable<Tuple<T,T>> edges
+        ) {
             foreach(var vertex in vertices)
                 AddVertex(vertex);
 
@@ -65,8 +67,8 @@ namespace KoderDojo.Examples {
 }
 \end{lstlisting}    
 
-\paragraph{} \cite{Algorithm1}, Algorithme de recherche en largeur.
-
+\newpage
+\subsection{Recherche en largeur \cite{Algorithm1}}
 \begin{lstlisting}
 using System.Collections.Generic;
 
@@ -100,8 +102,8 @@ namespace KoderDojo.Examples {
 }
 \end{lstlisting}
 
-\paragraph{} \cite{Algorithm3}, Implémentation de l'algorithme de Dijkstra en C\#
-
+\newpage
+\subsection{Dijkstra \cite{Algorithm3}}
 \begin{lstlisting}
 using System;
 using System.Collections.Generic;

@@ -15,10 +15,10 @@ la \emph{Théorie des Graphes}. Lorsque toute relation entre deux n\oe{}uds d'un
 dans un sens et dans l'autre, nous parlons de graphes \emph{non orientés}. Ce n'est par exemple pas le cas pour le
 réseau routier qui est un graphe \emph{orienté}, car il possède des rues \emph{à sens unique}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=400px]{chapters/02/images/reseaux.png}
-    \caption{\label{network_graphs} Différentes formes de graphes}
+    \caption{\label{network_graphs}Différentes formes de graphes.}
 \end{figure}
 
 \paragraph{} On peut retrouver naturellement certaines de ces constructions. Le réseau hiérarchique (2) existe
@@ -46,28 +46,27 @@ le réseau peut continuer de fonctionner.
 
 \paragraph{} En informatique, lorsque plusieurs machines sont connectées entre elles, le plus souvent par des câbles, on
 parle alors de \emph{réseau}. Afin de comprendre pourquoi certaines topologies de réseaux existent, nous allons introduire 
-deux types de réseaux bien connus : \emph{le LAN et le WAN}.
+deux types de réseaux bien connus : le \emph{LAN} et le \emph{WAN}.
 
 \paragraph{} Le LAN, ou Local Area Network, se limite à un espace géographique déterminé. On peut prendre
 par exemple le contenu d'une salle, un étage, un immeuble. Ainsi les réseaux d'une école, d'un
-hopital, d'une gare, d'un aéroport, sont des LANs. Pour parler de transmission sans fil, ou
+hopital, d'une gare, d'un aéroport, sont des LAN. Pour parler de transmission sans fil, ou
 Wi-Fi, on utilise aussi le terme \emph{WLAN}, pour Wireless LAN. Les points d'accès Wi-Fi, qui se
 sont démultipliés dans les cafés, restaurants, lieux d'attente, aéroports à travers le monde
 sont des exemples de WLAN.
 
 \paragraph{} Le WAN signifie Wide Area Network, ou réseau étendu. Il est en fait formé par
-l'association de plusieurs LANs. On retrouve ici la notion de réseaux \emph{composés}. Des LANs,
+l'association de plusieurs LAN. On retrouve ici la notion de réseaux \emph{composés}. Des LAN,
 reliés entre eux, forment un réseau à part entière, qui peut lui même se connecter à d'autres
-LANs ou WANs.
+LAN ou WAN.
 
 
 \paragraph{Réseau nominal} 
 
 \paragraph{} Aujourd'hui, les réseaux informatiques que nous utilisons au quotidien sont composés
-de l'exacte manière que nous venons de présenter : une multitude de - plus ou moins - petits LANs, et un empilement
-par couches successives de WANs dont le dernier, \emph{internet}, les met tous en relation. Il est inutile de divaguer
-sur la mise en place d'un \emph{réseau universel}, car celui-ci est déjà en place. Omniprésent, nous l'utilisons au
-quotidien.
+de l'exacte manière que nous venons de présenter : une multitude de - plus ou moins - petits LAN, et un empilement
+par couches successives de WAN dont le dernier, \emph{Internet}, les met tous en relation. Il est inutile de divaguer
+sur la mise en place d'un \emph{réseau omniprésent} car celui-ci est déjà en place : nous l'utilisons tous au quotidien.
 
 \paragraph{} Il serait normalement nécessaire de prendre en considération les aspects liés à la gouvernance de ce réseau 
 mondial, entre intérêts des États et des opérateurs de télécommunication. Mais nécessaire uniquement s'il était question
@@ -86,13 +85,13 @@ lui fournissant un service en ce qui concerne les données qu'elle transmet.
 
 \paragraph{} Et bien souvent, entre l'utilisateur et le service, on retrouve un acteur incontournable : le moteur de
 recherche. Le rôle de ce service est double : il va dans un premier temps \emph{indexer} le plus de contenus possible
-accessible sur internet, et dans un second temps permettre à un utilisateur d'effectuer une recherche par mots clés 
+accessible sur Internet, et dans un second temps permettre à un utilisateur d'effectuer une recherche par mots clés 
 pour lui renvoyer les contenus jugés les plus appropriés. Certains moteurs, plus spécifiques, utilisent leur base
 d'indexation pour fournir non plus un \emph{contenu} brut mais un ensemble de \emph{connaissances} liées à la requête
 de l'utilisateur \cite{Internet2}.
 
 \paragraph{} Le rôle à jouer des moteurs de recherche dans l'écosystème technologique actuel est colossal : ils peuvent
-presque être considérés comme la "porte" d'internet, permettant de trouver un contenu approprié à notre besoin en quelques
+presque être considérés comme la "porte" d'Internet, permettant de trouver un contenu approprié à notre besoin en quelques
 instants. Mais encore une fois ce service est à double tranchant, car les résultats renvoyés par le moteur sont fonction
 du contenu de sa base d'indexation. De fait Tim Bray, ancien employé de Google travaillant aujourd'hui chez Amazon Web Services,
 a remarqué que certains vieux articles de blogs étaient devenus, début 2018, totalement introuvables en utilisant le plus
@@ -112,7 +111,7 @@ offrant une alternative voire induisant une évolution des usages dans le domain
 
 \paragraph{} Cependant, il est important de bien faire dès à présent la distinction entre un \emph{réseau parallèle} et 
 ce que l'on se complait à appeler le "\emph{deep web}". En effet, le terme "réseau profond" ne
-désigne rien de plus que le contenu non indexé par les moteurs de recherche sur internet. Il ne s'agit en aucun cas d'un
+désigne rien de plus que le contenu non indexé par les moteurs de recherche sur Internet. Il ne s'agit en aucun cas d'un
 réseau alternatif nécessitant une manipulation technique particulière pour y accéder : il vous suffit de saisir le nom de
 domaine ou l'adresse IP en question dans la barre d'adresse de votre navigateur pour y accéder.
 
@@ -245,7 +244,7 @@ par le Réseau, induisant à la fois une plus grande transparence de tous et une
 
 \paragraph{} Qu'entend-on exactement par \emph{réseau universel} ? Un réseau \guillemotleft dont la juridiction s'étend de
 droit à la terre entière\guillemotright \cite{Universel0}, omniprésent et omniscient. Le vecteur d'échange est, comme nous 
-l'avons vu précédemment, déjà en place : internet \emph{est} un réseau global, permettant de connecter deux individus d'un 
+l'avons vu précédemment, déjà en place : Internet \emph{est} un réseau global, permettant de connecter deux individus d'un 
 bout à l'autre de la planète. Entrons alors, si vous le voulez bien, dans le domaine de l'imaginaire.
 
 \paragraph{} Imaginons un état au sein duquel serait déployé une véritable \emph{blockchain nationale} ! Tous les services
