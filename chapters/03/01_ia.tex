@@ -190,17 +190,23 @@ pour agir. Ils vont donc, dans le pire des cas, tester tous les chemins possible
 entre deux n\oe{}uds. De plus, ils ne garantissent pas que le chemin trouvé est bien le plus court ; ils sont 
 néanmoins \emph{faciles à implémenter}. Deux exemples connus de ces algorithmes sont les suivants :
 \begin{itemize}
-    \item Le \emph{parcours en profondeur}. C'est celui qu'on utilise \emph{naturellement} dans un labyrinthe, il consiste
+    \item Le \emph{parcours en profondeur} (ou Depth First Search). C'est celui qu'on utilise \emph{naturellement} dans un labyrinthe, il consiste
     à avancer le plus possible jusqu'à être coincé, puis revenir sur la dernière intersection et tester un nouveau chemin.
     Cet approche repose en immense partie sur \emph{la stratégie de parcours} que de l'on décide d'appliquer. Dans un labyrinthe
     par exemple, il est possible que choisir l'ordre d'importance (gauche, droite, milieu) nous aurait fait parvenir plus vite
     à la sortie que (droite, milieu, gauche). Cet algorithme n'est donc pas souvent efficace, de plus il faut qu'il teste
     en moyenne un grand nombre de possibilités pour trouver un chemin.
-    \item Le \emph{parcours en largeur}, que l'on peut assimilier au trajet que fait \emph{la police pour retrouver un
+    \item Le \emph{parcours en largeur} (ou Breadth First Search), que l'on peut assimilier au trajet que fait \emph{la police pour retrouver un
     coupable}. On part du derner point où il à été vu et on s'en éloigne en cercles concentriques. Ainsi, il n'est plus
     question d'ordre, mais cet algorithme n'est \emph{pas du tout efficace}. Néanmoins, si tous les arcs \emph{ont le
     même poids}, nous serons assurés de \emph{trouver le chemin le plus court}.
 \end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=300px]{chapters/03/images/bfs-dfs-bst.png}
+    \caption{\label{bfs-dfs}\emph{BFS and DFS on BST}, \cite{Algorithm0}}
+\end{figure}
 
 \paragraph{Algorithmes intelligents} Etant donné que les parcours présentés ne permettent pas de trouver le chemin
 le plus court, ni de le faire dans un temps acceptable, il nous faut utiliser d'autres algorithmes. Nous avons pour
