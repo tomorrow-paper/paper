@@ -2,7 +2,8 @@
 \section{Algorithmes}
 \label{algorithms}
 
-\subsection{Recherche en profondeur \cite{Algorithm2}}
+\subsection{Recherche en profondeur} 
+\paragraph{Reference} \cite{Algorithm2}
 \begin{lstlisting}
 using System;
 using System.Collections.Generic;
@@ -68,7 +69,8 @@ namespace KoderDojo.Examples {
 \end{lstlisting}    
 
 \newpage
-\subsection{Recherche en largeur \cite{Algorithm1}}
+\subsection{Recherche en largeur}
+\paragraph{Reference} \cite{Algorithm1}
 \begin{lstlisting}
 using System.Collections.Generic;
 
@@ -103,7 +105,70 @@ namespace KoderDojo.Examples {
 \end{lstlisting}
 
 \newpage
-\subsection{Dijkstra \cite{Algorithm3}}
+\subsection{Bellman-Ford}
+\paragraph{Reference} \cite{Algorithm4}
+\begin{lstlisting}
+# Python program for Bellman-Ford's single source 
+# shortest path algorithm.
+ 
+from collections import defaultdict
+ 
+#Class to represent a graph
+class Graph:
+ 
+    def __init__(self,vertices):
+        self.V= vertices #No. of vertices
+        self.graph = [] # default dictionary to store graph
+  
+    # function to add an edge to graph
+    def addEdge(self,u,v,w):
+        self.graph.append([u, v, w])
+         
+    # utility function used to print the solution
+    def printArr(self, dist):
+        print("Vertex   Distance from Source")
+        for i in range(self.V):
+            print("%d \t\t %d" % (i, dist[i]))
+     
+    # The main function that finds shortest distances from src to
+    # all other vertices using Bellman-Ford algorithm.  The function
+    # also detects negative weight cycle
+    def BellmanFord(self, src):
+ 
+        # Step 1: Initialize distances from src to all other vertices
+        # as INFINITE
+        dist = [float("Inf")] * self.V
+        dist[src] = 0
+ 
+ 
+        # Step 2: Relax all edges |V| - 1 times. A simple shortest 
+        # path from src to any other vertex can have at-most |V| - 1 
+        # edges
+        for i in range(self.V - 1):
+            # Update dist value and parent index of the adjacent vertices of
+            # the picked vertex. Consider only those vertices which are still in
+            # queue
+            for u, v, w in self.graph:
+                if dist[u] != float("Inf") and dist[u] + w < dist[v]:
+                        dist[v] = dist[u] + w
+ 
+        # Step 3: check for negative-weight cycles.  The above step 
+        # guarantees shortest distances if graph doesn't contain 
+        # negative weight cycle.  If we get a shorter path, then there
+        # is a cycle.
+ 
+        for u, v, w in self.graph:
+                if dist[u] != float("Inf") and dist[u] + w < dist[v]:
+                        print "Graph contains negative weight cycle"
+                        return
+                         
+        # print all distance
+        self.printArr(dist)
+\end{lstlisting}
+
+\newpage
+\subsection{Dijkstra}
+\paragraph{Reference} \cite{Algorithm3}
 \begin{lstlisting}
 using System;
 using System.Collections.Generic;
@@ -180,5 +245,43 @@ namespace Dijkstras
             return path;
         }
     }
+}
+\end{lstlisting}
+
+\newpage
+\subsection{A*}
+\paragraph{Reference} \cite{Algorithm5}
+\begin{lstlisting}
+template<typename Location, typename Graph>
+void dijkstra_search
+  (Graph graph,
+   Location start,
+   Location goal,
+   std::map<Location, Location>& came_from,
+   std::map<Location, double>& cost_so_far)
+{
+  PriorityQueue<Location, double> frontier;
+  frontier.put(start, 0);
+
+  came_from[start] = start;
+  cost_so_far[start] = 0;
+  
+  while (!frontier.empty()) {
+    Location current = frontier.get();
+
+    if (current == goal) {
+      break;
+    }
+
+    for (Location next : graph.neighbors(current)) {
+      double new_cost = cost_so_far[current] + graph.cost(current, next);
+      if (cost_so_far.find(next) == cost_so_far.end()
+          || new_cost < cost_so_far[next]) {
+        cost_so_far[next] = new_cost;
+        came_from[next] = current;
+        frontier.put(next, new_cost);
+      }
+    }
+  }
 }
 \end{lstlisting}
