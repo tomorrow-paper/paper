@@ -153,7 +153,7 @@ pub trait Recuperator<Req, Res> where Req: Request, Res: Response {
     fn compute(&self, request: Req) -> Result<Res>;
 }\end{lstlisting}
 
-\paragraph{} Ces différents \emph{récupérateurs} sont ensuite utilisés pour constituer un composant à plus haut niveau
+\paragraph{}\label{tomorrow-api} Ces différents \emph{récupérateurs} sont ensuite utilisés pour constituer un composant à plus haut niveau
 d'abstraction : \lstinline{tomorrow-api} (\url{https://github.com/tomorrow-paper/tomorrow-api}). API REST produisant des
 documents JSON, elle sert de façade pour d'éventuelles applications ou un usage à des fins de recherche par un être humain. 
 Pour cette première version de notre prototype, aucun \emph{état} ni aucune donnée ne sont persistés. Les informations 

@@ -336,4 +336,38 @@ relations et hiérarchie}, si nous souhaitons utiliser au mieux les capacités d
 
 \paragraph{Données humaines}
 
-\paragraph{TODO} POC avec brain.js
+\paragraph{} Il convient donc, à la lumière de ces dernières découvertes, d'essayer de mettre
+en place un système simple de Machine Learning afin d'illustrer notre propos. Nous avons choisi
+d'utiliser Javascript, language populaire et très apprécié pour sa simplicité de mise en place
+d'applications web, pour intéragir avec notre API créée précédemment (voir \ref{tomorrow-api}).
+
+\paragraph{} Ainsi, le projet \lstinline{tomorrow-brain-js}, à travers l'implémentation de la
+librairie de Machine Learning brain.js (\url{https://github.com/BrainJS}), propose l'utilisation
+de réseaux de neurones pour trois objectifs :
+
+\begin{itemize}
+    \item \emph{L'entrainement} d'un réseau, à partir d'un jeu de données. Une fois le réseau
+    entraîné, les résultats de l'entrainement ainsi que le réseaux sont enregistrés au format
+    \emph{JSON}, et pourront être réutilisés par la suite.
+    \item \emph{Le test} d'un réseau, à partir d'un jeu de données également. Ce dernier est
+    séparé en deux parties de tailles égales, l'une serviva à l'entrainement du réseau et l'autre
+    à évaluer la précision de ce réseau entraîné. 
+    \item \emph{La prédiction} à partir d'un réseau entraîné. Après avoir entraîné le réseau
+    à partir d'un premier jeu de données, ce dernier va effectuer des prédictions sur un second
+    jeu de données \emph{ne contenant que des inputs}, et va enregistrer les résultats au formation
+    JSON dans un fichier afin de pouvoir les exploiter.
+\end{itemize}
+
+\paragraph{} Ce POC réalisé, il devient alors très simple d'imaginer la création de \emph{services}
+destinés à automatiser \emph{l'apprentissage à partir de données humaines}. Il suffirait à ces services
+de récupérer les données leur semblant pertinentes sur \lstinline{tomorrow-api}, puis de les réarranger
+afin de les exploiter avec \lstinline{tomorrow-brain-js}. Ces services pourraient alors tenter par 
+exemple \emph{d'établir des liens, des connexions} entre des informations semblant distinctes 
+\emph{au premier abord}.
+
+\paragraph{} A travers la mise en place de cette solution, nous souhaitons avant tout mettre en
+avant \emph{la faisabilité} de tels projets. Les ressources auxquelles le commun des utilisateurs 
+d'Internet à accès aujourd'hui, aussi bien \emph{en termes de données que d'outils technologiques},
+ouvre la porte à un nombre d'utilisations qui semble infini. De fait, nous souhaitons également
+amener le lecteur à s'interroger sur les dérives possibles : quelle \emph{éthique} adopter pour
+l'informatique de demain ?
