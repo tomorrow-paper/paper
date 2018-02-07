@@ -40,12 +40,6 @@ mal architecturée, aux couplages forts et aux déploiements longs et laborieux.
 communautaires (dont \url{https://StackOverflow.com}, bien connu des développeurs) étaient des applications monolithiques 
 parvenant à maintenir un temps de réponse moyen de \emph{11.80 millisecondes} \cite{Microservices7} ?
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=400px]{chapters/02/images/stackexchange.png}
-    \caption{\label{stackexchange_architecture}Architecture des services StackExchange.}
-\end{figure}
-
 \paragraph{} Il est donc important de savoir raison garder. Tout d'abord, le grand avantage d'une architecture monolithique
 est que le développement et le déploiement de l'application sont en théorie plus simples à effectuer. La maintenance et 
 les évolutions applicatives dépendent quant à elles fortement du couplage des composants au sein même de l'application et 
@@ -61,7 +55,7 @@ complet de technologie alors que le projet a déjà plusieurs années de vie der
 conserve un \emph{état}, quel qu'il soit, durant son \emph{runtime}. Ainsi, il est bien souvent nécessaire de mettre en place
 des solutions supplémentaires pour servir de pont entre les utilisateurs et le service : on parle alors de \emph{2\up{nd} layer},
 ou \emph{seconde couche}, qui sera alors responsable de la répartition de la charge entre les différentes instances de l'application
-(comme illustré sur la figure \ref{stackexchange_architecture}). Si un état est conservé, un \emph{store} pourra être commun
+(comme illustré sur la figure \{REF\}). Si un état est conservé, un \emph{store} pourra être commun
 à l'ensemble des instances pour qu'elles puissent le récupérer et le mettre à jour si nécessaire.
 
 
@@ -72,16 +66,10 @@ simple : s'il devient compliqué de faire évoluer une application monolithique 
 composants, il suffit de l'éclater en multiples \emph{microservices} intéragissant entre eux et prenant chacun en charge 
 un aspect de la logique métier de l'application.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=350px]{chapters/02/images/monolith_to_microservices.png}
-    \caption{\label{monolith_to_microservices}Exemple de transformation en microservices d'une plateforme de partage vidéo \cite{Microservices1}.}
-\end{figure}
-
 \paragraph{} Les avantages d'une telle architecture sont multiples :
 
 \paragraph{} Tout d'abord, cela permet une meilleure scalabilité du système dans son ensemble. Dans l'exemple de la plateforme
-de partage de vidéo de la figure \ref{monolith_to_microservices}, s'il y a beaucoup plus de visionnages que de mises en 
+de partage de vidéo de la figure \{REF\}, s'il y a beaucoup plus de visionnages que de mises en 
 ligne sur le service, il sera alors possible d'allouer plus de ressources au service \emph{Streaming} ou d'en déployer
 plusieurs instances \emph{sans impacter les autres services}. Les économies en terme de ressources sont énormes car, dans 
 le cas d'une architecture monolithique, une augmentation des ressources n'aurait qu'en partie bénéficié à la fonctionnalité 
@@ -166,11 +154,6 @@ en charge, induisant pour certaines blockchains une augmentation du coût de tra
 avait littéralement \emph{embourbé} le réseau Ethereum à cause de l'afflux soudain de transactions dues à la popularité
 de ces chatons numériques.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=350px]{chapters/02/images/cryptokitties.png}
-    \caption{\label{cryptokitties}Page d'accueil du site \url{https://www.cryptokitties.co/}.}
-\end{figure}
 
 \paragraph{} Une solution de \emph{scaling} pour le réseau Ethereum est cependant en cours de développement : il s'agit du 
 \emph{Sharding} \cite{Blockchain0}. Le principe en est le suivant : plutôt que de propager et traiter les transactions de
@@ -191,12 +174,6 @@ le channel correctement fermé par l'ensemble des participants, les échanges so
 qui seront envoyées au réseau Bitcoin. À l'heure actuelle, ce dernier est limité à en moyenne 3 à 7 transactions par secondes,
 et ne génère des blocs qu'en théorie toutes les 10 minutes.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=350px]{chapters/02/images/lightning_network.png}
-    \caption{\label{lightning_network}Alice et Bob s'envoient réciproquement 10\$ à travers un canal Lightning. Une fois
-    celui-ci fermé, il n'enverra qu'une unique transaction de 20\$, signée par les deux participants, au réseau Bitcoin.}
-\end{figure}
 
 \paragraph{} Ce fonctionnement permettra de \emph{désengorger} le réseau, qui n'aurait plus que la responsabilité de pérenniser
 la décision finale des parties prenantes d'un ensemble de transactions \emph{off-chain}, réduisant considérablement le nombre

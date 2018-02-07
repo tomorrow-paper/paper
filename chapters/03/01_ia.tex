@@ -109,12 +109,6 @@ partie} de l'ensemble de définition de notre problème. Lorsqu'il est global, c
 de définition} de notre fonction. On remarquera qu'il est possible d'avoir plusieurs optimums globaux. Nous nous interesserons 
 uniquement aux minimisations, maximiser $f(x)$ consistant finalement à minimiser $-f(x)$.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=250px]{chapters/03/images/optimums.png}
-    \caption{\label{optimums}\emph{Local and global optimums} \cite{Optimums0}.}
-\end{figure}
-
 \paragraph{} Pour des fonctions simples, il est possible d'étudier ces dernières afin de trouver un minimum global.
 C'est le cas pour des fonctions comme $f(x) = 2 + 1/x$ avec $x \in [1, 3]$ qui a un minimum en 3 où elle vaut $7/3$.
 Cependant, dans la réalité, ces fonctions sont beaucoup trop complexes - en taille, en paramètres, en constructions
@@ -160,12 +154,6 @@ peut partir d'un n\oe{}ud et y revenir en ne passant pas deux fois par le même 
 de sommets qu'il contient, et enfin deux n\oe{}uds sont dits \emph{adjacents} s'il existe un arc permettant d'aller de
 l'un à l'autre.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=250px]{chapters/03/images/simple_graph.png}
-    \caption{\label{graph}\emph{Simple graph} \cite{GraphTheory0}.}
-\end{figure}
-
 \paragraph{} Il existe plusieurs manières de représenter un graphe. La première est \emph{graphique}, comme dans 
 l'exemple ci-dessus. Ici, l'ordre et le placement des n\oe{}uds importent peu, mais on va toujours chercher à placer
 l'ensemble de sorte à rendre le graphe \emph{le plus lisible}, en décroisant les arcs par exemple. Mais cette représentation
@@ -176,12 +164,6 @@ notre matrice par un système binaire : 0 quand il n'y a pas de connexion et 1 q
 suivant, notre graphe possède des poids, c'est à dire que le chemin \emph{entre deux n\oe{}uds possède une valeur}, on
 utilisera le signe $\infty$ lorsque deux n\oe{}uds ne sont pas reliés par un arc, et 0 pour le coût entre un n\oe{}ud et
 lui-même.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=250px]{chapters/03/images/weighted_graph.png}
-    \caption{\label{weighted_graph}\emph{Graph with weights} \cite{GraphTheory1}.}
-\end{figure}
 
 \paragraph{} Afin de travailler sur des graphes, nous pouvons utiliser deux catégories d'algorithmes : ceux dit \emph{naïfs},
 et ceux dits \emph{intelligents}. L'ensemble des algorithmes présentés le seront sur leur démarche. Le code associé est
@@ -203,12 +185,6 @@ néanmoins \emph{faciles à implémenter}. Deux exemples connus de ces algorithm
     question d'ordre, mais cet algorithme n'est \emph{pas du tout efficace}. Néanmoins, si tous les arcs \emph{ont le
     même poids}, nous serons assurés de \emph{trouver le chemin le plus court}.
 \end{itemize}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=300px]{chapters/03/images/bfs-dfs-bst.png}
-    \caption{\label{bfs-dfs}\emph{BFS and DFS on BST} \cite{Algorithm0}.}
-\end{figure}
 
 \paragraph{Algorithmes intelligents} Étant donné que les parcours présentés ne permettent pas de trouver le chemin
 le plus court, ni de le faire dans un temps acceptable, il nous faut utiliser d'autres algorithmes. Nous avons pour

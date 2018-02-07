@@ -38,12 +38,6 @@ nature des mémoires est totalement différente : là où l'ordinateur est capab
 capable de restituer une information de manière \emph{infaillible}, l'Homme doit compter sur les mémoires à court et long termes,
 ainsi que sur ses registres sensoriels - ce qu'il connaît de \emph{l'expérience} \cite{Brain0}.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=350px]{chapters/03/images/cerveau-robot.jpg}
-    \caption{\label{comparatif}\emph{Comparaison entre cerveau humain et ordinateur} \cite{Brain1}.}
-\end{figure}
-
 
 \subsection*{Résoudre des problèmes complexes}
 
@@ -103,12 +97,6 @@ En effet, plus les domaines ou problèmes à couvrir sont nombreux, plus notre a
 Globalement, le Machine Learning se découpe en quelques approches : apprentissage supervisé (\emph{Supervised learning}), apprentissage non supervisé
 (\emph{Unsupervised learning}), apprentissage par renforcement (\emph{Reinforcement learning}).
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=350px]{chapters/03/images/machine-learning.png}
-    \caption{\label{machine learning}\emph{Machine Learning Workflow}.}
-\end{figure}
-
 
 \subsection*{Apprentissage supervisé}
 
@@ -151,11 +139,6 @@ systèmes s'appuyant sur ces algorithmes, à l'exemple de :
 \paragraph{Classification et Regression} Lorque nous pratiquons l'apprentissage supervisé, il faut choisir en amont entre deux catégories d'algorithmes : classification ou
 regression. Leur différence peut s'illustrer de manière très simple par l'exemple suivant :
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=300px]{chapters/03/images/classification-regression.jpg}
-    \caption{\label{supervised learning}\emph{Classification and Regression} \cite{MachineLearning6}.}
-\end{figure}
 
 \paragraph{} Un algorithme d'apprentissage supervisé par regression prédit une valeur \emph{continue}, c'est à dire la valeur \emph{précise} attendue pour une instance de problème donnée.
 La réponse de cet algorithme n'est donc pas \emph{binaire} : c'est une valeur, un pourcentage, un indice, un indicateur. Plusieurs outils mathématiques, appartenant en particulier aux
@@ -185,11 +168,6 @@ des déviations, ainsi que des \emph{patterns} (modèles) particuliers. Ces algo
 discerner \emph{des groupes ou segments} dans les données, ou encore afin de construire des représentations visuelles de la
 donnée.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=300px]{chapters/03/images/clustering.png}
-    \caption{\label{clustering}\emph{Group distinction by unsupervised learning} \cite{MachineLearning0}.}
-\end{figure}
 
 \paragraph{} Ces algorithmes apprennent en particulier à détecter les anomalies dans les groupes, ce qui permet par 
 exemple de déterminer un \emph{comportement suspect} dans un lieu public. En sécurité informatique, sur internet, 
@@ -285,12 +263,6 @@ versions d'AlphaGo car elle n'est plus contrainte par \emph{les limites de la co
 \paragraph{} Après seulement trois jours d'auto-apprentissage, AlphaGo Zero arrivait à battre la version la plus aboutie d'AlphaGo à raison de 100 parties à 0,
 et devenait alors la meilleure IA jamais conçue pour le jeu de go. Enfin, la version Zero possède aussi une consommation en énergie bien plus faible.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=300px]{chapters/03/images/alphago-consumption.png}
-    \caption{\label{comparatif}\emph{Power consumption for each AlphaGo version} \cite{AlphaGo2}.}
-\end{figure}
-
 \paragraph{La clé de la réussite d'AlphaGo Zero} Ce dernier se démarque également par son architecture un peu particulière,
 aussi qualifiée de \guillemotleft monstre à deux têtes\guillemotright \cite{AlphaGo3}. En effet, après les 20 premières
 couches (ou \emph{blocks}), se trouvent deux \emph{têtes} : une qui va faire une prévision du joueur qui est actuellement
@@ -320,20 +292,10 @@ existent pour appliquer ce dernier :
 \begin{itemize}
     \item Le \emph{Hard parameter sharing}, où les couches inférieures sont \emph{partagées entre toutes les tâches}, tout en gardant
     des couches de sortie \emph{propres à chaque tâche}.
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=150px]{chapters/03/images/hard-param-sharing.png}
-        \caption{\label{hard-param-sharing}\emph{Hard parameter sharing for MTL in DNN} \cite{NeuralNets0}.}
-    \end{figure}
 
     \item Le \emph{Soft parameter sharing}, où chaque tâche possède \emph{ses propres couches inférieures}, mais où toutes les couches
     inférieures des différentes tâches \emph{sont contraintes entre elles}, c'est-à-dire qu'elles se mettent à jour en fonction de la valeur
     de leurs voisines.
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=250px]{chapters/03/images/soft-param-sharing.png}
-        \caption{\label{soft-param-sharing}\emph{Soft parameter sharing for MTL in DNN} \cite{NeuralNets0}.}
-    \end{figure}
 \end{itemize}
 
 \paragraph{} Bien que le MTL soit de plus en plus utilisé depuis les vingt dernières années, il semblerait que l'utilisation 
