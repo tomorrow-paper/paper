@@ -1,12 +1,12 @@
 \section{Machine Learning}
 
 \paragraph{} Commençons par nous arrêter un instant sur le terme de \emph{Machine Learning}. En français,
-cela pourrait se traduire par \emph{L'apprentissage de la machine}. Mais quel apprentissage ? N'est-ce pas
+cela pourrait se traduire par l'\emph{apprentissage de la machine}. Mais quel apprentissage ? N'est-ce pas
 le rôle de l'Homme, comme nous l'avons soutenu jusqu'ici, d'apprendre à la machine ? Nous verrons que dans
 le cas du Machine Learning, le concepteur ne fait que \emph{construire un système}, et lui donner
-\emph{les clés} pour parvenir à la résolution d'un \emph{problème complexe}. On remarque ici l'importance
+les \emph{clés} pour parvenir à la résolution d'un \emph{problème complexe}. On remarque ici l'importance
 de \emph{cibler} un domaine: lorsque nous parlons de ML, nous ne prétendons pas créer un système à l'image
-humaine, qui serait capable d'avoir une faculté d'apprentissage \emph{globale}, quel que soit le support. 
+de l'humain, qui serait capable d'avoir une faculté d'apprentissage \emph{globale}, quel que soit le support. 
 
 \paragraph{} Justement, n'est-ce pas là une réelle différence entre l'apprentissage humain et celui de la machine ?
 Lorsque l'Homme apprend, c'est par \emph{l'expérience}. Il fait l'expérience de son environnement et la
@@ -20,7 +20,8 @@ nous détaillerons l'utilisation par la suite. Ce qu'il faut retenir de la diff�
 d'un Homme et d'une machine, c'est la capacité d'adaptation du tissu neuronal de l'Homme à une variété de situations
 et de problèmes que la machine n'est pas capable d'appréhender seule.
 
-\paragraph{Cerveau humain et Ordinateur}
+
+\subsection*{Cerveau humain et Ordinateur}
 
 \paragraph{} Afin de comprendre ces différences entre les capacités de l'Homme et de la machine, il nous faut nous
 intéresser un instant à leur composition et à leur mode de fonctionnement. Rappelons en premier lieu qu'une machine
@@ -35,7 +36,7 @@ l'ordre de 5 milliards, et sont contigües en mémoire. On remarquera néanmoins
 beaucoup plus rapidement que dans le cerveau, où les impulsions synaptiques atteignent 6 à 10 m/s. Enfin on remarquera que la
 nature des mémoires est totalement différente : là où l'ordinateur est capable de \emph{stocker de l'information}, et est donc
 capable de restituer une information de manière \emph{infaillible}, l'Homme doit compter sur les mémoires à court et long termes,
-ainsi que sur ses registres sensoriels - ce qu'il connait de \emph{l'expérience} \cite{Brain0}.
+ainsi que sur ses registres sensoriels - ce qu'il connaît de \emph{l'expérience} \cite{Brain0}.
 
 \begin{figure}[ht]
     \centering
@@ -43,16 +44,17 @@ ainsi que sur ses registres sensoriels - ce qu'il connait de \emph{l'expérience
     \caption{\label{comparatif}\emph{Comparaison entre cerveau humain et ordinateur} \cite{Brain1}.}
 \end{figure}
 
-\paragraph{Résoudre des problèmes complexes}
+
+\subsection*{Résoudre des problèmes complexes}
 
 \paragraph{} Pour mettre en avant la valeur ajoutée du Machine Learning, nous allons nous intéresser à l'exemple
-du possesseur du chat appellé Ada \cite{MachineLearning0}. Il tente de poser la question suivante : qu'est-ce qu'Ada essaie de dire
+du possesseur du chat appellé Ada \cite{MachineLearning0}. Il pose la question suivante : qu'est-ce qu'Ada essaie de dire
 à son maître lorsqu'elle ronronne quelques instants après avoir fait tomber la télécommande de la table basse ? Cela ne semble
 pas avoir de réponse absolue en premier lieu, car il n'est pas possible de \emph{parler la langue d'Ada}. De fait, nous cherchons
 donc une réponse \emph{appropriée}, c'est-à-dire au plus proche des attentes qu'avait eu
 Ada auparavant, quand \emph{elle avait ronronné de la même manière}, ou \emph{dans un contexte similaire}. Une multitude de réponses
 possibles s'ouvrent alors à nous : elle à peut-être faim, ou encore elle cherche de l'attention, ou bien elle n'aime pas les
-télécommandes, ou elle aime simplement faire tomber des objets.. 
+télécommandes, ou elle aime simplement faire tomber des objets...
 
 \paragraph{} Néanmoins, les ordinateurs font d'ores et déjà un nombre incalculable de choses que nous ne serions pas capables de faire
 par nous-même comme la navigation, le calcul, le monitoring... serait-il donc possible que l'on construise un logiciel qui résolve le problème
@@ -77,7 +79,7 @@ permettre des analyses poussées, ou encore la finance sans tout le support des 
 ordinateurs puissent quant à eux approcher une solution exploitable. D'ordinaire, afin de résoudre des problèmes, les ordinateurs utilisent des \emph{affectations}
 (\emph{mapping}) de questions ou problèmes (en entrée) à des réponses ou solutions (en sortie). Tout le principe réside dans les étapes à respecter lors de
 cette affectation, et nous avons pu voir qu'un développeur n'a pas toujours la réponse à cette question. De fait, pourquoi ne pas demander à une 
-machine de se rendre compte \emph{elle-même} de la meilleure manière de réaliser cette affectation ? \cite{MachineLearning0} C'est exactement le propos du Machine
+machine de se rendre compte \emph{elle-même} de la meilleure manière de réaliser cette affectation \cite{MachineLearning0} ? C'est exactement le propos du Machine
 Learning. Il s'agit en général de renseigner \emph{d'immenses quantités} de données du problème afin qu'il adopte l'algorithme qui répond le mieux à
 comment configurer ce \emph{mapping}. Cela est rendu possible, comme nous l'avons vu précédemment dans la section sur \emph{le cerveau et l'ordinateur},
 par l'immense faculté de calcul \emph{infatigable} et \emph{infaillible} de la machine.
@@ -87,14 +89,14 @@ multiplication \emph{exponentielle} des données disponibles pour \emph{nourrir}
 uniquement un avantage car il augmente les chances qu'il y ait des données \emph{inutiles à notre problème}. C'est pourquoi il faut s'appliquer
 d'une part à tenter de fournir des jeux de données \emph{restreints ou contrôlés} à nos machines, et à toujours faire attention d'y supprimer les
 éventuelles données inutiles. Si vous souhaitez répondre au problème d'Ada, alors vous pouvez supprimer de vos données tout ce qui ne correspond
-sous aucun aspect au domaine : finance, médecine, informatique.. Ces données sont une \emph{mauvaise herbe} et risquent de \emph{ralentir} ou de
+sous aucun aspect au domaine : finance, médecine, informatique... Ces données sont une \emph{mauvaise herbe} et risquent de \emph{ralentir} ou de
 \emph{compromettre} l'apprentissage de la machine. 
 
 \paragraph{Plusieurs formes de Machine Learning} Il existe toujours une large variété de manières pour résoudre un problème donné. En informatique, cela se concrétise par la possiblité
 d'appliquer différents algorithmes à un problème, pour le résoudre par différents procédés. Un des exemples les plus connus est \emph{le tri} : tri à
-bulles, tri rapide, tri par insertion, tri avec pile.. Chaque approche possédant ses avantages et ses inconvéniants. Néanmoins, dans la plupart des
+bulles, tri rapide, tri par insertion, tri avec pile... Chaque approche possédant ses avantages et ses inconvéniants. Néanmoins, dans la plupart des
 situations, la majorité arrive à s'accorder sur un nombre restreint de solutions (une, deux) permettant de résoudre \emph{la majorité} des cas, de \emph{manière optimisée}.
-Lorsque l'on résoud un problème on suit le processus suivant : test d'une sélection d'algorithmes, évaluation de leur performance selon certains
+Lorsque l'on résout un problème on suit le processus suivant : test d'une sélection d'algorithmes, évaluation de leur performance selon certains
 modèles, décision sur l'utilisation du modèle ou de la combinaison de modèles à utiliser. Il faut cependant constater que l'utilisation de \emph{plusieurs}
 modèles rend la conception plus complexe. Cela explique aussi l'extrême complexité d'adaptation d'un \emph{même programme} à des \emph{problèmes différents}.
 En effet, plus les domaines ou problèmes à couvrir sont nombreux, plus notre algorithme devra être adaptatif et utiliser des méthodes \emph{différentes mais complémentaires}. 
@@ -107,7 +109,8 @@ Globalement, le Machine Learning se découpe en quelques approches : apprentissa
     \caption{\label{machine learning}\emph{Machine Learning Workflow}.}
 \end{figure}
 
-\paragraph{Apprentissage supervisé}
+
+\subsection*{Apprentissage supervisé}
 
 \paragraph{} Un algorithme d'apprentissage est dit \emph{supervisé} au sens où il lui est fourni des exemples de problèmes \emph{résolus} desquels
 il doit effectuer son apprentissage, où \emph{un intermédiaire humain} à pris le temps \emph{d'étiquetter} un certain nombre de cas avec la bonne réponse.
@@ -136,13 +139,13 @@ Une fois l'apprentissage terminé, le modèle, qui à été entraîné sur un je
 d'exemples avec une réponse associée, sans pour autant connaître les étapes pour parvenir à cette réponse. Ce type d'algorithmes est largement utilisé et nous avons déjà évoqué plusieurs
 systèmes s'appuyant sur ces algorithmes, à l'exemple de :
 \begin{itemize}
-    \item La détection de spams - Permet de garder votre boîte de réception propre après avoir appris de nombreux exemples de spams ;
-    \item La reconnaissance d'objets ou de comportement - A partir d'images ou de vidéos ;
-    \item La reconnaissance de l'écriture - Aussi appelés OCR (Optical Character Recognition), ces logiciels permettent par exemple de reconnaître les adresses sur les
+    \item La détection de spams, qui permet de garder votre boîte de réception propre après avoir appris de nombreux exemples de spams ;
+    \item La reconnaissance d'objets ou de comportement à partir d'images ou de vidéos ;
+    \item La reconnaissance de l'écriture, aussi appelés OCR (Optical Character Recognition), ces logiciels permettenttant par exemple de reconnaître les adresses sur les
     enveloppes postales ou encore les signatures ;
-    \item Biologie génétique - Reconnaître des séquences d'allèles ;
-    \item Médecine préventive - Dépister à l'avance certaines maladies par l'étude de diagnostics médicaux ;
-    \item La prédiction - Deviner une information à l'avance \cite{MachineLearning2}.
+    \item La biologie génétique, permettant de reconnaître des séquences d'allèles ;
+    \item La médecine préventive, dépistant à l'avance certaines maladies par l'étude de diagnostics médicaux ;
+    \item La prédiction, devinant une information à l'avance \cite{MachineLearning2}.
 \end{itemize}
 
 \paragraph{Classification et Regression} Lorque nous pratiquons l'apprentissage supervisé, il faut choisir en amont entre deux catégories d'algorithmes : classification ou
@@ -164,15 +167,16 @@ permettant de modéliser ces algorithmes sont \emph{pratiquement semblables}. En
 s'appuyant sur l'ensemble des données fournies. Ce sont les dernières couches du réseau, les couches \emph{décisionnelles}, qui se chargeront de transformer l'information reçue en une décision
 de type \emph{regression ou classification}. Le procédé reste donc globalement similaire.
 
-\paragraph{} On remarquera que \emph{les accès} aux méthodes du Machine Learning sont encore restreints : ce domaine nécessite à la fois des connaissances conséquentes dans d'autres domaines 
+\paragraph{} On remarquera que les \emph{accès} aux méthodes du Machine Learning sont encore restreints : ce domaine nécessite à la fois des connaissances conséquentes dans d'autres domaines 
 à forte composante mathématique ainsi que des systèmes informatiques développés afin de \emph{stocker de large quantités de données} et \emph{d'effectuer efficacement des calculs} sur ces
-dernières. De plus, il n'existe pas d'outil \emph{simple et libre} permettant d'appliquer les principes du ML sans apprentissage préalable. Le background nécessaire pour participer à la création 
+dernières. De plus, il n'existe pas d'outil \emph{simple et libre} permettant d'appliquer les principes du ML sans apprentissage préalable. L'expérience nécessaire pour participer à la création 
 et l'entrainement d'un modèle est riche, et l'utilisation de ces techniques est donc réservé à une \emph{population possédant un niveau de formation élevé}. Dans cette mesure, nous pouvons
-questionner l'éthique d'utilisation des techniques du Machine Learning. Etant donné que ces techniques sont réservées à une partie de la population, et qu'elles lui permettent d'acquérir 
+questionner l'éthique d'utilisation des techniques du Machine Learning. Étant donné que la mise en \oe{}uvre de ces techniques est réservée à une partie de la population, et qu'elles lui permettent d'acquérir 
 \emph{une connaissance plus précise du fonctionnement de l'ensemble de la population}, elles contribuent en un sens à \emph{accentuer les disparités entre les classes sociales}. Nous reviendrons
 sur ce point important lorsque nous aborderons les usages et dérives associés à l'intelligence artificielle.
 
-\paragraph{Apprentissage non supervisé, GANs}
+
+\subsection*{Apprentissage non supervisé, GAN}
 
 \paragraph{} Lorsque nous parlons d'apprentissage non supervisé, on entend que les algorithmes n'ont au départ \emph{aucune
 réponse} sur laquelle s'appuyer, et qu'ils doivent donc apprendre la structure des données par eux-même. Pour apprendre, il
@@ -188,12 +192,12 @@ donnée.
 \end{figure}
 
 \paragraph{} Ces algorithmes apprennent en particulier à détecter les anomalies dans les groupes, ce qui permet par 
-exemple de déterminer \emph{un comportement suspect} dans un lieu public. En sécurité informatique, sur internet, 
+exemple de déterminer un \emph{comportement suspect} dans un lieu public. En sécurité informatique, sur internet, 
 les algorithmes de machine learning peuvent détecter des éléments anormaux dans une source aussi riche que le trafic
 d'un réseau. 
 
 \paragraph{Generative Adversarial Networks} Selon Yann Le Cun, ils seraient une des inventions les plus pertinentes
-des 10 dernières années dans le milieu du machine learning. Les Generative Adversarial Networks, simplifié par GAN,
+des 10 dernières années dans le milieu du machine learning. Les Generative Adversarial Networks, simplifié en GAN,
 consistent en deux types de modèles utilisés ensemble :
 
 \begin{itemize}
@@ -203,15 +207,16 @@ consistent en deux types de modèles utilisés ensemble :
     qu'un modèle discriminatif \emph{n'arrive pas} à faire la différence avec une donnée authentique.
 \end{itemize} 
 
-\paragraph{} Bien que ces deux modèles soient utiles séparemment, ils le sont encore davantage couplés, appliqué à des cas
-du monde réel, ou \emph{l'étiquettage de la donnée est souvent cher} \cite{MachineLearning5}. On peut assimiler leur travail
-à celui \emph{d'un faussaire et d'un policier} (génératif et discriminatif). C'est un fait qui nous interpelle et nous fait
-comprendre l'importance que leur apportent les chercheurs : en prenant à la fois le rôle de \emph{créateur de faux} et de
-\emph{distinguer le vrai du faux}, les GANs permettent de saisir le \emph{comportement sous-jacent} d'un système, qu'il serait
+\paragraph{} Bien que ces deux modèles soient utiles séparemment, ils le sont encore davantage couplés, appliqués à des cas
+du monde réel, où \emph{l'étiquettage de la donnée est souvent cher} \cite{MachineLearning5}. On peut assimiler leur travail
+à celui d'un \emph{faussaire} et d'un \emph{policier} (génératif et discriminatif). C'est un fait qui nous interpelle et nous fait
+comprendre l'importance que leur apportent les chercheurs : en prenant à la fois le rôle de \emph{créateur de faux} et la possibilité de
+\emph{distinguer le vrai du faux}, les GAN permettent de saisir le \emph{comportement sous-jacent} d'un système, qu'il serait
 impossible d'approcher pour un humain. Cela ouvre de nouvelles perspectives pour la compréhension de problèmes complexes de
-domaines aussi divers que les mathématiques, l'informatique, la finance, la médecine.. ou des problèmes tels que celui d'Ada !
+domaines aussi divers que les mathématiques, l'informatique, la finance, la médecine... ou des problèmes tels que celui d'Ada !
 
-\paragraph{AlphaGo, AlphaGo Zero}
+
+\subsection*{AlphaGo, AlphaGo Zero}
 
 \paragraph{} Courant 2016 et 2017, une annonce à fait grand bruit dans le milieu de l'intelligence artificielle
 suite à un événement particulier : une IA avait enfin réussi à battre un des meilleurs joueurs professionnels de Go
@@ -221,16 +226,17 @@ dans le milieu de l'IA et du \emph{Deep Learning} en particulier.
 
 \paragraph{Jeu de Go, complexité infinie ?} Le jeu de Go est né en Chine il y a plus de 2500 ans. C'est un jeu de stratégie
 se déroulant sur un plateau, le \emph{Goban}, sur lequel est tracé un quadrillage de 19 lignes sur 19 colonnes. Chaque joueur
-pose, chacun son tour, une pierre de sa couleur (noire ou blanche) afin de tenter de posséder plus de \emph{territoire} que
+pose, chacun son tour, une pierre de sa couleur (noire ou blanche) afin de tenter de posséder plus de \emph{territoires} que
 son adversaire. Allégorie de l'Univers dans le monde oriental, le go se distingue en effet de tous les autres jeux de stratégie
 par son immense complexité combinatoire. Le nombre de positions légales est estimé à \begin{math}10^{170}\end{math} sur un goban
 de 19x19 contre \begin{math}10^{40}\end{math} aux échecs, et l'arbre de jeu couvre à lui seul plus de \begin{math}10^{600}\end{math}
-parties plausibles contre environ \begin{math}10^{120}\end{math} aux échecs. A titre indicatif, le nombre d'atomes dans l'Univers est
+parties plausibles contre environ \begin{math}10^{120}\end{math} aux échecs. À titre indicatif, le nombre d'atomes dans l'Univers est
 de l'ordre de \begin{math}10^{79}\end{math}, la complexité du jeu de go est donc \emph{bien trop importante} pour essayer de l'approcher
 avec des algorithmes classiques, ce qui explique qu'aucune IA d'un niveau réellement acceptable (c'est-à-dire proche de celui de
 professionnel) n'ait été conçue avant AlphaGo.
 
-\paragraph{AlphaGo, application réussie du Machine Learning}
+
+\subsection*{AlphaGo, application réussie du Machine Learning}
 
 \paragraph{} Quels sont les secrets d'AlphaGo ? Afin de calculer la valeur 
 d'une partie \emph{dans un état donné}, AlphaGo utilise le MCTS ou Monte Carlo Tree Search. Cet algorithme permet d'analyser
@@ -239,31 +245,32 @@ Néanmoins l'utilisation du MCTS à elle seule ne permet d'atteindre qu'un nivea
 utilisé un système de Deep Learning mettant en jeu des réseaux de neurones avec deux responsabilités distinctes : le
 \emph{Policy Network} (ou réseau stratégique) et le \emph{Value Network} (ou réseau de valorisation) \cite{AlphaGo0}.
 
-\paragraph{Réseau stratégique} L'entrainement de ce réseau à nécessité deux étapes de machine learning. Une première partie à 
+\paragraph{Réseau stratégique} L'entraînement de ce réseau a nécessité deux étapes de machine learning. Une première partie a 
 consisté en l'apprentissage supervisé du réseau, auquel à été fourni 30 millions de positions à partir des parties recensées sur 
-le KGS Go Server (serveur mondial de jeu de go). Suite à cet entraînement le réseau à été capable de prédire les coups joués par 
-des professionnels avec une précision de 57\%. Une deuxième étape à été consacrée à l'apprentissage par renforcement, afin d'aider
+le KGS Go Server (serveur mondial de jeu de go). Suite à cet entraînement le réseau a été capable de prédire les coups joués par 
+des professionnels avec une précision de 57\%. Une deuxième étape a été consacrée à l'apprentissage par renforcement, afin d'aider
 à la prédiction des meilleurs coups possibles. Suite à un entrainement de plus d'un million de parties contre lui-mêmme, le réseau
-renforcé à été capable de battre le réseau non renforcé dans plus de 80\% des cas. A ce stage le réseau possède encore un niveau
-d'amateur - environ 3e dan sur le KGS Go Server \cite{AlphaGo1}.
+renforcé a été capable de battre le réseau non renforcé dans plus de 80\% des cas. À ce stage le réseau possède encore un niveau
+d'amateur - environ 3\up{ème} dan sur le KGS Go Server \cite{AlphaGo1}.
 
 \paragraph{Réseau de valorisation} L'objectif du réseau de valorisation est de se focaliser sur l'évaluation de la position à un
 instant donné. L'entrainement précédent ayant conduit à de \emph{l'overfitting} (le réseau tente de mémoriser les issues des parties
-plutôt que \emph{généraliser des positions nouvelles}), un nouvel entraînement à été généré à partir des parties jouées contre
+plutôt que \emph{généraliser des positions nouvelles}), un nouvel entraînement a été généré à partir des parties jouées contre
 lui-même, soit plus de 30 millions de positions provenant d'autant de parties.
 
-\paragraph{Les Résultats} En 2015, AlphaGo est la première machine à remporter des parties contre un professionnel, Fan HUI (2e dan professionnel
-français). Il est ensuite le gagnant de parties importantes : contre Lee Sedol (9e dan coréen), considéré comme un des meilleurs professionnels
-au monde, puis contre Ke Jie (9e dan chinois) qui est alors classé 1er au rang mondial. Il gagne aussi dans 99.8\% des cas contre
+\paragraph{Les résultats} En 2015, AlphaGo est la première machine à remporter des parties contre un professionnel, Fan H\textsc{ui} (2\up{ème} dan professionnel
+français). Il est ensuite le gagnant de parties importantes : contre Lee S\textsc{edol} (9\up{ème} dan coréen), considéré comme un des meilleurs professionnels
+au monde, puis contre Ke J\textsc{ie} (9\up{ème} dan chinois) qui est alors classé 1\up{er} au niveau mondial. Il gagne aussi dans 99.8\% des cas contre
 les meilleurs programmes, comme Crazy Stone, Pachi ou Zen. De plus, la version distribuée d'AlphaGo gagne 77\% de ses parties
 contre la version non distribuée, ce qui signifie qu'AlphaGo est aussi bien \emph{performant que scalable}.
 
-\paragraph{AlphaGo Zero, la révolution}
 
-\paragraph{} Contrairement à AlphaGo qui à été entrainé au départ par l'étude de parties de professionnels, la version Zero d'AlphaGo saute
+\subsection*{AlphaGo Zero, la révolution}
+
+\paragraph{} Contrairement à AlphaGo qui a été entrainé au départ par l'étude de parties de professionnels, la version Zero d'AlphaGo saute
 cette étape et apprend en jouant directement contre elle-même. Une nouvelle forme \cite{AlphaGo2} d'apprentissage par renforcement lui permet
-d'être son propre professeur. Au départ, le réseau neuronal ne connait rien du jeu de go si ce n'est les règles, et joue donc des coups aléatoires.
-Pendant la partie, le réseau neural se met à jour afin d'améliorer son système de prédiction. AlphaGo Zero joue ainsi contre sa nouvelle version,
+d'être son propre professeur. Au départ, le réseau neuronal ne connaît rien du jeu de go si ce n'est les règles, et joue donc des coups aléatoires.
+Pendant la partie, le réseau neuronal se met à jour afin d'améliorer son système de prédiction. AlphaGo Zero joue ainsi contre sa nouvelle version,
 et ainsi de suite jusqu'à ce qu'il gagne réellement en niveau et que le réseau s'optimise. Cette technique est bien plus puissante que les anciennes
 versions d'AlphaGo car elle n'est plus contrainte par \emph{les limites de la connaissance humaine}. 
 
@@ -286,14 +293,14 @@ et devenait alors la meilleure IA jamais conçue pour le jeu de go. Enfin, la ve
 
 \paragraph{La clé de la réussite d'AlphaGo Zero} Ce dernier se démarque également par son architecture un peu particulière,
 aussi qualifiée de \guillemotleft monstre à deux têtes\guillemotright \cite{AlphaGo3}. En effet, après les 20 premières
-couches ou \emph{blocks}, se trouvent deux \emph{têtes} : une qui va faire une prévision sur le joueur qui est actuellement
-en train de gagner, une qui calcule la probabilité de jouer tel ou tel coup. C'est un fait inhabituel en comparaison à tous
-les systèmes dont il à été question jusqu'ici, qui ne restituaient qu'\emph{une sortie unique} (comme une image, l'appartenance
+couches (ou \emph{blocks}), se trouvent deux \emph{têtes} : une qui va faire une prévision du joueur qui est actuellement
+en train de gagner, et une qui calcule la probabilité de jouer tel ou tel coup. C'est un fonctionnement inhabituel en comparaison de tous
+les systèmes dont il à été question jusqu'ici, qui ne restituaient qu'une \emph{sortie unique} (comme une image, l'appartenance
 à un groupe, une valeur précise).
 
-\paragraph{} La question se pose alors du \emph{fonctionnement} d'un tel système. Et il est en fait \emph{identique}
-à ce que nous avons vu jusqu'alors : lorsque la première \emph{tête} fait une prédiction, cela met à jour le modèle
-du \emph{corps}; et de la même manière pour la seconde tête. De cette façon, l'évolution à chaque tour est plus importante
+\paragraph{} La question du \emph{fonctionnement} d'un tel système se pose alors. Et il est en fait \emph{identique}
+à ce que nous avons vu jusque là : lorsque la première \emph{tête} fait une prédiction, cela met à jour le modèle
+du \emph{corps} ; et de la même manière pour la seconde tête. De cette façon, l'évolution à chaque tour est plus importante
 puisque ce ne sont plus une mais deux mises à jour des couches neuronales qui sont effectuées. Cela permet bien évidemment
 un renforcement plus important et plus rapide de notre système, mais cela ouvre également à la création de nouveaux systèmes :
 les réseaux neuronaux \emph{multi-têtes}.
@@ -330,31 +337,32 @@ existent pour appliquer ce dernier :
 \end{itemize}
 
 \paragraph{} Bien que le MTL soit de plus en plus utilisé depuis les vingt dernières années, il semblerait que l'utilisation 
-du \emph{hard paramater sharing} soit encore invasive et source de problèmes pour son application aux réseaux de neurones profonds
+du \emph{hard parameter sharing} soit encore invasive et source de problèmes pour son application aux réseaux de neurones profonds
 \cite{NeuralNets0}. De plus, il est nécessaire de gagner en compréhension sur le fonctionnement des tâches, leurs \emph{similarités,
 relations et hiérarchie}, si nous souhaitons utiliser au mieux les capacités du MTL.
 
-\paragraph{Données humaines}
+
+\subsection*{Données humaines}
 
 \paragraph{} Il convient donc, à la lumière de ces dernières découvertes, d'essayer de mettre
 en place un système simple de Machine Learning afin d'illustrer notre propos. Nous avons choisi
 d'utiliser Javascript, language populaire et très apprécié pour sa simplicité de mise en place
 d'applications web, pour intéragir avec notre API créée précédemment (voir \ref{tomorrow-api}).
 
-\paragraph{} Ainsi, le projet \lstinline{tomorrow-brain-js}, à travers l'implémentation de la
-librairie de Machine Learning brain.js (\url{https://github.com/BrainJS}), propose l'utilisation
-de réseaux de neurones pour trois objectifs :
+\paragraph{} Ainsi, le projet \lstinline{tomorrow-brain-js} (\url{https://github.com/tomorrow-paper/tomorrow-brain-js}), 
+à travers l'implémentation de la librairie de Machine Learning brain.js (\url{https://github.com/BrainJS}), propose
+l'utilisation de réseaux de neurones pour trois objectifs :
 
 \begin{itemize}
     \item \emph{L'entrainement} d'un réseau, à partir d'un jeu de données. Une fois le réseau
-    entraîné, les résultats de l'entrainement ainsi que le réseaux sont enregistrés au format
-    \emph{JSON}, et pourront être réutilisés par la suite.
+    entraîné, les résultats de l'entrainement ainsi que le réseau lui-même sont enregistrés au format
+    JSON, et pourront être réutilisés par la suite ;
     \item \emph{Le test} d'un réseau, à partir d'un jeu de données également. Ce dernier est
-    séparé en deux parties de tailles égales, l'une serviva à l'entrainement du réseau et l'autre
-    à évaluer la précision de ce réseau entraîné. 
+    séparé en deux parties de tailles égales, l'une servira à l'entrainement du réseau et l'autre
+    à évaluer la précision de ce réseau entraîné ;
     \item \emph{La prédiction} à partir d'un réseau entraîné. Après avoir entraîné le réseau
     à partir d'un premier jeu de données, ce dernier va effectuer des prédictions sur un second
-    jeu de données \emph{ne contenant que des inputs}, et va enregistrer les résultats au formation
+    jeu de données \emph{ne contenant que des inputs}, et va enregistrer les résultats au format
     JSON dans un fichier afin de pouvoir les exploiter.
 \end{itemize}
 
@@ -363,11 +371,11 @@ destinés à automatiser \emph{l'apprentissage à partir de données humaines}. 
 de récupérer les données leur semblant pertinentes sur \lstinline{tomorrow-api}, puis de les réarranger
 afin de les exploiter avec \lstinline{tomorrow-brain-js}. Ces services pourraient alors tenter par 
 exemple \emph{d'établir des liens, des connexions} entre des informations semblant distinctes 
-\emph{au premier abord}.
+\emph{au premier abord}... puis diffuser ses résultats sur le réseau \lstinline{tomorrow-network}. 
 
-\paragraph{} A travers la mise en place de cette solution, nous souhaitons avant tout mettre en
+\paragraph{} À travers la mise en place de cette solution, nous souhaitons avant tout mettre en
 avant \emph{la faisabilité} de tels projets. Les ressources auxquelles le commun des utilisateurs 
-d'Internet à accès aujourd'hui, aussi bien \emph{en termes de données que d'outils technologiques},
+d'Internet a accès aujourd'hui, aussi bien \emph{en termes de données que d'outils technologiques},
 ouvre la porte à un nombre d'utilisations qui semble infini. De fait, nous souhaitons également
 amener le lecteur à s'interroger sur les dérives possibles : quelle \emph{éthique} adopter pour
 l'informatique de demain ?
